@@ -1,1 +1,509 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eSIM Online</title>
 
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f8ff;
+color:#12213a;
+line-height:1.7;
+}
+
+header{
+background:white;
+border-bottom:1px solid #e5eaf3;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+.nav{
+max-width:1150px;
+margin:auto;
+padding:16px 22px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-size:25px;
+font-weight:900;
+color:#1264e8;
+direction:ltr;
+}
+
+nav a{
+margin:0 8px;
+font-weight:bold;
+color:#35445e;
+text-decoration:none;
+}
+
+.btn{
+display:inline-block;
+background:#1264e8;
+color:white;
+padding:11px 19px;
+border-radius:12px;
+font-weight:bold;
+text-decoration:none;
+}
+
+.hero{
+max-width:1150px;
+margin:35px auto 0;
+padding:45px 25px;
+border-radius:28px;
+background:linear-gradient(135deg,#0d63e8,#24a7ff);
+color:white;
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:25px;
+align-items:center;
+}
+
+.hero h1{
+font-size:46px;
+line-height:1.2;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:19px;
+margin-bottom:22px;
+}
+
+.hero .btn{
+background:white;
+color:#1264e8;
+}
+
+.phone{
+min-height:250px;
+border-radius:30px;
+background:rgba(255,255,255,.15);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:90px;
+}
+
+section{
+max-width:1150px;
+margin:45px auto;
+padding:0 22px;
+}
+
+.title{
+text-align:center;
+margin-bottom:25px;
+}
+
+.title h2{
+font-size:31px;
+}
+
+.title p{
+color:#68758b;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+}
+
+.card{
+background:white;
+border:1px solid #e3e9f3;
+border-radius:22px;
+padding:24px;
+box-shadow:0 10px 30px rgba(30,70,130,.07);
+}
+
+.country{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:18px;
+}
+
+.country h3{
+font-size:25px;
+}
+
+.flag{
+font-size:34px;
+}
+
+.plans{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:11px;
+}
+
+.plan{
+border:1px solid #e6ebf3;
+border-radius:14px;
+padding:12px;
+background:#fafcff;
+}
+
+.plan strong{
+display:block;
+color:#1264e8;
+font-size:17px;
+}
+
+.plan span{
+color:#5d6a80;
+font-size:14px;
+}
+
+.price{
+font-weight:900;
+color:#101d34;
+font-size:16px;
+}
+
+.cta{
+background:#102b54;
+color:white;
+border-radius:25px;
+padding:35px;
+text-align:center;
+}
+
+.cta h2{
+font-size:30px;
+margin-bottom:10px;
+}
+
+footer{
+margin-top:50px;
+background:#0c1c33;
+color:#cbd6e7;
+padding:30px 22px;
+text-align:center;
+}
+
+.small{
+font-size:13px;
+color:#8fa0b8;
+margin-top:6px;
+}
+
+@media(max-width:800px){
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+}
+
+@media(max-width:520px){
+nav a:not(.btn){
+display:none;
+}
+
+.plans{
+grid-template-columns:1fr;
+}
+
+.hero{
+margin:18px 12px 0;
+padding:30px 18px;
+}
+
+section{
+padding:0 12px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav">
+
+<div class="logo">eSIM Online</div>
+
+<nav>
+<a href="#plans">پلانەکان</a>
+<a href="#how">چۆن کاردەکات؟</a>
+<a class="btn" href="#contact">پەیوەندی</a>
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+
+<div>
+<h1>ئینتەرنێت لە هەر شوێنێک 🌍</h1>
+
+<p>
+پلانەکانی eSIM بۆ گەشت و سەفەر،
+بە نرخە گونجاوەکان و بەبێ سیمکارتی فیزیکی.
+</p>
+
+<a class="btn" href="#plans">بینینی پلانەکان</a>
+</div>
+
+<div class="phone">📱🌍</div>
+
+</section>
+
+
+<section id="plans">
+
+<div class="title">
+<h2>پلانەکانی eSIM</h2>
+<p>Turkey 🇹🇷 و Europe 🇪🇺</p>
+</div>
+
+
+<div class="cards">
+
+
+<article class="card">
+
+<div class="country">
+<h3>🇹🇷 تورکیا</h3>
+<div class="flag">✈️</div>
+</div>
+
+<div class="plans">
+
+<div class="plan">
+<strong>10 GB</strong>
+<span>30 ڕۆژ</span>
+<div class="price">8,500 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>20 GB</strong>
+<span>30 ڕۆژ</span>
+<div class="price">11,500 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>10 GB</strong>
+<span>15 ڕۆژ</span>
+<div class="price">8,500 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>20 GB</strong>
+<span>15 ڕۆژ</span>
+<div class="price">10,500 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>50 GB</strong>
+<span>30 ڕۆژ</span>
+<div class="price">23,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>Unlimited</strong>
+<span>3 ڕۆژ</span>
+<div class="price">8,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>Unlimited</strong>
+<span>5 ڕۆژ</span>
+<div class="price">10,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>Unlimited</strong>
+<span>7 ڕۆژ</span>
+<div class="price">11,500 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>Unlimited</strong>
+<span>10 ڕۆژ</span>
+<div class="price">18,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>Unlimited</strong>
+<span>15 ڕۆژ</span>
+<div class="price">23,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>Unlimited</strong>
+<span>30 ڕۆژ</span>
+<div class="price">28,000 د.ع</div>
+</div>
+
+</div>
+</article>
+
+
+<article class="card">
+
+<div class="country">
+<h3>🇪🇺 ئەوروپا</h3>
+<div class="flag">🌍</div>
+</div>
+
+<div class="plans">
+
+<div class="plan">
+<strong>5 GB</strong>
+<span>7 ڕۆژ</span>
+<div class="price">25,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>10 GB</strong>
+<span>7 ڕۆژ</span>
+<div class="price">35,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>50 GB</strong>
+<span>7 ڕۆژ</span>
+<div class="price">90,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>5 GB</strong>
+<span>15 ڕۆژ</span>
+<div class="price">30,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>10 GB</strong>
+<span>15 ڕۆژ</span>
+<div class="price">40,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>50 GB</strong>
+<span>15 ڕۆژ</span>
+<div class="price">100,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>Unlimited</strong>
+<span>3 ڕۆژ</span>
+<div class="price">20,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>Unlimited</strong>
+<span>5 ڕۆژ</span>
+<div class="price">25,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>Unlimited</strong>
+<span>7 ڕۆژ</span>
+<div class="price">30,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>Unlimited</strong>
+<span>10 ڕۆژ</span>
+<div class="price">35,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>Unlimited</strong>
+<span>15 ڕۆژ</span>
+<div class="price">55,000 د.ع</div>
+</div>
+
+<div class="plan">
+<strong>Unlimited</strong>
+<span>30 ڕۆژ</span>
+<div class="price">75,000 د.ع</div>
+</div>
+
+</div>
+</article>
+
+</div>
+</section>
+
+
+<section id="how">
+
+<div class="title">
+<h2>چۆن کاردەکات؟</h2>
+<p>بە سێ هەنگاوی سادە</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>١. پلان هەڵبژێرە</h3>
+<p>وڵات و ماوەی پێویستت هەڵبژێرە.</p>
+</div>
+
+<div class="card">
+<h3>٢. داواکاری بنێرە</h3>
+<p>پلانەکە دیاری بکە و پەیوەندیمان پێوە بکە.</p>
+</div>
+
+</div>
+</section>
+
+
+<section id="contact">
+
+<div class="cta">
+
+<h2>ئامادەی بۆ گەشت؟ 🌍</h2>
+
+<p>
+eSIM Online — ئینتەرنێت بە ئاسانی لە گەشتەکانت.
+</p>
+
+<br>
+
+<a class="btn" href="#plans">
+بینینی پلانەکان
+</a>
+
+</div>
+</section>
+
+</main>
+
+
+<footer>
+
+<strong>eSIM Online</strong>
+
+<div class="small">
+پلانەکان و نرخەکان دەتوانرێن لە داهاتوودا نوێ بکرێنەوە.
+</div>
+
+</footer>
+
+</body>
+</html>
