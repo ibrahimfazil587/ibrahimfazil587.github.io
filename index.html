@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eSIM | پلانەکانی ئینتەرنێت</title>
+
+<title>eSIM بەڕێوە</title>
 
 <style>
 *{
@@ -14,24 +15,23 @@
 
 body{
   font-family:Arial,Tahoma,sans-serif;
-  background:#f5f7fb;
-  color:#172033;
+  background:#f3f7fc;
+  color:#111b32;
 }
 
+/* TOP */
 .top{
+  height:76px;
   background:#fff;
-  padding:14px 16px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  box-shadow:0 2px 12px #0000000d;
-  position:sticky;
-  top:0;
-  z-index:50;
+  padding:0 30px;
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
 }
 
 .logo{
-  font-size:21px;
+  font-size:27px;
   font-weight:900;
   color:#075bbb;
 }
@@ -42,61 +42,91 @@ body{
 
 .whatsapp-top{
   background:#20c76a;
-  color:#fff;
+  color:white;
   text-decoration:none;
-  padding:9px 14px;
-  border-radius:12px;
-  font-size:13px;
+  padding:13px 20px;
+  border-radius:16px;
+  font-size:15px;
   font-weight:bold;
 }
 
+/* HERO */
 .hero{
-  margin:15px;
-  padding:20px;
-  border-radius:22px;
-  background:linear-gradient(135deg,#075bbb,#168ee8);
-  color:#fff;
+  margin:28px;
+  padding:34px 30px;
+  border-radius:28px;
+  color:white;
+  background:
+    radial-gradient(circle at 85% 20%,#ffffff22,transparent 22%),
+    radial-gradient(circle at 10% 90%,#ffffff18,transparent 28%),
+    linear-gradient(135deg,#075bbb,#168ee8);
+  overflow:hidden;
+  position:relative;
+}
+
+.hero:after{
+  content:"✈️";
+  position:absolute;
+  left:25px;
+  bottom:-30px;
+  font-size:125px;
+  opacity:.10;
+  transform:rotate(-12deg);
 }
 
 .hero h1{
-  font-size:25px;
-  margin-bottom:7px;
+  font-size:34px;
   font-weight:900;
+  margin-bottom:9px;
+  position:relative;
+  z-index:2;
 }
 
 .hero p{
-  font-size:13px;
-  opacity:.9;
-  margin-bottom:15px;
+  font-size:16px;
+  opacity:.92;
+  margin-bottom:22px;
+  position:relative;
+  z-index:2;
 }
 
 .search{
   width:100%;
+  height:57px;
   border:0;
   outline:0;
-  padding:14px 16px;
-  border-radius:14px;
-  font-size:14px;
+  border-radius:18px;
+  padding:0 20px;
+  font-size:16px;
+  color:#333;
   background:#fff;
-  color:#222;
+  position:relative;
+  z-index:3;
 }
 
+/* FILTERS */
 .filters{
   display:flex;
-  gap:8px;
+  gap:10px;
   overflow-x:auto;
-  padding:0 15px 15px;
+  padding:0 28px 22px;
+  scrollbar-width:none;
+}
+
+.filters::-webkit-scrollbar{
+  display:none;
 }
 
 .filter{
   border:0;
   background:#fff;
   color:#075bbb;
-  border-radius:12px;
-  padding:9px 14px;
+  border-radius:16px;
+  padding:13px 20px;
   white-space:nowrap;
+  font-size:14px;
   font-weight:bold;
-  box-shadow:0 2px 8px #0000000b;
+  box-shadow:0 3px 12px rgba(0,0,0,.06);
   cursor:pointer;
 }
 
@@ -105,231 +135,432 @@ body{
   color:#fff;
 }
 
+/* COUNTRIES */
 #countries{
-  padding:0 15px 30px;
+  padding:0 28px 40px;
 }
 
 .country{
+  margin-bottom:28px;
   background:#fff;
-  border-radius:20px;
+  border-radius:28px;
   overflow:hidden;
-  margin-bottom:18px;
-  box-shadow:0 4px 18px #0000000b;
+  box-shadow:0 5px 22px rgba(0,0,0,.07);
 }
 
 /* COUNTRY HEADER */
-
 .country-head{
-  padding:20px 17px;
-  color:#fff;
+  min-height:190px;
   position:relative;
   overflow:hidden;
-  background:linear-gradient(135deg,#075bbb,#168ee8);
-  min-height:112px;
+  color:#fff;
+  padding:28px 25px;
+  background:
+    linear-gradient(135deg,#075bbb,#168ee8);
 }
 
+/* sky/light */
 .country-head:before{
-  content:"✈";
+  content:"";
   position:absolute;
-  left:18px;
-  top:-18px;
-  font-size:100px;
-  opacity:.08;
-  transform:rotate(-15deg);
+  inset:0;
+  background:
+    radial-gradient(circle at 70% 30%,#ffffff25,transparent 20%),
+    linear-gradient(135deg,transparent 50%,#ffffff0d);
 }
 
+/* travel decoration */
+.country-head:after{
+  content:"";
+  position:absolute;
+  left:-25px;
+  bottom:-55px;
+  width:420px;
+  height:150px;
+  background:#063e7525;
+  border-radius:50% 50% 0 0;
+}
+
+/* LANDMARK */
+.country-landmark{
+  position:absolute;
+  left:32%;
+  bottom:-30px;
+  font-size:125px;
+  line-height:1;
+  opacity:.20;
+  z-index:1;
+  filter:saturate(.7);
+  pointer-events:none;
+}
+
+/* airplane */
+.country-plane{
+  position:absolute;
+  left:42%;
+  top:17px;
+  font-size:42px;
+  opacity:.30;
+  transform:rotate(-8deg);
+  z-index:2;
+}
+
+/* header content */
 .country-title{
   position:relative;
-  z-index:2;
+  z-index:5;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:10px;
+  gap:18px;
 }
 
 .country-left{
   display:flex;
   align-items:center;
-  gap:11px;
-  min-width:0;
+  gap:15px;
 }
 
 .country-flag{
-  width:57px;
-  height:57px;
-  min-width:57px;
-  background:#ffffff20;
-  border:1px solid #ffffff40;
-  border-radius:16px;
+  width:76px;
+  height:76px;
+  border-radius:21px;
+  background:#ffffff1c;
+  border:1px solid #ffffff50;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:34px;
+  font-size:45px;
+  box-shadow:inset 0 0 20px #ffffff0b;
 }
 
 .country-name{
-  font-size:23px;
+  font-size:31px;
   font-weight:900;
 }
 
 .country-sub{
-  margin-top:5px;
-  font-size:12px;
-  opacity:.92;
+  font-size:15px;
+  margin-top:7px;
+  opacity:.95;
 }
 
 .country-badges{
   display:flex;
   flex-direction:column;
-  gap:6px;
+  gap:9px;
 }
 
 .country-badge{
-  background:#ffffff20;
-  border:1px solid #ffffff40;
-  padding:6px 9px;
-  border-radius:18px;
-  font-size:10px;
+  border:1px solid #ffffff55;
+  background:#ffffff1c;
+  border-radius:25px;
+  padding:9px 15px;
+  font-size:12px;
   white-space:nowrap;
+  backdrop-filter:blur(4px);
 }
 
-/* TRAVEL LANDMARK */
-
-.country-landmark{
-  position:absolute;
-  right:105px;
-  bottom:-22px;
-  font-size:86px;
-  opacity:.15;
-  filter:grayscale(1);
-  z-index:1;
-}
-
-/* PLAN */
-
+/* PLAN LIST */
 .plans{
-  padding:10px;
+  padding:13px;
+  background:#f9fbfe;
 }
 
+/* PLAN CARD */
 .plan{
+  min-height:84px;
+  background:#fff;
+  border:1px solid #e9edf3;
+  border-radius:20px;
+  margin-bottom:10px;
+  padding:11px 12px;
+
   display:flex;
   align-items:center;
-  gap:8px;
-  background:#fff;
-  border:1px solid #edf0f5;
-  border-radius:13px;
-  padding:9px 8px;
-  margin-bottom:7px;
-  min-height:58px;
+  gap:12px;
+
+  box-shadow:0 2px 8px rgba(0,0,0,.025);
 }
 
 .plan:last-child{
   margin-bottom:0;
 }
 
+/* icon */
 .plan-icon{
-  width:35px;
-  min-width:35px;
-  height:35px;
-  border-radius:10px;
-  background:#eaf4ff;
-  color:#0874d1;
+  width:56px;
+  min-width:56px;
+  height:56px;
+  border-radius:17px;
+  background:linear-gradient(145deg,#edf6ff,#dfeefe);
+  color:#0764be;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:19px;
-  font-weight:bold;
+  font-size:29px;
+  font-weight:900;
 }
 
+/* info */
 .plan-info{
   flex:1;
-  min-width:70px;
+  min-width:90px;
 }
 
 .plan-data{
-  font-size:15px;
+  font-size:23px;
   font-weight:900;
-  color:#152033;
+  color:#111b32;
+  line-height:1.1;
 }
 
 .plan-days{
-  font-size:11px;
-  color:#8992a3;
-  margin-top:3px;
+  font-size:13px;
+  color:#9299a7;
+  margin-top:6px;
 }
 
+/* price */
 .plan-price{
-  background:#ffe9e8;
-  color:#e53935;
-  border-radius:10px;
-  padding:8px 9px;
-  font-size:11px;
+  background:#ffe8e8;
+  color:#df3333;
+  border-radius:22px;
+  padding:14px 19px;
+  font-size:17px;
   font-weight:900;
   white-space:nowrap;
 }
 
+/* buy */
 .buy{
   border:0;
-  background:#20bd65;
-  color:#fff;
-  border-radius:10px;
-  padding:9px 11px;
-  font-size:12px;
+  background:linear-gradient(135deg,#16bd63,#0bb95c);
+  color:white;
+  border-radius:17px;
+  padding:15px 22px;
+  font-size:16px;
   font-weight:900;
-  cursor:pointer;
   white-space:nowrap;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(18,190,94,.18);
 }
 
 .buy:active{
   transform:scale(.96);
 }
 
-.empty{
-  background:#fff;
-  border-radius:16px;
-  padding:30px;
-  text-align:center;
-  color:#777;
+/* COLORS */
+.turkey{
+  background:
+    linear-gradient(135deg,#075bbbcc,#168ee8dd),
+    #0873ce;
 }
 
-/* COUNTRY COLORS */
+.europe{
+  background:
+    linear-gradient(135deg,#075bbbcc,#168ee8dd),
+    #0873ce;
+}
 
-.turkey{background:linear-gradient(135deg,#075bbb,#168ee8)}
-.europe{background:linear-gradient(135deg,#1769aa,#168ee8)}
-.america{background:linear-gradient(135deg,#124e96,#1877d4)}
-.global{background:linear-gradient(135deg,#075bbb,#00a4b8)}
-.middle{background:linear-gradient(135deg,#075bbb,#159bd7)}
-.asia{background:linear-gradient(135deg,#075bbb,#008fba)}
-.levant{background:linear-gradient(135deg,#075bbb,#147ed0)}
+.america{
+  background:
+    linear-gradient(135deg,#124e96,#1877d4);
+}
 
-@media(max-width:480px){
-  .country-name{
+.global{
+  background:
+    linear-gradient(135deg,#075bbb,#00a4b8);
+}
+
+.middle{
+  background:
+    linear-gradient(135deg,#075bbb,#159bd7);
+}
+
+.asia{
+  background:
+    linear-gradient(135deg,#075bbb,#008fba);
+}
+
+.levant{
+  background:
+    linear-gradient(135deg,#075bbb,#147ed0);
+}
+
+/* EMPTY */
+.empty{
+  background:#fff;
+  border-radius:20px;
+  padding:40px;
+  text-align:center;
+  color:#777;
+  font-size:16px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+  .top{
+    height:72px;
+    padding:0 15px;
+  }
+
+  .logo{
     font-size:21px;
+  }
+
+  .whatsapp-top{
+    padding:11px 15px;
+    font-size:13px;
+  }
+
+  .hero{
+    margin:20px 15px;
+    padding:28px 20px;
+    border-radius:25px;
+  }
+
+  .hero h1{
+    font-size:27px;
+  }
+
+  .hero p{
+    font-size:13px;
+  }
+
+  .search{
+    height:52px;
+    font-size:14px;
+  }
+
+  .filters{
+    padding:0 15px 17px;
+  }
+
+  #countries{
+    padding:0 15px 30px;
+  }
+
+  .country{
+    border-radius:22px;
+  }
+
+  .country-head{
+    min-height:160px;
+    padding:22px 15px;
+  }
+
+  .country-flag{
+    width:62px;
+    height:62px;
+    min-width:62px;
+    font-size:36px;
+    border-radius:17px;
+  }
+
+  .country-name{
+    font-size:23px;
+  }
+
+  .country-sub{
+    font-size:12px;
   }
 
   .country-badge{
     font-size:9px;
-    padding:6px 8px;
+    padding:7px 10px;
   }
 
   .country-landmark{
-    right:85px;
-    font-size:70px;
+    left:28%;
+    bottom:-20px;
+    font-size:90px;
+  }
+
+  .country-plane{
+    left:43%;
+    top:15px;
+    font-size:30px;
+  }
+
+  .plans{
+    padding:9px;
   }
 
   .plan{
-    gap:6px;
-    padding:8px 6px;
+    min-height:70px;
+    padding:8px;
+    gap:7px;
+    border-radius:17px;
+  }
+
+  .plan-icon{
+    width:47px;
+    min-width:47px;
+    height:47px;
+    border-radius:14px;
+    font-size:23px;
+  }
+
+  .plan-data{
+    font-size:18px;
+  }
+
+  .plan-days{
+    font-size:11px;
+    margin-top:4px;
   }
 
   .plan-price{
-    padding:8px 7px;
-    font-size:10px;
+    padding:11px 10px;
+    border-radius:15px;
+    font-size:12px;
   }
 
   .buy{
-    padding:9px 9px;
-    font-size:11px;
+    padding:11px 11px;
+    border-radius:14px;
+    font-size:12px;
+  }
+}
+
+@media(max-width:390px){
+
+  .country-name{
+    font-size:20px;
+  }
+
+  .country-flag{
+    width:56px;
+    min-width:56px;
+    height:56px;
+    font-size:32px;
+  }
+
+  .plan{
+    gap:5px;
+  }
+
+  .plan-icon{
+    width:42px;
+    min-width:42px;
+    height:42px;
+    font-size:20px;
+  }
+
+  .plan-data{
+    font-size:16px;
+  }
+
+  .plan-price{
+    font-size:10px;
+    padding:10px 7px;
+  }
+
+  .buy{
+    font-size:10px;
+    padding:10px 7px;
   }
 }
 </style>
@@ -337,39 +568,80 @@ body{
 
 <body>
 
+<!-- TOP -->
 <div class="top">
-  <div class="logo">e<span>SIM</span> بەڕێوە</div>
 
-  <a class="whatsapp-top"
-     href="https://wa.me/9647506021212"
-     target="_blank">
-     💬 WhatsApp
+  <div class="logo">
+    e<span>SIM</span> بەڕێوە
+  </div>
+
+  <a
+    class="whatsapp-top"
+    href="https://wa.me/9647506021212"
+    target="_blank">
+    WhatsApp 💬
   </a>
+
 </div>
 
+
+<!-- HERO -->
 <section class="hero">
+
   <h1>🌍 پلانەکانی eSIM</h1>
-  <p>ئینتەرنێتی خێرا بۆ گەشتکردن لە هەموو جیهان</p>
+
+  <p>
+    ئینتەرنێتی خێرا بۆ گەشتکردن لە هەموو جیهان
+  </p>
 
   <input
     id="search"
     class="search"
     type="text"
     placeholder="گەڕان بە ناوی وڵات، GB، Unlimited، ڕۆژ، نرخ..."
-    oninput="display()"
   >
+
 </section>
 
+
+<!-- FILTERS -->
 <div class="filters">
-  <button class="filter active" onclick="setFilter('all',this)">هەموو</button>
-  <button class="filter" onclick="setFilter('europe',this)">🇪🇺 ئەوروپا</button>
-  <button class="filter" onclick="setFilter('middle',this)">🌙 ڕۆژهەڵاتی ناوەڕاست</button>
-  <button class="filter" onclick="setFilter('asia',this)">🌏 ئاسیا</button>
-  <button class="filter" onclick="setFilter('america',this)">🇺🇸 ئەمەریکا</button>
-  <button class="filter" onclick="setFilter('global',this)">🌍 جیهانی</button>
+
+  <button class="filter active"
+          onclick="setFilter('all',this)">
+    هەموو
+  </button>
+
+  <button class="filter"
+          onclick="setFilter('europe',this)">
+    🇪🇺 ئەوروپا
+  </button>
+
+  <button class="filter"
+          onclick="setFilter('middle',this)">
+    🌙 ڕۆژهەڵاتی ناوەڕاست
+  </button>
+
+  <button class="filter"
+          onclick="setFilter('asia',this)">
+    🌏 ئاسیا
+  </button>
+
+  <button class="filter"
+          onclick="setFilter('america',this)">
+    🇺🇸 ئەمەریکا
+  </button>
+
+  <button class="filter"
+          onclick="setFilter('global',this)">
+    🌍 جیهانی
+  </button>
+
 </div>
 
+
 <main id="countries"></main>
+
 
 <script>
 
@@ -377,13 +649,15 @@ const WHATSAPP = "9647506021212";
 
 let currentFilter = "all";
 
+
 const countries = [
 
+/* TURKEY */
 {
  name:"Turkey",
  sub:"گەشت بۆ تورکیا",
  flag:"🇹🇷",
- region:"ئوروپا",
+ region:"ئەوروپا",
  class:"turkey",
  landmark:"🕌",
  plans:[
@@ -401,11 +675,12 @@ const countries = [
  ]
 },
 
+/* GERMANY */
 {
  name:"Germany",
  sub:"گەشت بۆ ئەڵمانیا",
  flag:"🇩🇪",
- region:"ئوروپا",
+ region:"ئەوروپا",
  class:"europe",
  landmark:"🏰",
  plans:[
@@ -424,6 +699,7 @@ const countries = [
  ]
 },
 
+/* USA */
 {
  name:"United States",
  sub:"گەشت بۆ ئەمەریکا",
@@ -444,6 +720,7 @@ const countries = [
  ]
 },
 
+/* EUROPE UK */
 {
  name:"Europe + UK",
  sub:"گەشت بە ئەوروپا و بەریتانیا",
@@ -464,6 +741,7 @@ const countries = [
  ]
 },
 
+/* GLOBAL */
 {
  name:"Global",
  sub:"گەشت بە هەموو جیهان",
@@ -488,6 +766,7 @@ const countries = [
  ]
 },
 
+/* UAE */
 {
  name:"UAE",
  sub:"گەشت بۆ ئیمارات",
@@ -507,6 +786,7 @@ const countries = [
  ]
 },
 
+/* AZERBAIJAN */
 {
  name:"Azerbaijan",
  sub:"گەشت بۆ ئەزەربایجان",
@@ -527,6 +807,7 @@ const countries = [
  ]
 },
 
+/* CHINA */
 {
  name:"China",
  sub:"گەشت بۆ چین",
@@ -548,6 +829,7 @@ const countries = [
  ]
 },
 
+/* OMAN */
 {
  name:"Oman",
  sub:"گەشت بۆ عومان",
@@ -569,11 +851,12 @@ const countries = [
  ]
 },
 
+/* SWITZERLAND */
 {
  name:"Switzerland",
  sub:"گەشت بۆ سوئیس",
  flag:"🇨🇭",
- region:"ئوروپا",
+ region:"ئەوروپا",
  class:"europe",
  landmark:"🏔️",
  plans:[
@@ -589,11 +872,12 @@ const countries = [
  ]
 },
 
+/* ITALY */
 {
  name:"Italy",
  sub:"گەشت بۆ ئیتالیا",
  flag:"🇮🇹",
- region:"ئوروپا",
+ region:"ئەوروپا",
  class:"europe",
  landmark:"🏛️",
  plans:[
@@ -609,11 +893,12 @@ const countries = [
  ]
 },
 
+/* DENMARK */
 {
  name:"Denmark",
  sub:"گەشت بۆ دانمارک",
  flag:"🇩🇰",
- region:"ئوروپا",
+ region:"ئەوروپا",
  class:"europe",
  landmark:"🏰",
  plans:[
@@ -629,6 +914,7 @@ const countries = [
  ]
 },
 
+/* SINGAPORE */
 {
  name:"Singapore",
  sub:"گەشت بۆ سینگاپور",
@@ -651,6 +937,7 @@ const countries = [
  ]
 },
 
+/* THAILAND */
 {
  name:"Thailand",
  sub:"گەشت بۆ تایلەند",
@@ -671,6 +958,7 @@ const countries = [
  ]
 },
 
+/* SAUDI */
 {
  name:"Saudi Arabia",
  sub:"گەشت بۆ سعودیە",
@@ -690,6 +978,7 @@ const countries = [
  ]
 },
 
+/* LEBANON */
 {
  name:"Lebanon",
  sub:"گەشت بۆ لوبنان",
@@ -713,6 +1002,8 @@ const countries = [
 
 ];
 
+
+/* BUY */
 function buy(ci,pi){
 
   const c = countries[ci];
@@ -738,27 +1029,32 @@ function buy(ci,pi){
 }
 
 
+/* DISPLAY */
 function display(){
 
   const search =
-    document.getElementById("search").value
+    document.getElementById("search")
+    .value
     .toLowerCase()
     .trim();
 
   const container =
     document.getElementById("countries");
 
-  container.innerHTML = "";
+  container.innerHTML="";
 
-  let found = false;
+  let found=false;
 
   countries.forEach((c,ci)=>{
 
-    if(currentFilter !== "all" && c.class !== currentFilter){
+    if(
+      currentFilter !== "all" &&
+      c.class !== currentFilter
+    ){
       return;
     }
 
-    const countryText =
+    const searchable =
       (
         c.name +
         " " +
@@ -766,30 +1062,53 @@ function display(){
         " " +
         c.region +
         " " +
-        c.plans.map(x=>x.join(" ")).join(" ")
+        c.plans
+          .map(p=>p.join(" "))
+          .join(" ")
       ).toLowerCase();
 
-    if(search && !countryText.includes(search)){
+    if(
+      search &&
+      !searchable.includes(search)
+    ){
       return;
     }
 
-    found = true;
+    found=true;
 
-    let plansHTML = "";
+    let plansHTML="";
 
     c.plans.forEach((p,pi)=>{
 
+      const icon =
+        p[0].toLowerCase()
+        .includes("unlimited")
+        ? "∞"
+        : "▮▮▮";
+
       plansHTML += `
+
         <div class="plan">
 
-          <div class="plan-icon">📶</div>
-
-          <div class="plan-info">
-            <div class="plan-data">${p[0]}</div>
-            <div class="plan-days">${p[1]}</div>
+          <div class="plan-icon">
+            ${icon}
           </div>
 
-          <div class="plan-price">${p[2]}</div>
+          <div class="plan-info">
+
+            <div class="plan-data">
+              ${p[0]}
+            </div>
+
+            <div class="plan-days">
+              ${p[1]}
+            </div>
+
+          </div>
+
+          <div class="plan-price">
+            ${p[2]}
+          </div>
 
           <button
             class="buy"
@@ -798,13 +1117,20 @@ function display(){
           </button>
 
         </div>
+
       `;
     });
 
+
     container.innerHTML += `
+
       <section class="country">
 
         <div class="country-head ${c.class}">
+
+          <div class="country-plane">
+            ✈️
+          </div>
 
           <div class="country-landmark">
             ${c.landmark}
@@ -819,6 +1145,7 @@ function display(){
               </div>
 
               <div>
+
                 <div class="country-name">
                   ${c.name}
                 </div>
@@ -826,14 +1153,16 @@ function display(){
                 <div class="country-sub">
                   ✈️ ${c.sub}
                 </div>
+
               </div>
 
             </div>
 
+
             <div class="country-badges">
 
               <div class="country-badge">
-                📶 eSIM
+                eSIM 📶
               </div>
 
               <div class="country-badge">
@@ -846,31 +1175,42 @@ function display(){
 
         </div>
 
+
         <div class="plans">
+
           ${plansHTML}
+
         </div>
 
       </section>
+
     `;
   });
 
+
   if(!found){
-    container.innerHTML = `
+
+    container.innerHTML=`
+
       <div class="empty">
         🔎 هیچ پلانێک نەدۆزرایەوە
       </div>
+
     `;
   }
 }
 
 
+/* FILTER */
 function setFilter(filter,button){
 
-  currentFilter = filter;
+  currentFilter=filter;
 
   document
     .querySelectorAll(".filter")
-    .forEach(x=>x.classList.remove("active"));
+    .forEach(
+      x=>x.classList.remove("active")
+    );
 
   button.classList.add("active");
 
@@ -878,17 +1218,16 @@ function setFilter(filter,button){
 }
 
 
+/* SEARCH */
 document
   .getElementById("search")
-  .addEventListener("keydown",function(e){
-
-    if(e.key === "Enter"){
-      display();
-    }
-
-  });
+  .addEventListener(
+    "input",
+    display
+  );
 
 
+/* START */
 display();
 
 </script>
