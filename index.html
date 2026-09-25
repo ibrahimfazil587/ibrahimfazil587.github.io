@@ -2,39 +2,33 @@
 <html lang="ku" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>eSIM Online</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f7f8fa;color:#111;direction:rtl}
-header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
-.nav{max-width:1150px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:25px;font-weight:900;color:#e11}
-.logo span{color:#111}
-nav a{margin:0 8px;text-decoration:none;color:#222;font-weight:700}
-.hero{background:linear-gradient(135deg,#e11,#b40000);color:#fff;text-align:center;padding:65px 20px}
-.hero h1{font-size:42px;margin:0 0 15px}
-.hero p{font-size:19px;margin:0 auto 25px;max-width:700px;line-height:1.8}
-.btn{display:inline-block;background:#fff;color:#c00;padding:13px 25px;border-radius:10px;text-decoration:none;font-weight:800}
-.container{max-width:1150px;margin:auto;padding:35px 20px}
-.filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:30px}
-.filter{border:0;background:#fff;border:1px solid #ddd;padding:10px 18px;border-radius:25px;font-weight:700;cursor:pointer}
-.filter.active{background:#e11;color:#fff;border-color:#e11}
-.country{background:#fff;border-radius:16px;margin:22px 0;padding:22px;box-shadow:0 4px 18px #0000000b}
-.country h2{margin-top:0;color:#c00}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+header{background:#d71920;color:white;padding:20px;text-align:center}
+header h1{margin:0;font-size:30px}
+nav{margin-top:10px}
+nav a{color:white;text-decoration:none;margin:0 10px}
+.hero{background:white;text-align:center;padding:45px 20px}
+.hero h2{font-size:34px;margin:0 0 12px}
+.hero p{font-size:18px;color:#555}
+.container{max-width:1100px;margin:auto;padding:25px 15px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:25px}
+.filters button{border:0;background:#172033;color:white;padding:10px 16px;border-radius:20px;cursor:pointer}
+.country{background:white;border-radius:15px;padding:20px;margin-bottom:25px;box-shadow:0 3px 15px #0001}
+.country h2{margin-top:0;color:#d71920}
 table{width:100%;border-collapse:collapse}
-th,td{padding:13px 10px;border-bottom:1px solid #eee;text-align:right}
-th{background:#fafafa}
-.buy{display:inline-block;background:#e11;color:#fff;text-decoration:none;padding:8px 14px;border-radius:8px;font-weight:700}
-.note{background:#fff3f3;border-right:4px solid #e11;padding:12px;margin:15px 0;border-radius:8px}
-footer{background:#111;color:#fff;text-align:center;padding:35px 20px;margin-top:40px}
-.wa{position:fixed;bottom:20px;left:20px;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:28px;z-index:20}
+th,td{padding:12px;border-bottom:1px solid #eee;text-align:center}
+th{background:#f1f3f7}
+.buy{background:#d71920;color:white;border:0;padding:8px 15px;border-radius:8px;text-decoration:none;display:inline-block}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25d366;color:white;padding:14px 20px;border-radius:30px;text-decoration:none;font-weight:bold;box-shadow:0 3px 12px #0003}
+footer{text-align:center;background:#172033;color:white;padding:25px;margin-top:30px}
 @media(max-width:650px){
-.hero h1{font-size:32px}
-nav{display:none}
+.hero h2{font-size:27px}
 table{font-size:13px}
-th,td{padding:9px 5px}
-.buy{padding:7px 9px}
+th,td{padding:8px 4px}
 }
 </style>
 </head>
@@ -42,345 +36,277 @@ th,td{padding:9px 5px}
 <body>
 
 <header>
-<div class="nav">
-<div class="logo">eSIM <span>Online</span></div>
+<h1>eSIM Online</h1>
 <nav>
 <a href="#plans">پلانەکان</a>
-<a href="#how">چۆن کاردەکات؟</a>
-<a href="https://wa.me/9647506021212">پەیوەندی</a>
+<a href="#contact">پەیوەندی</a>
 </nav>
-</div>
 </header>
 
 <section class="hero">
-<h1>eSIM Online 🌍</h1>
-<p>ئینتەرنێتی خێرا و ئاسان بۆ گەشتکردن لە هەموو جیهان. پلانەکەت هەڵبژێرە و بە ئاسانی کڕینی بکە.</p>
-<a class="btn" href="#plans">بینینی پلانەکان</a>
+<h2>ئینتەرنێتی جیهانی بە eSIM 🌍</h2>
+<p>پلانەکەت هەڵبژێرە و بە ئاسانی داواکاری بکە.</p>
 </section>
 
 <div class="container" id="plans">
 
-<div class="filters">
-<button class="filter active" onclick="showAll()">هەموو</button>
-<button class="filter" onclick="showCountry('Turkey')">تورکیا 🇹🇷</button>
-<button class="filter" onclick="showCountry('Europe')">ئەوروپا 🇪🇺</button>
-<button class="filter" onclick="showCountry('Germany')">ئەڵمانیا 🇩🇪</button>
-<button class="filter" onclick="showCountry('USA')">ئەمریکا 🇺🇸</button>
-<button class="filter" onclick="showCountry('Global')">جیهانی 🌍</button>
-<button class="filter" onclick="showCountry('UAE')">ئیمارات 🇦🇪</button>
-<button class="filter" onclick="showCountry('China')">چین 🇨🇳</button>
-<button class="filter" onclick="showCountry('Azerbaijan')">ئازەربایجان 🇦🇿</button>
-<button class="filter" onclick="showCountry('Oman')">عومان 🇴🇲</button>
-<button class="filter" onclick="showCountry('Switzerland')">سوئیس 🇨🇭</button>
-<button class="filter" onclick="showCountry('Italy')">ئیتالیا 🇮🇹</button>
-<button class="filter" onclick="showCountry('Lebanon')">لوبنان 🇱🇧</button>
-<button class="filter" onclick="showCountry('Denmark')">دانمارک 🇩🇰</button>
-<button class="filter" onclick="showCountry('Singapore')">سینگاپور 🇸🇬</button>
-<button class="filter" onclick="showCountry('Thailand')">تایلاند 🇹🇭</button>
-<button class="filter" onclick="showCountry('Saudi')">سعودیە 🇸🇦</button>
+<div class="country">
+<h2>🇹🇷 Turkey</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>8,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%2010GB%20-%2030%20Days%20-%208500%20IQD">کڕین</a></td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>11,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%2020GB%20-%2030%20Days%20-%2011500%20IQD">کڕین</a></td></tr>
+<tr><td>50 GB</td><td>30 ڕۆژ</td><td>23,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%2050GB%20-%2030%20Days%20-%2023000%20IQD">کڕین</a></td></tr>
+<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>8,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%20Unlimited%203%20Days%20-%208000%20IQD">کڕین</a></td></tr>
+<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>10,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%20Unlimited%205%20Days%20-%2010000%20IQD">کڕین</a></td></tr>
+<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>11,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%20Unlimited%207%20Days%20-%2011500%20IQD">کڕین</a></td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>18,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%20Unlimited%2010%20Days%20-%2018000%20IQD">کڕین</a></td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>23,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%20Unlimited%2015%20Days%20-%2023000%20IQD">کڕین</a></td></tr>
+<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>28,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%20Unlimited%2030%20Days%20-%2028000%20IQD">کڕین</a></td></tr>
+</table>
 </div>
 
-<div class="note">هەموو پلانەکان بە دوگمەی <b>کڕین</b> بۆ WhatsApp بەستراون.</div>
-
-<!-- Turkey -->
-<section class="country" data-country="Turkey">
-<h2>🇹🇷 تورکیا</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>8,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=سڵاو،%20پلان%20Turkey%2010GB%2030%20ڕۆژ%20بە%208,500%20IQD%20دەوێت">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>11,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%2020GB%2030%20ڕۆژ%2011,500%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>15 ڕۆژ</td><td>8,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%2010GB%2015%20ڕۆژ%208,500%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>15 ڕۆژ</td><td>10,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%2020GB%2015%20ڕۆژ%2010,500%20IQD">کڕین</a></td></tr>
-<tr><td>50 GB</td><td>30 ڕۆژ</td><td>23,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%2050GB%2030%20ڕۆژ%2023,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>8,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20Unlimited%203%20ڕۆژ%208,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>10,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20Unlimited%205%20ڕۆژ%2010,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>11,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20Unlimited%207%20ڕۆژ%2011,500%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>18,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20Unlimited%2010%20ڕۆژ%2018,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>23,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20Unlimited%2015%20ڕۆژ%2023,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>28,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20Unlimited%2030%20ڕۆژ%2028,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🇩🇪 Germany</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>1 GB</td><td>7 ڕۆژ</td><td>6,500 IQD</td></tr>
+<tr><td>2 GB</td><td>15 ڕۆژ</td><td>7,000 IQD</td></tr>
+<tr><td>3 GB</td><td>30 ڕۆژ</td><td>8,000 IQD</td></tr>
+<tr><td>5 GB</td><td>30 ڕۆژ</td><td>9,000 IQD</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>12,000 IQD</td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>19,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>11,500 IQD</td></tr>
+<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>14,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>16,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>22,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>30,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>44,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- Europe -->
-<section class="country" data-country="Europe">
-<h2>🇪🇺 ئەوروپا + UK</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>1 GB</td><td>7 ڕۆژ</td><td>12,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Europe%201GB%207%20ڕۆژ%2012,500%20IQD">کڕین</a></td></tr>
-<tr><td>2 GB</td><td>15 ڕۆژ</td><td>13,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Europe%202GB%2015%20ڕۆژ%2013,000%20IQD">کڕین</a></td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>14,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Europe%205GB%2030%20ڕۆژ%2014,000%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>16,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Europe%2010GB%2030%20ڕۆژ%2016,000%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>18,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Europe%2020GB%2030%20ڕۆژ%2018,500%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Europe%20Unlimited%203%20ڕۆژ%2015,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>16,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Europe%20Unlimited%205%20ڕۆژ%2016,500%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>18,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Europe%20Unlimited%207%20ڕۆژ%2018,500%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Europe%20Unlimited%2010%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>30,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Europe%20Unlimited%2015%20ڕۆژ%2030,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>40,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Europe%20Unlimited%2030%20ڕۆژ%2040,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🇺🇸 USA</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>3 GB</td><td>30 ڕۆژ</td><td>10,000 IQD</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>20,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>25,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>30,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>50,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>80,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- Germany -->
-<section class="country" data-country="Germany">
-<h2>🇩🇪 ئەڵمانیا</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>1 GB</td><td>7 ڕۆژ</td><td>6,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Germany%201GB%207%20ڕۆژ%206,500%20IQD">کڕین</a></td></tr>
-<tr><td>2 GB</td><td>15 ڕۆژ</td><td>7,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Germany%202GB%2015%20ڕۆژ%207,000%20IQD">کڕین</a></td></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>8,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Germany%203GB%2030%20ڕۆژ%208,000%20IQD">کڕین</a></td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>9,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Germany%205GB%2030%20ڕۆژ%209,000%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>12,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Germany%2010GB%2030%20ڕۆژ%2012,000%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>19,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Germany%2020GB%2030%20ڕۆژ%2019,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>11,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Germany%20Unlimited%203%20ڕۆژ%2011,500%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>14,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Germany%20Unlimited%205%20ڕۆژ%2014,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>16,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Germany%20Unlimited%207%20ڕۆژ%2016,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>22,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Germany%20Unlimited%2010%20ڕۆژ%2022,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>30,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Germany%20Unlimited%2015%20ڕۆژ%2030,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>44,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Germany%20Unlimited%2030%20ڕۆژ%2044,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🌍 Global</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>1 GB</td><td>5 ڕۆژ</td><td>9,000 IQD</td></tr>
+<tr><td>1 GB</td><td>7 ڕۆژ</td><td>10,000 IQD</td></tr>
+<tr><td>2 GB</td><td>15 ڕۆژ</td><td>13,500 IQD</td></tr>
+<tr><td>3 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td></tr>
+<tr><td>5 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td></tr>
+<tr><td>5 GB</td><td>60 ڕۆژ</td><td>25,000 IQD</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>35,000 IQD</td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>55,000 IQD</td></tr>
+<tr><td>10 GB</td><td>180 ڕۆژ</td><td>85,000 IQD</td></tr>
+<tr><td>20 GB</td><td>365 ڕۆژ</td><td>100,000 IQD</td></tr>
+<tr><td>60 GB</td><td>125 ڕۆژ</td><td>255,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- USA -->
-<section class="country" data-country="USA">
-<h2>🇺🇸 ئەمریکا</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>10,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=USA%203GB%2030%20ڕۆژ%2010,000%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=USA%2010GB%2030%20ڕۆژ%2020,000%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=USA%2020GB%2030%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=USA%20Unlimited%203%20ڕۆژ%2015,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>20,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=USA%20Unlimited%205%20ڕۆژ%2020,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=USA%20Unlimited%207%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>30,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=USA%20Unlimited%2010%20ڕۆژ%2030,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>50,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=USA%20Unlimited%2015%20ڕۆژ%2050,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>80,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=USA%20Unlimited%2030%20ڕۆژ%2080,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🇦🇪 UAE</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>1 GB</td><td>7 ڕۆژ</td><td>9,500 IQD</td></tr>
+<tr><td>2 GB</td><td>15 ڕۆژ</td><td>11,500 IQD</td></tr>
+<tr><td>3 GB</td><td>30 ڕۆژ</td><td>12,500 IQD</td></tr>
+<tr><td>5 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>45,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>80,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>100,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- Global -->
-<section class="country" data-country="Global">
-<h2>🌍 جیهانی</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>200 MB</td><td>30 ڕۆژ</td><td>7,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%20200MB%2030%20ڕۆژ%207,500%20IQD">کڕین</a></td></tr>
-<tr><td>300 MB</td><td>3 ڕۆژ</td><td>7,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%20300MB%203%20ڕۆژ%207,000%20IQD">کڕین</a></td></tr>
-<tr><td>1 GB</td><td>5 ڕۆژ</td><td>9,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%201GB%205%20ڕۆژ%209,000%20IQD">کڕین</a></td></tr>
-<tr><td>1 GB</td><td>7 ڕۆژ</td><td>10,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%201GB%207%20ڕۆژ%2010,000%20IQD">کڕین</a></td></tr>
-<tr><td>2 GB</td><td>15 ڕۆژ</td><td>13,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%202GB%2015%20ڕۆژ%2013,500%20IQD">کڕین</a></td></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%203GB%2030%20ڕۆژ%2020,000%20IQD">کڕین</a></td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%205GB%2030%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>5 GB</td><td>60 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%205GB%2060%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>35,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%2010GB%2030%20ڕۆژ%2035,000%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>55,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%2020GB%2030%20ڕۆژ%2055,000%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>180 ڕۆژ</td><td>85,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%2010GB%20180%20ڕۆژ%2085,000%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>365 ڕۆژ</td><td>100,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%2020GB%20365%20ڕۆژ%20100,000%20IQD">کڕین</a></td></tr>
-<tr><td>60 GB</td><td>125 ڕۆژ</td><td>255,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Global%2060GB%20125%20ڕۆژ%20255,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🇨🇳 China</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>3 GB</td><td>30 ڕۆژ</td><td>10,000 IQD</td></tr>
+<tr><td>5 GB</td><td>30 ڕۆژ</td><td>11,500 IQD</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>13,500 IQD</td></tr>
+<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>20,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>25,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>30,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>40,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>55,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- UAE -->
-<section class="country" data-country="UAE">
-<h2>🇦🇪 ئیمارات</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>1 GB</td><td>7 ڕۆژ</td><td>9,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=UAE%201GB%207%20ڕۆژ%209,500%20IQD">کڕین</a></td></tr>
-<tr><td>2 GB</td><td>15 ڕۆژ</td><td>11,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=UAE%202GB%2015%20ڕۆژ%2011,500%20IQD">کڕین</a></td></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>12,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=UAE%203GB%2030%20ڕۆژ%2012,500%20IQD">کڕین</a></td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=UAE%205GB%2030%20ڕۆژ%2020,000%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=UAE%2010GB%2030%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>45,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=UAE%20Unlimited%2010%20ڕۆژ%2045,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>80,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=UAE%20Unlimited%2015%20ڕۆژ%2080,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>100,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=UAE%20Unlimited%2030%20ڕۆژ%20100,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🇦🇿 Azerbaijan</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>5 GB</td><td>30 ڕۆژ</td><td>15,000 IQD</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>30,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>20,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>30,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>35,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>45,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>75,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>100,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- China -->
-<section class="country" data-country="China">
-<h2>🇨🇳 چین</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>10,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=China%203GB%2030%20ڕۆژ%2010,000%20IQD">کڕین</a></td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>11,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=China%205GB%2030%20ڕۆژ%2011,500%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=China%2010GB%2030%20ڕۆژ%2020,000%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=China%2020GB%2030%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>13,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=China%20Unlimited%203%20ڕۆژ%2013,500%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>20,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=China%20Unlimited%205%20ڕۆژ%2020,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=China%20Unlimited%207%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>30,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=China%20Unlimited%2010%20ڕۆژ%2030,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>40,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=China%20Unlimited%2015%20ڕۆژ%2040,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>55,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=China%20Unlimited%2030%20ڕۆژ%2055,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🇴🇲 Oman</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>3 GB</td><td>30 ڕۆژ</td><td>10,000 IQD</td></tr>
+<tr><td>5 GB</td><td>30 ڕۆژ</td><td>12,500 IQD</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>45,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>20,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>20,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>25,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>30,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>50,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>70,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- Azerbaijan -->
-<section class="country" data-country="Azerbaijan">
-<h2>🇦🇿 ئازەربایجان</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>15,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Azerbaijan%205GB%2030%20ڕۆژ%2015,000%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Azerbaijan%2010GB%2030%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>30,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Azerbaijan%2020GB%2030%20ڕۆژ%2030,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>20,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Azerbaijan%20Unlimited%203%20ڕۆژ%2020,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>30,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Azerbaijan%20Unlimited%205%20ڕۆژ%2030,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>35,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Azerbaijan%20Unlimited%207%20ڕۆژ%2035,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>45,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Azerbaijan%20Unlimited%2010%20ڕۆژ%2045,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>75,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Azerbaijan%20Unlimited%2015%20ڕۆژ%2075,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>100,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Azerbaijan%20Unlimited%2030%20ڕۆژ%20100,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🇨🇭 Switzerland</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>5 GB</td><td>30 ڕۆژ</td><td>16,000 IQD</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>23,000 IQD</td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>31,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>18,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>23,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>28,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>38,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>53,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- Oman -->
-<section class="country" data-country="Oman">
-<h2>🇴🇲 عومان</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>10,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Oman%203GB%2030%20ڕۆژ%2010,000%20IQD">کڕین</a></td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>12,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Oman%205GB%2030%20ڕۆژ%2012,500%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Oman%2010GB%2030%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>45,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Oman%2020GB%2030%20ڕۆژ%2045,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>20,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Oman%20Unlimited%203%20ڕۆژ%2020,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>20,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Oman%20Unlimited%205%20ڕۆژ%2020,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Oman%20Unlimited%207%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>30,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Oman%20Unlimited%2010%20ڕۆژ%2030,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>50,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Oman%20Unlimited%2015%20ڕۆژ%2050,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>70,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Oman%20Unlimited%2030%20ڕۆژ%2070,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🇮🇹 Italy</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>5 GB</td><td>30 ڕۆژ</td><td>12,000 IQD</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>16,000 IQD</td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>23,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>13,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>15,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>16,500 IQD</td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>23,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>28,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>38,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- Switzerland -->
-<section class="country" data-country="Switzerland">
-<h2>🇨🇭 سوئیس</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>16,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Switzerland%205GB%2030%20ڕۆژ%2016,000%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>23,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Switzerland%2010GB%2030%20ڕۆژ%2023,000%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>31,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Switzerland%2020GB%2030%20ڕۆژ%2031,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Switzerland%20Unlimited%203%20ڕۆژ%2015,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>18,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Switzerland%20Unlimited%205%20ڕۆژ%2018,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>23,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Switzerland%20Unlimited%207%20ڕۆژ%2023,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>28,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Switzerland%20Unlimited%2010%20ڕۆژ%2028,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>38,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Switzerland%20Unlimited%2015%20ڕۆژ%2038,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>53,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Switzerland%20Unlimited%2030%20ڕۆژ%2053,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🇩🇰 Denmark</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>5 GB</td><td>30 ڕۆژ</td><td>11,500 IQD</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>13,500 IQD</td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>15,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>12,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>14,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>15,500 IQD</td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>22,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>27,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>37,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- Italy -->
-<section class="country" data-country="Italy">
-<h2>🇮🇹 ئیتالیا</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>12,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Italy%205GB%2030%20ڕۆژ%2012,000%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>16,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Italy%2010GB%2030%20ڕۆژ%2016,000%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>23,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Italy%2020GB%2030%20ڕۆژ%2023,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>13,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Italy%20Unlimited%203%20ڕۆژ%2013,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>15,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Italy%20Unlimited%205%20ڕۆژ%2015,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>16,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Italy%20Unlimited%207%20ڕۆژ%2016,500%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>23,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Italy%20Unlimited%2010%20ڕۆژ%2023,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>28,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Italy%20Unlimited%2015%20ڕۆژ%2028,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>38,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Italy%20Unlimited%2030%20ڕۆژ%2038,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🇸🇬 Singapore</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>2 GB</td><td>15 ڕۆژ</td><td>13,000 IQD</td></tr>
+<tr><td>3 GB</td><td>30 ڕۆژ</td><td>13,500 IQD</td></tr>
+<tr><td>5 GB</td><td>30 ڕۆژ</td><td>14,500 IQD</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>15,500 IQD</td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>16,500 IQD</td></tr>
+<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>17,500 IQD</td></tr>
+<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>19,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>25,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>30,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>40,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- Lebanon -->
-<section class="country" data-country="Lebanon">
-<h2>🇱🇧 لوبنان</h2>
-<div class="note">نرخەکانی لوبنان بە USD ـن.</div>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>1 GB</td><td>5 ڕۆژ</td><td>$7.99</td><td><a class="buy" href="https://wa.me/9647506021212?text=Lebanon%201GB%205%20days%20%247.99">کڕین</a></td></tr>
-<tr><td>1 GB</td><td>7 ڕۆژ</td><td>$8.99</td><td><a class="buy" href="https://wa.me/9647506021212?text=Lebanon%201GB%207%20days%20%248.99">کڕین</a></td></tr>
-<tr><td>2 GB</td><td>15 ڕۆژ</td><td>$11.99</td><td><a class="buy" href="https://wa.me/9647506021212?text=Lebanon%202GB%2015%20days%20%2411.99">کڕین</a></td></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>$13.99</td><td><a class="buy" href="https://wa.me/9647506021212?text=Lebanon%203GB%2030%20days%20%2413.99">کڕین</a></td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>$18.99</td><td><a class="buy" href="https://wa.me/9647506021212?text=Lebanon%205GB%2030%20days%20%2418.99">کڕین</a></td></tr>
-<tr><td>5 GB</td><td>60 ڕۆژ</td><td>$18.99</td><td><a class="buy" href="https://wa.me/9647506021212?text=Lebanon%205GB%2060%20days%20%2418.99">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>$12.99</td><td><a class="buy" href="https://wa.me/9647506021212?text=Lebanon%2010GB%2030%20days%20%2412.99">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>180 ڕۆژ</td><td>$73.99</td><td><a class="buy" href="https://wa.me/9647506021212?text=Lebanon%2010GB%20180%20days%20%2473.99">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>$44.99</td><td><a class="buy" href="https://wa.me/9647506021212?text=Lebanon%2020GB%2030%20days%20%2444.99">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>365 ڕۆژ</td><td>$85.99</td><td><a class="buy" href="https://wa.me/9647506021212?text=Lebanon%2020GB%20365%20days%20%2485.99">کڕین</a></td></tr>
+<div class="country">
+<h2>🇹🇭 Thailand</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>5 GB</td><td>30 ڕۆژ</td><td>16,000 IQD</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>23,000 IQD</td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>31,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>18,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>23,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>28,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>38,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>53,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- Denmark -->
-<section class="country" data-country="Denmark">
-<h2>🇩🇰 دانمارک</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>11,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Denmark%205GB%2030%20ڕۆژ%2011,500%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>13,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Denmark%2010GB%2030%20ڕۆژ%2013,500%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>15,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Denmark%2020GB%2030%20ڕۆژ%2015,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>12,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Denmark%20Unlimited%203%20ڕۆژ%2012,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>14,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Denmark%20Unlimited%205%20ڕۆژ%2014,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>15,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Denmark%20Unlimited%207%20ڕۆژ%2015,500%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>22,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Denmark%20Unlimited%2010%20ڕۆژ%2022,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>27,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Denmark%20Unlimited%2015%20ڕۆژ%2027,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>37,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Denmark%20Unlimited%2030%20ڕۆژ%2037,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🇸🇦 Saudi Arabia</h2>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>40,000 IQD</td></tr>
+<tr><td>25 GB</td><td>45 ڕۆژ</td><td>60,000 IQD</td></tr>
+<tr><td>50 GB</td><td>30 ڕۆژ</td><td>90,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>20,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>25,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>35,000 IQD</td></tr>
+<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>60,000 IQD</td></tr>
 </table>
-</section>
+</div>
 
-<!-- Singapore -->
-<section class="country" data-country="Singapore">
-<h2>🇸🇬 سینگاپور</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>2 GB</td><td>15 ڕۆژ</td><td>13,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Singapore%202GB%2015%20ڕۆژ%2013,000%20IQD">کڕین</a></td></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>13,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Singapore%203GB%2030%20ڕۆژ%2013,500%20IQD">کڕین</a></td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>14,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Singapore%205GB%2030%20ڕۆژ%2014,500%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>15,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Singapore%2010GB%2030%20ڕۆژ%2015,500%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Singapore%2020GB%2030%20ڕۆژ%2020,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>16,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Singapore%20Unlimited%203%20ڕۆژ%2016,500%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>17,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Singapore%20Unlimited%205%20ڕۆژ%2017,500%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>19,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Singapore%20Unlimited%207%20ڕۆژ%2019,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Singapore%20Unlimited%2010%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>30,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Singapore%20Unlimited%2015%20ڕۆژ%2030,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>40,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Singapore%20Unlimited%2030%20ڕۆژ%2040,000%20IQD">کڕین</a></td></tr>
+<div class="country">
+<h2>🇱🇧 Lebanon</h2>
+<p>نرخەکان بە USD ـن.</p>
+<table>
+<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
+<tr><td>1 GB</td><td>5 ڕۆژ</td><td>$7.99</td></tr>
+<tr><td>1 GB</td><td>7 ڕۆژ</td><td>$8.99</td></tr>
+<tr><td>2 GB</td><td>15 ڕۆژ</td><td>$11.99</td></tr>
+<tr><td>3 GB</td><td>30 ڕۆژ</td><td>$13.99</td></tr>
+<tr><td>5 GB</td><td>30 ڕۆژ</td><td>$18.99</td></tr>
+<tr><td>5 GB</td><td>60 ڕۆژ</td><td>$18.99</td></tr>
+<tr><td>10 GB</td><td>30 ڕۆژ</td><td>$12.99</td></tr>
+<tr><td>10 GB</td><td>180 ڕۆژ</td><td>$73.99</td></tr>
+<tr><td>20 GB</td><td>30 ڕۆژ</td><td>$44.99</td></tr>
+<tr><td>20 GB</td><td>365 ڕۆژ</td><td>$85.99</td></tr>
 </table>
-</section>
-
-<!-- Thailand -->
-<section class="country" data-country="Thailand">
-<h2>🇹🇭 تایلاند</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>16,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Thailand%205GB%2030%20ڕۆژ%2016,000%20IQD">کڕین</a></td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>23,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Thailand%2010GB%2030%20ڕۆژ%2023,000%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>31,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Thailand%2020GB%2030%20ڕۆژ%2031,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Thailand%20Unlimited%203%20ڕۆژ%2015,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>18,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Thailand%20Unlimited%205%20ڕۆژ%2018,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>23,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Thailand%20Unlimited%207%20ڕۆژ%2023,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>28,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Thailand%20Unlimited%2010%20ڕۆژ%2028,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>38,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Thailand%20Unlimited%2015%20ڕۆژ%2038,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>53,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Thailand%20Unlimited%2030%20ڕۆژ%2053,000%20IQD">کڕین</a></td></tr>
-</table>
-</section>
-
-<!-- Saudi -->
-<section class="country" data-country="Saudi">
-<h2>🇸🇦 سعودیە</h2>
-<table><tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>40,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Saudi%2020GB%2030%20ڕۆژ%2040,000%20IQD">کڕین</a></td></tr>
-<tr><td>25 GB</td><td>45 ڕۆژ</td><td>60,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Saudi%2025GB%2045%20ڕۆژ%2060,000%20IQD">کڕین</a></td></tr>
-<tr><td>50 GB</td><td>30 ڕۆژ</td><td>90,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Saudi%2050GB%2030%20ڕۆژ%2090,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Saudi%20Unlimited%203%20ڕۆژ%2015,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>20,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Saudi%20Unlimited%205%20ڕۆژ%2020,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>25,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Saudi%20Unlimited%207%20ڕۆژ%2025,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>35,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Saudi%20Unlimited%2010%20ڕۆژ%2035,000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>60,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Saudi%20Unlimited%2015%20ڕۆژ%2060,000%20IQD">کڕین</a></td></tr>
-</table>
-</section>
+</div>
 
 </div>
 
-<section class="container" id="how">
-<h2>چۆن کاردەکات؟</h2>
-<p>1️⃣ پلانەکەت هەڵبژێرە</p>
-<p>2️⃣ کرتە لە <b>کڕین</b> بکە</p>
-<p>3️⃣ لە WhatsApp دا داواکارییەکەت تەواو بکە</p>
-<p>4️⃣ eSIM ـەکەت وەردەگرە و بە ئینتەرنێت بەکاربهێنە 🌍</p>
-</section>
-
-<a class="wa" href="https://wa.me/9647506021212" aria-label="WhatsApp">☏</a>
-
-<footer>
-<b>eSIM Online</b>
-<p>Internet Anywhere 🌍</p>
-<p>WhatsApp: +964 750 602 1212</p>
+<footer id="contact">
+<p>eSIM Online</p>
+<p>پەیوەندی: +964 750 602 1212</p>
 </footer>
 
-<script>
-function showAll(){
- document.querySelectorAll('.country').forEach(x=>x.style.display='block');
-}
-function showCountry(c){
- document.querySelectorAll('.country').forEach(x=>{
-   x.style.display=x.dataset.country===c?'block':'none';
- });
-}
-</script>
+<a class="whatsapp" href="https://wa.me/9647506021212">WhatsApp 💬</a>
 
 </body>
 </html>
