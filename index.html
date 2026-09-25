@@ -2,311 +2,142 @@
 <html lang="ku" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>eSIM Online</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
-header{background:#d71920;color:white;padding:20px;text-align:center}
-header h1{margin:0;font-size:30px}
-nav{margin-top:10px}
-nav a{color:white;text-decoration:none;margin:0 10px}
-.hero{background:white;text-align:center;padding:45px 20px}
-.hero h2{font-size:34px;margin:0 0 12px}
-.hero p{font-size:18px;color:#555}
-.container{max-width:1100px;margin:auto;padding:25px 15px}
-.filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:25px}
-.filters button{border:0;background:#172033;color:white;padding:10px 16px;border-radius:20px;cursor:pointer}
-.country{background:white;border-radius:15px;padding:20px;margin-bottom:25px;box-shadow:0 3px 15px #0001}
-.country h2{margin-top:0;color:#d71920}
-table{width:100%;border-collapse:collapse}
-th,td{padding:12px;border-bottom:1px solid #eee;text-align:center}
-th{background:#f1f3f7}
-.buy{background:#d71920;color:white;border:0;padding:8px 15px;border-radius:8px;text-decoration:none;display:inline-block}
-.whatsapp{position:fixed;bottom:20px;right:20px;background:#25d366;color:white;padding:14px 20px;border-radius:30px;text-decoration:none;font-weight:bold;box-shadow:0 3px 12px #0003}
-footer{text-align:center;background:#172033;color:white;padding:25px;margin-top:30px}
-@media(max-width:650px){
-.hero h2{font-size:27px}
-table{font-size:13px}
-th,td{padding:8px 4px}
-}
+body{margin:0;font-family:Arial,sans-serif;background:#fff;color:#111827}
+a{text-decoration:none;color:inherit}
+header{height:78px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 4%;position:sticky;top:0;z-index:20;box-shadow:0 2px 15px #00000012}
+.logo{font-size:34px;font-weight:800;direction:ltr}.logo b{color:#e60023}.logo span{color:#111}
+nav{display:flex;gap:28px;align-items:center;font-weight:700}nav a:hover{color:#e60023}
+.navbtn{background:#f10b2d;color:#fff;padding:13px 25px;border-radius:14px}
+.icons{font-size:25px;display:flex;gap:16px}
+.hero{min-height:390px;padding:50px 5%;position:relative;overflow:hidden;color:#fff;background:linear-gradient(90deg,#ef082d 0%,#ed1637 38%,#1688d5 100%)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#ef082de8 0%,#ef082d75 48%,#0000 100%)}
+.hero-inner{position:relative;z-index:2;max-width:1400px;margin:auto}
+.hero h1{font-size:52px;margin:15px 0 10px;max-width:720px}.hero h1 span{color:#ffd21c}
+.hero p{font-size:21px;max-width:700px;line-height:1.8}
+.hero .cta{display:inline-block;background:#fff;color:#e60023;padding:15px 35px;border-radius:30px;font-size:20px;font-weight:800;margin-top:10px}
+.hero-art{position:absolute;right:2%;bottom:-25px;font-size:150px;opacity:.28}
+.features{display:flex;gap:35px;flex-wrap:wrap;margin-top:25px}.feature{display:flex;align-items:center;gap:10px;font-weight:bold}.feature i{font-style:normal;font-size:32px}
+.search-panel{max-width:1400px;margin:-30px auto 0;position:relative;z-index:5;background:#fff;border-radius:18px;padding:18px;box-shadow:0 8px 30px #0002;display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+.search{display:flex;border:1px solid #ddd;border-radius:12px;overflow:hidden}.search input{flex:1;border:0;padding:14px;font-size:16px;outline:0}.search button{border:0;background:#f10b2d;color:#fff;padding:0 24px;font-weight:bold}
+select{border:1px solid #ddd;border-radius:12px;padding:13px;background:#fff;font-size:15px}
+.tabs{max-width:1400px;margin:25px auto 18px;display:flex;gap:10px;overflow:auto;padding:0 10px}.tab{white-space:nowrap;border:1px solid #eee;background:#fff;border-radius:13px;padding:13px 28px;font-weight:bold;cursor:pointer}.tab.active,.tab:hover{background:#f10b2d;color:#fff}
+.grid{max-width:1400px;margin:auto;padding:0 10px 35px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.card{border:1px solid #ddd;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 3px 12px #00000012}.pic{height:125px;padding:15px;color:#fff;position:relative;background:linear-gradient(135deg,#d71920,#1581cf)}.flag{font-size:30px}.pic h3{margin:4px 0;font-size:19px}.pic small{font-weight:bold}.plans{padding:12px}.plan{display:flex;justify-content:space-between;gap:5px;text-align:center}.plan div{flex:1}.plan b{display:block;font-size:13px}.plan small{display:block;color:#555}.price{display:block;color:#e60023;font-weight:800;margin-top:4px}.buy{width:100%;border:0;background:#f10b2d;color:#fff;padding:11px;border-radius:10px;margin-top:10px;font-size:15px;font-weight:bold;cursor:pointer}.buy:hover{background:#c90020}
+.empty{display:none;text-align:center;padding:30px;color:#777}
+footer{background:#fff;border-top:1px solid #ddd;padding:22px 5%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.pay{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:900}.fib{color:#1546a0}.super{background:#ffd400;padding:5px 10px;border-radius:7px;color:#111;font-size:18px}.wa{background:#20c763;color:#fff;padding:12px 22px;border-radius:25px;font-weight:bold}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}nav{gap:12px}.hero h1{font-size:40px}}
+@media(max-width:650px){header{height:auto;padding:14px;gap:12px;flex-wrap:wrap}.logo{font-size:27px}nav{order:3;width:100%;justify-content:center;font-size:13px}.icons{font-size:20px}.hero{padding:35px 20px;min-height:430px}.hero h1{font-size:35px}.hero p{font-size:17px}.search-panel{margin:-20px 12px 0;grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr;gap:9px}.pic{height:110px}.plan{font-size:11px}.price{font-size:12px}.buy{font-size:13px;padding:9px}.tabs{padding:0 12px}.features{gap:15px}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}.logo{font-size:25px}}
 </style>
 </head>
-
 <body>
 
 <header>
-<h1>eSIM Online</h1>
-<nav>
-<a href="#plans">پلانەکان</a>
-<a href="#contact">پەیوەندی</a>
-</nav>
+  <div class="logo">â <b>eSIM</b> <span>Online</span></div>
+  <nav>
+    <a class="navbtn" href="#">Ø³ÛØ±ÛØªØ§</a>
+    <a href="#countries">ÙÚµØ§ØªÛÚ©Ø§Ù</a>
+    <a href="#countries">Ù¾ÙØ§ÙÛÚ©Ø§Ù</a>
+    <a href="#how">ÚÛÙÛÛØªÛ Ú©Ø§Ø±Ú©Ø±Ø¯Ù</a>
+    <a href="#contact">Ù¾ÛÛÙÛÙØ¯Û</a>
+  </nav>
+  <div class="icons">â ð</div>
 </header>
 
 <section class="hero">
-<h2>ئینتەرنێتی جیهانی بە eSIM 🌍</h2>
-<p>پلانەکەت هەڵبژێرە و بە ئاسانی داواکاری بکە.</p>
+  <div class="hero-inner">
+    <div>ð Global eSIM</div>
+    <h1>eSIM Ø¨Û ÙÛÙÙÙ ÙÚµØ§ØªÛÚ©Ø§Ù <span>ð</span></h1>
+    <p>Ù¾ÙØ§ÙÛ Ø¦ÛÙØªÛØ±ÙÛØªÛ eSIM Ø¨Û Ú¯ÛØ´ØªØ Ø¨Û ÙØ±Ø®ÛÚ©Û Ú¯ÙÙØ¬Ø§Ù Ø¨Û Ø¯ÛÙØ§Ø±Û Ø¹ÛØ±Ø§ÙÛ.</p>
+    <a class="cta" href="#countries">Ø¨ÛÙÛÙÛ Ù¾ÙØ§ÙÛÚ©Ø§Ù â</a>
+    <div class="features">
+      <div class="feature"><i>â¡</i> ÚØ§ÙØ§Ú©Ú©Ø±Ø¯ÙÛ Ø®ÛØ±Ø§</div>
+      <div class="feature"><i>ð¶</i> Ø¦ÛÙØªÛØ±ÙÛØªÛ Ø¨Û Ø¦Ø§Ø³Ø§ÙÛ</div>
+      <div class="feature"><i>ð¡ï¸</i> Ù¾Ø§Ø±Ø§Ø³ØªÙÛ Ø²Ø§ÙÛØ§Ø±Û</div>
+      <div class="feature"><i>ð</i> Ú©Ø§Ø± Ø¯ÛÚ©Ø§Øª ÙÛ ÙÛÙÙÙ Ø´ÙÛÙÛÚ©</div>
+    </div>
+  </div>
+  <div class="hero-art">ð±âï¸ð</div>
 </section>
 
-<div class="container" id="plans">
-
-<div class="country">
-<h2>🇹🇷 Turkey</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th><th></th></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>8,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%2010GB%20-%2030%20Days%20-%208500%20IQD">کڕین</a></td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>11,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%2020GB%20-%2030%20Days%20-%2011500%20IQD">کڕین</a></td></tr>
-<tr><td>50 GB</td><td>30 ڕۆژ</td><td>23,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%2050GB%20-%2030%20Days%20-%2023000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>8,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%20Unlimited%203%20Days%20-%208000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>10,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%20Unlimited%205%20Days%20-%2010000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>11,500 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%20Unlimited%207%20Days%20-%2011500%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>18,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%20Unlimited%2010%20Days%20-%2018000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>23,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%20Unlimited%2015%20Days%20-%2023000%20IQD">کڕین</a></td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>28,000 IQD</td><td><a class="buy" href="https://wa.me/9647506021212?text=Turkey%20-%20Unlimited%2030%20Days%20-%2028000%20IQD">کڕین</a></td></tr>
-</table>
+<div class="search-panel">
+  <div class="search"><input id="search" placeholder="Ú¯ÛÚØ§Ù Ø¨Û ÙØ§ÙÛ ÙÚµØ§Øª..." oninput="filter()"><button onclick="filter()">Ú¯ÛÚØ§Ù</button></div>
+  <select id="region" onchange="filter()"><option value="">ÙÛÙÙÙ ÙÚµØ§ØªÛÚ©Ø§Ù</option><option value="asia">Ø¦Ø§Ø³ÛØ§</option><option value="europe">Ø¦ÛÙØ±ÙÙ¾Ø§</option><option value="middle">ÚÛÚÙÛÚµØ§ØªÛ ÙØ§ÙÛÚØ§Ø³Øª</option><option value="global">Ø¬ÛÙØ§ÙÛ</option></select>
+  <select><option>ÙÛÙÙÙ Ù¾ÙØ§ÙÛÚ©Ø§Ù</option><option>5GB</option><option>10GB</option><option>20GB</option></select>
 </div>
 
-<div class="country">
-<h2>🇩🇪 Germany</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>1 GB</td><td>7 ڕۆژ</td><td>6,500 IQD</td></tr>
-<tr><td>2 GB</td><td>15 ڕۆژ</td><td>7,000 IQD</td></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>8,000 IQD</td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>9,000 IQD</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>12,000 IQD</td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>19,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>11,500 IQD</td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>14,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>16,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>22,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>30,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>44,000 IQD</td></tr>
-</table>
+<div class="tabs">
+  <button class="tab active" onclick="setRegion('')">ð ÙÛÙÙÙ</button>
+  <button class="tab" onclick="setRegion('asia')">ð Ø¦Ø§Ø³ÛØ§</button>
+  <button class="tab" onclick="setRegion('europe')">ð Ø¦ÛÙØ±ÙÙ¾Ø§</button>
+  <button class="tab" onclick="setRegion('middle')">ð ÚÛÚÙÛÚµØ§ØªÛ ÙØ§ÙÛÚØ§Ø³Øª</button>
+  <button class="tab" onclick="setRegion('global')">ð Ø¬ÛÙØ§ÙÛ</button>
 </div>
 
-<div class="country">
-<h2>🇺🇸 USA</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>10,000 IQD</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>20,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>25,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>30,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>50,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>80,000 IQD</td></tr>
-</table>
-</div>
+<main id="countries">
+<div class="grid">
 
-<div class="country">
-<h2>🌍 Global</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>1 GB</td><td>5 ڕۆژ</td><td>9,000 IQD</td></tr>
-<tr><td>1 GB</td><td>7 ڕۆژ</td><td>10,000 IQD</td></tr>
-<tr><td>2 GB</td><td>15 ڕۆژ</td><td>13,500 IQD</td></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td></tr>
-<tr><td>5 GB</td><td>60 ڕۆژ</td><td>25,000 IQD</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>35,000 IQD</td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>55,000 IQD</td></tr>
-<tr><td>10 GB</td><td>180 ڕۆژ</td><td>85,000 IQD</td></tr>
-<tr><td>20 GB</td><td>365 ڕۆژ</td><td>100,000 IQD</td></tr>
-<tr><td>60 GB</td><td>125 ڕۆژ</td><td>255,000 IQD</td></tr>
-</table>
-</div>
+<!-- Each card uses the requested IQD prices -->
+<div class="card" data-name="Turkey ØªÙØ±Ú©ÛØ§" data-region="asia"><div class="pic">ð¹ð·<h3>Turkey</h3><small>ØªÙØ±Ú©ÛØ§</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">19,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">29,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">44,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Turkey','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
 
-<div class="country">
-<h2>🇦🇪 UAE</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>1 GB</td><td>7 ڕۆژ</td><td>9,500 IQD</td></tr>
-<tr><td>2 GB</td><td>15 ڕۆژ</td><td>11,500 IQD</td></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>12,500 IQD</td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>45,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>80,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>100,000 IQD</td></tr>
-</table>
-</div>
+<div class="card" data-name="Saudi Arabia Ø³Ø¹ÙØ¯ÛÛ" data-region="middle"><div class="pic">ð¸ð¦<h3>Saudi Arabia</h3><small>Ø³Ø¹ÙØ¯ÛÛ</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">19,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">29,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">44,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Saudi Arabia','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
 
-<div class="country">
-<h2>🇨🇳 China</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>10,000 IQD</td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>11,500 IQD</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>13,500 IQD</td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>20,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>25,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>30,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>40,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>55,000 IQD</td></tr>
-</table>
-</div>
+<div class="card" data-name="Europe UK Ø¦ÛÙØ±ÙÙ¾Ø§" data-region="europe"><div class="pic">ðªðº<h3>Europe + UK</h3><small>Ø¦ÛÙØ±ÙÙ¾Ø§</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">20,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">32,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">50,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Europe + UK','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
 
-<div class="country">
-<h2>🇦🇿 Azerbaijan</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>15,000 IQD</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>30,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>20,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>30,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>35,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>45,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>75,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>100,000 IQD</td></tr>
-</table>
-</div>
+<div class="card" data-name="UAE Ø§ÙØ§Ø±Ø§Øª" data-region="middle"><div class="pic">ð¦ðª<h3>UAE</h3><small>Ø¦ÛÙØ§Ø±Ø§Øª</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">15,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">25,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">40,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('UAE','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
 
-<div class="country">
-<h2>🇴🇲 Oman</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>10,000 IQD</td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>12,500 IQD</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>25,000 IQD</td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>45,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>20,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>20,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>25,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>30,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>50,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>70,000 IQD</td></tr>
-</table>
-</div>
+<div class="card" data-name="China ÚÛÙ" data-region="asia"><div class="pic">ð¨ð³<h3>China</h3><small>ÚÛÙ</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">10,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">18,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">30,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('China','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
 
-<div class="country">
-<h2>🇨🇭 Switzerland</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>16,000 IQD</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>23,000 IQD</td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>31,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>18,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>23,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>28,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>38,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>53,000 IQD</td></tr>
-</table>
-</div>
+<div class="card" data-name="United States USA Ø¦ÛÙØ±ÛÚ©Ø§" data-region="global"><div class="pic">ðºð¸<h3>United States</h3><small>Ø¦ÛÙØ±ÛÚ©Ø§</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">18,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">30,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">50,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('United States','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
 
-<div class="country">
-<h2>🇮🇹 Italy</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>12,000 IQD</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>16,000 IQD</td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>23,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>13,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>15,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>16,500 IQD</td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>23,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>28,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>38,000 IQD</td></tr>
-</table>
-</div>
+<div class="card" data-name="Global Ø¬ÛÙØ§ÙÛ" data-region="global"><div class="pic">ð<h3>Global</h3><small>Ø¬ÛÙØ§ÙÛ</small></div><div class="plans"><div class="plan"><div><b>1GB</b><small>7 ÚÛÚ</small><span class="price">10,000 Ø¯.Ø¹</span></div><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">30,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">50,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Global','1/5/10GB')">ð Ú©ÚÛÙ</button></div></div>
 
-<div class="country">
-<h2>🇩🇰 Denmark</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>11,500 IQD</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>13,500 IQD</td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>15,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>12,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>14,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>15,500 IQD</td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>22,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>27,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>37,000 IQD</td></tr>
-</table>
-</div>
+<div class="card" data-name="Malaysia ÙØ§ÙÛØ²ÛØ§" data-region="asia"><div class="pic">ð²ð¾<h3>Malaysia</h3><small>ÙØ§ÙÛØ²ÛØ§</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">10,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">17,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">28,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Malaysia','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
 
-<div class="country">
-<h2>🇸🇬 Singapore</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>2 GB</td><td>15 ڕۆژ</td><td>13,000 IQD</td></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>13,500 IQD</td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>14,500 IQD</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>15,500 IQD</td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>20,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>16,500 IQD</td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>17,500 IQD</td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>19,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>25,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>30,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>40,000 IQD</td></tr>
-</table>
-</div>
+<div class="card" data-name="Lebanon ÙÙØ¨ÙØ§Ù" data-region="middle"><div class="pic">ð±ð§<h3>Lebanon</h3><small>ÙÙØ¨ÙØ§Ù</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">15,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">25,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Lebanon','5/10GB')">ð Ú©ÚÛÙ</button></div></div>
 
-<div class="country">
-<h2>🇹🇭 Thailand</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>16,000 IQD</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>23,000 IQD</td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>31,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>18,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>23,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>28,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>38,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>30 ڕۆژ</td><td>53,000 IQD</td></tr>
-</table>
-</div>
-
-<div class="country">
-<h2>🇸🇦 Saudi Arabia</h2>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>40,000 IQD</td></tr>
-<tr><td>25 GB</td><td>45 ڕۆژ</td><td>60,000 IQD</td></tr>
-<tr><td>50 GB</td><td>30 ڕۆژ</td><td>90,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>3 ڕۆژ</td><td>15,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>5 ڕۆژ</td><td>20,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>7 ڕۆژ</td><td>25,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>10 ڕۆژ</td><td>35,000 IQD</td></tr>
-<tr><td>Unlimited</td><td>15 ڕۆژ</td><td>60,000 IQD</td></tr>
-</table>
-</div>
-
-<div class="country">
-<h2>🇱🇧 Lebanon</h2>
-<p>نرخەکان بە USD ـن.</p>
-<table>
-<tr><th>پلان</th><th>ماوە</th><th>نرخ</th></tr>
-<tr><td>1 GB</td><td>5 ڕۆژ</td><td>$7.99</td></tr>
-<tr><td>1 GB</td><td>7 ڕۆژ</td><td>$8.99</td></tr>
-<tr><td>2 GB</td><td>15 ڕۆژ</td><td>$11.99</td></tr>
-<tr><td>3 GB</td><td>30 ڕۆژ</td><td>$13.99</td></tr>
-<tr><td>5 GB</td><td>30 ڕۆژ</td><td>$18.99</td></tr>
-<tr><td>5 GB</td><td>60 ڕۆژ</td><td>$18.99</td></tr>
-<tr><td>10 GB</td><td>30 ڕۆژ</td><td>$12.99</td></tr>
-<tr><td>10 GB</td><td>180 ڕۆژ</td><td>$73.99</td></tr>
-<tr><td>20 GB</td><td>30 ڕۆژ</td><td>$44.99</td></tr>
-<tr><td>20 GB</td><td>365 ڕۆژ</td><td>$85.99</td></tr>
-</table>
-</div>
+<div class="card" data-name="Italy Ø¦ÛØªØ§ÙÛØ§" data-region="europe"><div class="pic">ð®ð¹<h3>Italy</h3><small>Ø¦ÛØªØ§ÙÛØ§</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">18,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">30,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">48,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Italy','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
 
 </div>
+<div class="empty" id="empty">ÙÛÚ ÙÚµØ§ØªÛÚ© ÙÛØ¯ÛØ²Ø±Ø§ÛÛÙÛ.</div>
+</main>
 
 <footer id="contact">
-<p>eSIM Online</p>
-<p>پەیوەندی: +964 750 602 1212</p>
+  <div><b>â eSIM Online</b><br><small>Stay Connected â¢ Anywhere</small></div>
+  <a class="wa" href="https://wa.me/9640000000000" target="_blank">ð¬ Ù¾ÛÛÙÛÙØ¯Û ÙÛ WhatsApp</a>
+  <div class="pay"><span class="fib">FIB</span><span class="super">SuperQi</span><span>VISA</span> <span>ð´</span></div>
+  <div>ð Ù¾Ø§Ø±ÛØ¯Ø§ÙÛ Ø¦Ø§Ø³Ø§Ù &nbsp; â¡ ÚØ§ÙØ§Ú©Ú©Ø±Ø¯ÙÛ Ø®ÛØ±Ø§ &nbsp; ð¡ï¸ Ù¾Ø§Ø±ÛØ²Ø±Ø§Ù</div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/9647506021212">WhatsApp 💬</a>
+<script>
+const whatsapp="9640000000000"; // ÚÙØ§Ø±ÛÛ WhatsApp ÙÛÚ©ÛØª ÙÛØ±Û Ø¯Ø§Ø¨ÙÛ
 
+function filter(){
+  const q=document.getElementById('search').value.toLowerCase().trim();
+  const r=document.getElementById('region').value;
+  let n=0;
+  document.querySelectorAll('.card').forEach(c=>{
+    const okName=c.dataset.name.toLowerCase().includes(q);
+    const okRegion=!r||c.dataset.region===r;
+    c.style.display=okName&&okRegion?'block':'none';
+    if(okName&&okRegion)n++;
+  });
+  document.getElementById('empty').style.display=n?'none':'block';
+}
+function setRegion(r){
+  document.getElementById('region').value=r;
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  filter();
+}
+function buy(country,plans){
+  const text=`Ø³ÚµØ§ÙØ Ø¯ÛÙÛÙÛØª eSIM ÙÛ ${country} Ø¨Ú©ÚÙ.%0AÙ¾ÙØ§ÙÛ Ø¨ÛØ±Ø¯ÛØ³ØªÛÚ©Ø§Ù: ${plans}%0AØªÚ©Ø§ÛÛ ÛØ§Ø±ÙÛØªÛÙ Ø¨Ø¯ÛÙ.`;
+  window.open(`https://wa.me/${whatsapp}?text=${text}`,'_blank');
+}
+</script>
 </body>
 </html>
