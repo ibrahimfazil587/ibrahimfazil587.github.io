@@ -2,142 +2,918 @@
 <html lang="ku" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>eSIM Online</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>eSIM Online | پلانی ئینتەرنێت</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#fff;color:#111827}
-a{text-decoration:none;color:inherit}
-header{height:78px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 4%;position:sticky;top:0;z-index:20;box-shadow:0 2px 15px #00000012}
-.logo{font-size:34px;font-weight:800;direction:ltr}.logo b{color:#e60023}.logo span{color:#111}
-nav{display:flex;gap:28px;align-items:center;font-weight:700}nav a:hover{color:#e60023}
-.navbtn{background:#f10b2d;color:#fff;padding:13px 25px;border-radius:14px}
-.icons{font-size:25px;display:flex;gap:16px}
-.hero{min-height:390px;padding:50px 5%;position:relative;overflow:hidden;color:#fff;background:linear-gradient(90deg,#ef082d 0%,#ed1637 38%,#1688d5 100%)}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#ef082de8 0%,#ef082d75 48%,#0000 100%)}
-.hero-inner{position:relative;z-index:2;max-width:1400px;margin:auto}
-.hero h1{font-size:52px;margin:15px 0 10px;max-width:720px}.hero h1 span{color:#ffd21c}
-.hero p{font-size:21px;max-width:700px;line-height:1.8}
-.hero .cta{display:inline-block;background:#fff;color:#e60023;padding:15px 35px;border-radius:30px;font-size:20px;font-weight:800;margin-top:10px}
-.hero-art{position:absolute;right:2%;bottom:-25px;font-size:150px;opacity:.28}
-.features{display:flex;gap:35px;flex-wrap:wrap;margin-top:25px}.feature{display:flex;align-items:center;gap:10px;font-weight:bold}.feature i{font-style:normal;font-size:32px}
-.search-panel{max-width:1400px;margin:-30px auto 0;position:relative;z-index:5;background:#fff;border-radius:18px;padding:18px;box-shadow:0 8px 30px #0002;display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
-.search{display:flex;border:1px solid #ddd;border-radius:12px;overflow:hidden}.search input{flex:1;border:0;padding:14px;font-size:16px;outline:0}.search button{border:0;background:#f10b2d;color:#fff;padding:0 24px;font-weight:bold}
-select{border:1px solid #ddd;border-radius:12px;padding:13px;background:#fff;font-size:15px}
-.tabs{max-width:1400px;margin:25px auto 18px;display:flex;gap:10px;overflow:auto;padding:0 10px}.tab{white-space:nowrap;border:1px solid #eee;background:#fff;border-radius:13px;padding:13px 28px;font-weight:bold;cursor:pointer}.tab.active,.tab:hover{background:#f10b2d;color:#fff}
-.grid{max-width:1400px;margin:auto;padding:0 10px 35px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.card{border:1px solid #ddd;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 3px 12px #00000012}.pic{height:125px;padding:15px;color:#fff;position:relative;background:linear-gradient(135deg,#d71920,#1581cf)}.flag{font-size:30px}.pic h3{margin:4px 0;font-size:19px}.pic small{font-weight:bold}.plans{padding:12px}.plan{display:flex;justify-content:space-between;gap:5px;text-align:center}.plan div{flex:1}.plan b{display:block;font-size:13px}.plan small{display:block;color:#555}.price{display:block;color:#e60023;font-weight:800;margin-top:4px}.buy{width:100%;border:0;background:#f10b2d;color:#fff;padding:11px;border-radius:10px;margin-top:10px;font-size:15px;font-weight:bold;cursor:pointer}.buy:hover{background:#c90020}
-.empty{display:none;text-align:center;padding:30px;color:#777}
-footer{background:#fff;border-top:1px solid #ddd;padding:22px 5%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.pay{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:900}.fib{color:#1546a0}.super{background:#ffd400;padding:5px 10px;border-radius:7px;color:#111;font-size:18px}.wa{background:#20c763;color:#fff;padding:12px 22px;border-radius:25px;font-weight:bold}
-@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}nav{gap:12px}.hero h1{font-size:40px}}
-@media(max-width:650px){header{height:auto;padding:14px;gap:12px;flex-wrap:wrap}.logo{font-size:27px}nav{order:3;width:100%;justify-content:center;font-size:13px}.icons{font-size:20px}.hero{padding:35px 20px;min-height:430px}.hero h1{font-size:35px}.hero p{font-size:17px}.search-panel{margin:-20px 12px 0;grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr;gap:9px}.pic{height:110px}.plan{font-size:11px}.price{font-size:12px}.buy{font-size:13px;padding:9px}.tabs{padding:0 12px}.features{gap:15px}}
-@media(max-width:420px){.grid{grid-template-columns:1fr}.logo{font-size:25px}}
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+}
+
+header{
+  background:linear-gradient(135deg,#6d1920,#a82732);
+  color:white;
+  padding:18px 20px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.header{
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:26px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#ffd54a;
+}
+
+nav{
+  display:flex;
+  gap:18px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+nav a:hover{
+  color:#ffd54a;
+}
+
+.hero{
+  background:white;
+  text-align:center;
+  padding:55px 20px 40px;
+}
+
+.hero h1{
+  margin:0 0 12px;
+  font-size:38px;
+  color:#6d1920;
+}
+
+.hero p{
+  margin:0 auto 25px;
+  color:#666;
+  font-size:18px;
+  max-width:700px;
+  line-height:1.8;
+}
+
+.hero-btn{
+  display:inline-block;
+  background:#6d1920;
+  color:white;
+  padding:14px 28px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.hero-btn:hover{
+  background:#8d222b;
+}
+
+.container{
+  max-width:1150px;
+  margin:auto;
+  padding:30px 18px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.section-title h2{
+  margin:0 0 8px;
+  color:#6d1920;
+  font-size:30px;
+}
+
+.section-title p{
+  color:#777;
+}
+
+.search-box{
+  display:flex;
+  gap:10px;
+  margin-bottom:25px;
+}
+
+.search-box input{
+  flex:1;
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:15px;
+  font-size:16px;
+  outline:none;
+  background:white;
+}
+
+.search-box input:focus{
+  border-color:#6d1920;
+}
+
+.filters{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+  justify-content:center;
+}
+
+.filters button{
+  border:0;
+  background:#172033;
+  color:white;
+  padding:10px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.filters button.active,
+.filters button:hover{
+  background:#6d1920;
+}
+
+.countries{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+}
+
+.country{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  transition:.25s;
+}
+
+.country:hover{
+  transform:translateY(-4px);
+  box-shadow:0 9px 25px rgba(0,0,0,.13);
+}
+
+.country-head{
+  background:linear-gradient(135deg,#6d1920,#9d2731);
+  color:white;
+  padding:20px;
+}
+
+.country-head h3{
+  margin:0;
+  font-size:22px;
+}
+
+.country-head small{
+  opacity:.9;
+}
+
+.plans{
+  padding:15px;
+}
+
+.plan{
+  border:1px solid #e6e8ed;
+  border-radius:13px;
+  padding:14px;
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.plan:last-child{
+  margin-bottom:0;
+}
+
+.plan-info strong{
+  display:block;
+  font-size:17px;
+  margin-bottom:5px;
+}
+
+.plan-info span{
+  color:#777;
+  font-size:13px;
+}
+
+.price{
+  font-size:17px;
+  font-weight:bold;
+  color:#6d1920;
+  white-space:nowrap;
+}
+
+.buy{
+  border:0;
+  background:#6d1920;
+  color:white;
+  padding:9px 13px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.buy:hover{
+  background:#a82732;
+}
+
+.features{
+  background:white;
+  padding:45px 20px;
+  margin-top:25px;
+}
+
+.feature-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.feature{
+  text-align:center;
+  padding:25px 15px;
+  border:1px solid #eee;
+  border-radius:16px;
+  background:#fafafa;
+}
+
+.feature-icon{
+  font-size:35px;
+  margin-bottom:10px;
+}
+
+.feature h3{
+  margin:8px 0;
+}
+
+.feature p{
+  color:#777;
+  line-height:1.7;
+}
+
+.contact{
+  background:#172033;
+  color:white;
+  text-align:center;
+  padding:45px 20px;
+}
+
+.contact h2{
+  margin-top:0;
+}
+
+.whatsapp{
+  display:inline-block;
+  margin-top:15px;
+  background:#25d366;
+  color:white;
+  padding:14px 25px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.whatsapp:hover{
+  background:#1ebe5d;
+}
+
+footer{
+  background:#101624;
+  color:#aaa;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+}
+
+#noResults{
+  display:none;
+  text-align:center;
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  color:#777;
+}
+
+@media(max-width:700px){
+
+  .header{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  nav{
+    gap:12px;
+    font-size:14px;
+  }
+
+  .hero{
+    padding:40px 15px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .container{
+    padding:25px 12px;
+  }
+
+  .countries{
+    grid-template-columns:1fr;
+  }
+
+  .plan{
+    flex-wrap:wrap;
+  }
+
+  .price{
+    margin-right:auto;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">â <b>eSIM</b> <span>Online</span></div>
-  <nav>
-    <a class="navbtn" href="#">Ø³ÛØ±ÛØªØ§</a>
-    <a href="#countries">ÙÚµØ§ØªÛÚ©Ø§Ù</a>
-    <a href="#countries">Ù¾ÙØ§ÙÛÚ©Ø§Ù</a>
-    <a href="#how">ÚÛÙÛÛØªÛ Ú©Ø§Ø±Ú©Ø±Ø¯Ù</a>
-    <a href="#contact">Ù¾ÛÛÙÛÙØ¯Û</a>
-  </nav>
-  <div class="icons">â ð</div>
+  <div class="header">
+
+    <div class="logo">
+      eSIM <span>Online</span>
+    </div>
+
+    <nav>
+      <a href="#home">سەرەتا</a>
+      <a href="#plans">پلانەکان</a>
+      <a href="#features">تایبەتمەندی</a>
+      <a href="#contact">پەیوەندی</a>
+    </nav>
+
+  </div>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div>ð Global eSIM</div>
-    <h1>eSIM Ø¨Û ÙÛÙÙÙ ÙÚµØ§ØªÛÚ©Ø§Ù <span>ð</span></h1>
-    <p>Ù¾ÙØ§ÙÛ Ø¦ÛÙØªÛØ±ÙÛØªÛ eSIM Ø¨Û Ú¯ÛØ´ØªØ Ø¨Û ÙØ±Ø®ÛÚ©Û Ú¯ÙÙØ¬Ø§Ù Ø¨Û Ø¯ÛÙØ§Ø±Û Ø¹ÛØ±Ø§ÙÛ.</p>
-    <a class="cta" href="#countries">Ø¨ÛÙÛÙÛ Ù¾ÙØ§ÙÛÚ©Ø§Ù â</a>
-    <div class="features">
-      <div class="feature"><i>â¡</i> ÚØ§ÙØ§Ú©Ú©Ø±Ø¯ÙÛ Ø®ÛØ±Ø§</div>
-      <div class="feature"><i>ð¶</i> Ø¦ÛÙØªÛØ±ÙÛØªÛ Ø¨Û Ø¦Ø§Ø³Ø§ÙÛ</div>
-      <div class="feature"><i>ð¡ï¸</i> Ù¾Ø§Ø±Ø§Ø³ØªÙÛ Ø²Ø§ÙÛØ§Ø±Û</div>
-      <div class="feature"><i>ð</i> Ú©Ø§Ø± Ø¯ÛÚ©Ø§Øª ÙÛ ÙÛÙÙÙ Ø´ÙÛÙÛÚ©</div>
-    </div>
-  </div>
-  <div class="hero-art">ð±âï¸ð</div>
+
+<section class="hero" id="home">
+
+  <h1>ئینتەرنێتی eSIM بۆ هەموو جیهان 🌍</h1>
+
+  <p>
+    پلانەکانی eSIM بە نرخێکی گونجاو بۆ گەشت و سەفەر.
+    پەیوەندی بە ئینتەرنێت بکە لە هەر شوێنێک.
+  </p>
+
+  <a href="#plans" class="hero-btn">
+    بینینی پلانەکان
+  </a>
+
 </section>
 
-<div class="search-panel">
-  <div class="search"><input id="search" placeholder="Ú¯ÛÚØ§Ù Ø¨Û ÙØ§ÙÛ ÙÚµØ§Øª..." oninput="filter()"><button onclick="filter()">Ú¯ÛÚØ§Ù</button></div>
-  <select id="region" onchange="filter()"><option value="">ÙÛÙÙÙ ÙÚµØ§ØªÛÚ©Ø§Ù</option><option value="asia">Ø¦Ø§Ø³ÛØ§</option><option value="europe">Ø¦ÛÙØ±ÙÙ¾Ø§</option><option value="middle">ÚÛÚÙÛÚµØ§ØªÛ ÙØ§ÙÛÚØ§Ø³Øª</option><option value="global">Ø¬ÛÙØ§ÙÛ</option></select>
-  <select><option>ÙÛÙÙÙ Ù¾ÙØ§ÙÛÚ©Ø§Ù</option><option>5GB</option><option>10GB</option><option>20GB</option></select>
-</div>
 
-<div class="tabs">
-  <button class="tab active" onclick="setRegion('')">ð ÙÛÙÙÙ</button>
-  <button class="tab" onclick="setRegion('asia')">ð Ø¦Ø§Ø³ÛØ§</button>
-  <button class="tab" onclick="setRegion('europe')">ð Ø¦ÛÙØ±ÙÙ¾Ø§</button>
-  <button class="tab" onclick="setRegion('middle')">ð ÚÛÚÙÛÚµØ§ØªÛ ÙØ§ÙÛÚØ§Ø³Øª</button>
-  <button class="tab" onclick="setRegion('global')">ð Ø¬ÛÙØ§ÙÛ</button>
-</div>
+<section class="container" id="plans">
 
-<main id="countries">
-<div class="grid">
+  <div class="section-title">
+    <h2>پلانەکانی ئینتەرنێت</h2>
+    <p>وڵاتەکەت هەڵبژێرە و پلانەکە بکڕە</p>
+  </div>
 
-<!-- Each card uses the requested IQD prices -->
-<div class="card" data-name="Turkey ØªÙØ±Ú©ÛØ§" data-region="asia"><div class="pic">ð¹ð·<h3>Turkey</h3><small>ØªÙØ±Ú©ÛØ§</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">19,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">29,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">44,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Turkey','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
 
-<div class="card" data-name="Saudi Arabia Ø³Ø¹ÙØ¯ÛÛ" data-region="middle"><div class="pic">ð¸ð¦<h3>Saudi Arabia</h3><small>Ø³Ø¹ÙØ¯ÛÛ</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">19,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">29,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">44,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Saudi Arabia','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
+  <div class="search-box">
 
-<div class="card" data-name="Europe UK Ø¦ÛÙØ±ÙÙ¾Ø§" data-region="europe"><div class="pic">ðªðº<h3>Europe + UK</h3><small>Ø¦ÛÙØ±ÙÙ¾Ø§</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">20,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">32,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">50,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Europe + UK','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
+    <input
+      type="text"
+      id="search"
+      placeholder="گەڕان بە ناوی وڵات..."
+      oninput="searchCountries()"
+    >
 
-<div class="card" data-name="UAE Ø§ÙØ§Ø±Ø§Øª" data-region="middle"><div class="pic">ð¦ðª<h3>UAE</h3><small>Ø¦ÛÙØ§Ø±Ø§Øª</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">15,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">25,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">40,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('UAE','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
+  </div>
 
-<div class="card" data-name="China ÚÛÙ" data-region="asia"><div class="pic">ð¨ð³<h3>China</h3><small>ÚÛÙ</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">10,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">18,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">30,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('China','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
 
-<div class="card" data-name="United States USA Ø¦ÛÙØ±ÛÚ©Ø§" data-region="global"><div class="pic">ðºð¸<h3>United States</h3><small>Ø¦ÛÙØ±ÛÚ©Ø§</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">18,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">30,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">50,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('United States','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
+  <div class="filters">
 
-<div class="card" data-name="Global Ø¬ÛÙØ§ÙÛ" data-region="global"><div class="pic">ð<h3>Global</h3><small>Ø¬ÛÙØ§ÙÛ</small></div><div class="plans"><div class="plan"><div><b>1GB</b><small>7 ÚÛÚ</small><span class="price">10,000 Ø¯.Ø¹</span></div><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">30,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">50,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Global','1/5/10GB')">ð Ú©ÚÛÙ</button></div></div>
+    <button class="active" onclick="filterCountries('all',this)">
+      هەموو
+    </button>
 
-<div class="card" data-name="Malaysia ÙØ§ÙÛØ²ÛØ§" data-region="asia"><div class="pic">ð²ð¾<h3>Malaysia</h3><small>ÙØ§ÙÛØ²ÛØ§</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">10,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">17,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">28,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Malaysia','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
+    <button onclick="filterCountries('asia',this)">
+      ئاسیا
+    </button>
 
-<div class="card" data-name="Lebanon ÙÙØ¨ÙØ§Ù" data-region="middle"><div class="pic">ð±ð§<h3>Lebanon</h3><small>ÙÙØ¨ÙØ§Ù</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">15,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">25,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Lebanon','5/10GB')">ð Ú©ÚÛÙ</button></div></div>
+    <button onclick="filterCountries('europe',this)">
+      ئەوروپا
+    </button>
 
-<div class="card" data-name="Italy Ø¦ÛØªØ§ÙÛØ§" data-region="europe"><div class="pic">ð®ð¹<h3>Italy</h3><small>Ø¦ÛØªØ§ÙÛØ§</small></div><div class="plans"><div class="plan"><div><b>5GB</b><small>30 ÚÛÚ</small><span class="price">18,000 Ø¯.Ø¹</span></div><div><b>10GB</b><small>30 ÚÛÚ</small><span class="price">30,000 Ø¯.Ø¹</span></div><div><b>20GB</b><small>30 ÚÛÚ</small><span class="price">48,000 Ø¯.Ø¹</span></div></div><button class="buy" onclick="buy('Italy','5/10/20GB')">ð Ú©ÚÛÙ</button></div></div>
+    <button onclick="filterCountries('middleeast',this)">
+      ڕۆژهەڵاتی ناوەڕاست
+    </button>
 
-</div>
-<div class="empty" id="empty">ÙÛÚ ÙÚµØ§ØªÛÚ© ÙÛØ¯ÛØ²Ø±Ø§ÛÛÙÛ.</div>
-</main>
+    <button onclick="filterCountries('global',this)">
+      جیهانی
+    </button>
 
-<footer id="contact">
-  <div><b>â eSIM Online</b><br><small>Stay Connected â¢ Anywhere</small></div>
-  <a class="wa" href="https://wa.me/9640000000000" target="_blank">ð¬ Ù¾ÛÛÙÛÙØ¯Û ÙÛ WhatsApp</a>
-  <div class="pay"><span class="fib">FIB</span><span class="super">SuperQi</span><span>VISA</span> <span>ð´</span></div>
-  <div>ð Ù¾Ø§Ø±ÛØ¯Ø§ÙÛ Ø¦Ø§Ø³Ø§Ù &nbsp; â¡ ÚØ§ÙØ§Ú©Ú©Ø±Ø¯ÙÛ Ø®ÛØ±Ø§ &nbsp; ð¡ï¸ Ù¾Ø§Ø±ÛØ²Ø±Ø§Ù</div>
+  </div>
+
+
+  <div class="countries" id="countries">
+
+
+    <!-- TURKEY -->
+
+    <div class="country" data-region="asia" data-name="تورکیا تركيا Turkey">
+
+      <div class="country-head">
+        <h3>🇹🇷 تورکیا</h3>
+        <small>Turkey eSIM</small>
+      </div>
+
+      <div class="plans">
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>5GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">15,000 د.ع</div>
+          <button class="buy" onclick="buy('تورکیا','5GB / 30 ڕۆژ','15,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>10GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">25,000 د.ع</div>
+          <button class="buy" onclick="buy('تورکیا','10GB / 30 ڕۆژ','25,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>20GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">40,000 د.ع</div>
+          <button class="buy" onclick="buy('تورکیا','20GB / 30 ڕۆژ','40,000 د.ع')">کڕین</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- SAUDI -->
+
+    <div class="country" data-region="middleeast" data-name="سعودیە سعودی Arabia Saudi Arabia">
+
+      <div class="country-head">
+        <h3>🇸🇦 سعودیە</h3>
+        <small>Saudi Arabia eSIM</small>
+      </div>
+
+      <div class="plans">
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>5GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">19,000 د.ع</div>
+          <button class="buy" onclick="buy('سعودیە','5GB / 30 ڕۆژ','19,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>10GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">29,000 د.ع</div>
+          <button class="buy" onclick="buy('سعودیە','10GB / 30 ڕۆژ','29,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>20GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">44,000 د.ع</div>
+          <button class="buy" onclick="buy('سعودیە','20GB / 30 ڕۆژ','44,000 د.ع')">کڕین</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- EUROPE -->
+
+    <div class="country" data-region="europe" data-name="ئەوروپا Europe">
+
+      <div class="country-head">
+        <h3>🇪🇺 ئەوروپا</h3>
+        <small>Europe eSIM</small>
+      </div>
+
+      <div class="plans">
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>5GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">20,000 د.ع</div>
+          <button class="buy" onclick="buy('ئەوروپا','5GB / 30 ڕۆژ','20,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>10GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">32,000 د.ع</div>
+          <button class="buy" onclick="buy('ئەوروپا','10GB / 30 ڕۆژ','32,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>20GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">50,000 د.ع</div>
+          <button class="buy" onclick="buy('ئەوروپا','20GB / 30 ڕۆژ','50,000 د.ع')">کڕین</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- MALAYSIA -->
+
+    <div class="country" data-region="asia" data-name="مالیزیا Malaysia">
+
+      <div class="country-head">
+        <h3>🇲🇾 مالیزیا</h3>
+        <small>Malaysia eSIM</small>
+      </div>
+
+      <div class="plans">
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>5GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">10,000 د.ع</div>
+          <button class="buy" onclick="buy('مالیزیا','5GB / 30 ڕۆژ','10,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>10GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">17,000 د.ع</div>
+          <button class="buy" onclick="buy('مالیزیا','10GB / 30 ڕۆژ','17,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>20GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">28,000 د.ع</div>
+          <button class="buy" onclick="buy('مالیزیا','20GB / 30 ڕۆژ','28,000 د.ع')">کڕین</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- HONG KONG -->
+
+    <div class="country" data-region="asia" data-name="هۆنگ کۆنگ Hong Kong">
+
+      <div class="country-head">
+        <h3>🇭🇰 هۆنگ کۆنگ</h3>
+        <small>Hong Kong eSIM</small>
+      </div>
+
+      <div class="plans">
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>5GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">10,000 د.ع</div>
+          <button class="buy" onclick="buy('هۆنگ کۆنگ','5GB / 30 ڕۆژ','10,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>10GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">18,000 د.ع</div>
+          <button class="buy" onclick="buy('هۆنگ کۆنگ','10GB / 30 ڕۆژ','18,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>20GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">30,000 د.ع</div>
+          <button class="buy" onclick="buy('هۆنگ کۆنگ','20GB / 30 ڕۆژ','30,000 د.ع')">کڕین</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- LEBANON -->
+
+    <div class="country" data-region="middleeast" data-name="لوبنان Lebanon">
+
+      <div class="country-head">
+        <h3>🇱🇧 لوبنان</h3>
+        <small>Lebanon eSIM</small>
+      </div>
+
+      <div class="plans">
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>5GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">15,000 د.ع</div>
+          <button class="buy" onclick="buy('لوبنان','5GB / 30 ڕۆژ','15,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>10GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">25,000 د.ع</div>
+          <button class="buy" onclick="buy('لوبنان','10GB / 30 ڕۆژ','25,000 د.ع')">کڕین</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- GLOBAL -->
+
+    <div class="country" data-region="global" data-name="جیهانی Global">
+
+      <div class="country-head">
+        <h3>🌍 جیهانی</h3>
+        <small>Global eSIM</small>
+      </div>
+
+      <div class="plans">
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>1GB</strong>
+            <span>7 ڕۆژ</span>
+          </div>
+          <div class="price">10,000 د.ع</div>
+          <button class="buy" onclick="buy('جیهانی','1GB / 7 ڕۆژ','10,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>5GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">30,000 د.ع</div>
+          <button class="buy" onclick="buy('جیهانی','5GB / 30 ڕۆژ','30,000 د.ع')">کڕین</button>
+        </div>
+
+        <div class="plan">
+          <div class="plan-info">
+            <strong>10GB</strong>
+            <span>30 ڕۆژ</span>
+          </div>
+          <div class="price">50,000 د.ع</div>
+          <button class="buy" onclick="buy('جیهانی','10GB / 30 ڕۆژ','50,000 د.ع')">کڕین</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <div id="noResults">
+    هیچ وڵاتێک بەو ناوە نەدۆزرایەوە.
+  </div>
+
+</section>
+
+
+<section class="features" id="features">
+
+  <div class="section-title">
+    <h2>بۆچی eSIM Online؟</h2>
+    <p>خزمەتگوزارییەکی خێرا و ئاسان</p>
+  </div>
+
+  <div class="feature-grid">
+
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <h3>خێرا</h3>
+      <p>پلانەکەت بە خێرایی و بە ئاسانترین شێوە وەردەگریت.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🌍</div>
+      <h3>جیهانی</h3>
+      <p>بژاردەی جۆراوجۆر بۆ وڵاتەکانی جیهان.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">💰</div>
+      <h3>نرخی گونجاو</h3>
+      <p>پلانە جۆراوجۆرەکان بە نرخە جیاوازەکان.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">📱</div>
+      <h3>ئاسان</h3>
+      <p>بەبێ سیمکارت، eSIM ـەکەت بە ئاسانی بەکاربهێنە.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+  <h2>پێویستت بە یارمەتییە؟</h2>
+
+  <p>
+    بۆ کڕین یان هەر پرسیارێک، لە ڕێگەی WhatsApp پەیوەندیمان پێوە بکە.
+  </p>
+
+  <!-- ژمارەی WhatsApp ـەکەت لێرە دابنێ -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/9647500000000"
+    target="_blank"
+  >
+    💬 پەیوەندی لە WhatsApp
+  </a>
+
+</section>
+
+
+<footer>
+  © 2026 eSIM Online — هەموو مافەکان پارێزراون.
 </footer>
 
-<script>
-const whatsapp="9640000000000"; // ÚÙØ§Ø±ÛÛ WhatsApp ÙÛÚ©ÛØª ÙÛØ±Û Ø¯Ø§Ø¨ÙÛ
 
-function filter(){
-  const q=document.getElementById('search').value.toLowerCase().trim();
-  const r=document.getElementById('region').value;
-  let n=0;
-  document.querySelectorAll('.card').forEach(c=>{
-    const okName=c.dataset.name.toLowerCase().includes(q);
-    const okRegion=!r||c.dataset.region===r;
-    c.style.display=okName&&okRegion?'block':'none';
-    if(okName&&okRegion)n++;
+<script>
+
+/* WhatsApp number */
+const whatsappNumber = "9647500000000";
+
+
+/* Buy plan */
+
+function buy(country,plan,price){
+
+  const message =
+    "سڵاو، دەمەوێت ئەم پلانی eSIM بکڕم:%0A%0A" +
+    "🌍 وڵات: " + country + "%0A" +
+    "📦 پلان: " + plan + "%0A" +
+    "💰 نرخ: " + price;
+
+  window.open(
+    "https://wa.me/" + whatsappNumber + "?text=" + message,
+    "_blank"
+  );
+}
+
+
+/* Search */
+
+function searchCountries(){
+
+  const input =
+    document.getElementById("search").value.toLowerCase().trim();
+
+  const countries =
+    document.querySelectorAll(".country");
+
+  let found = 0;
+
+  countries.forEach(function(country){
+
+    const name =
+      country.getAttribute("data-name").toLowerCase();
+
+    if(name.includes(input)){
+
+      country.style.display = "";
+
+      found++;
+
+    }else{
+
+      country.style.display = "none";
+
+    }
+
   });
-  document.getElementById('empty').style.display=n?'none':'block';
+
+  document.getElementById("noResults").style.display =
+    found === 0 ? "block" : "none";
 }
-function setRegion(r){
-  document.getElementById('region').value=r;
-  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-  filter();
+
+
+/* Filter */
+
+function filterCountries(region,button){
+
+  document.querySelectorAll(".filters button")
+    .forEach(function(btn){
+
+      btn.classList.remove("active");
+
+    });
+
+  button.classList.add("active");
+
+  document.getElementById("search").value = "";
+
+  const countries =
+    document.querySelectorAll(".country");
+
+  let found = 0;
+
+  countries.forEach(function(country){
+
+    if(
+      region === "all" ||
+      country.getAttribute("data-region") === region
+    ){
+
+      country.style.display = "";
+
+      found++;
+
+    }else{
+
+      country.style.display = "none";
+
+    }
+
+  });
+
+  document.getElementById("noResults").style.display =
+    found === 0 ? "block" : "none";
 }
-function buy(country,plans){
-  const text=`Ø³ÚµØ§ÙØ Ø¯ÛÙÛÙÛØª eSIM ÙÛ ${country} Ø¨Ú©ÚÙ.%0AÙ¾ÙØ§ÙÛ Ø¨ÛØ±Ø¯ÛØ³ØªÛÚ©Ø§Ù: ${plans}%0AØªÚ©Ø§ÛÛ ÛØ§Ø±ÙÛØªÛÙ Ø¨Ø¯ÛÙ.`;
-  window.open(`https://wa.me/${whatsapp}?text=${text}`,'_blank');
-}
+
 </script>
+
 </body>
 </html>
