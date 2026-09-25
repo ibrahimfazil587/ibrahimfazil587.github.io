@@ -2,640 +2,549 @@
 <html lang="ku" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>eSIM بەڕێوە</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  font-family:Arial,Tahoma,sans-serif;
-  background:#f3f7fc;
-  color:#111b32;
+font-family:Arial,Tahoma,sans-serif;
+background:#f4f7fb;
+color:#111b32;
 }
 
-/* TOP */
 .top{
-  height:76px;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 30px;
-  box-shadow:0 2px 12px rgba(0,0,0,.06);
+height:76px;
+background:#fff;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 30px;
+box-shadow:0 2px 12px #0000000c;
 }
 
 .logo{
-  font-size:27px;
-  font-weight:900;
-  color:#075bbb;
+font-size:27px;
+font-weight:900;
+color:#075bbb;
 }
-
-.logo span{
-  color:#e53935;
-}
+.logo span{color:#e53935}
 
 .whatsapp-top{
-  background:#20c76a;
-  color:white;
-  text-decoration:none;
-  padding:13px 20px;
-  border-radius:16px;
-  font-size:15px;
-  font-weight:bold;
+background:#20c76a;
+color:white;
+text-decoration:none;
+padding:13px 20px;
+border-radius:16px;
+font-size:15px;
+font-weight:bold;
 }
 
-/* HERO */
 .hero{
-  margin:28px;
-  padding:34px 30px;
-  border-radius:28px;
-  color:white;
-  background:
-    radial-gradient(circle at 85% 20%,#ffffff22,transparent 22%),
-    radial-gradient(circle at 10% 90%,#ffffff18,transparent 28%),
-    linear-gradient(135deg,#075bbb,#168ee8);
-  overflow:hidden;
-  position:relative;
+margin:28px;
+padding:34px 30px;
+border-radius:28px;
+color:white;
+background:linear-gradient(135deg,#075bbb,#168ee8);
+position:relative;
+overflow:hidden;
 }
 
 .hero:after{
-  content:"✈️";
-  position:absolute;
-  left:25px;
-  bottom:-30px;
-  font-size:125px;
-  opacity:.10;
-  transform:rotate(-12deg);
+content:"✈️";
+position:absolute;
+left:25px;
+bottom:-30px;
+font-size:125px;
+opacity:.1;
 }
 
 .hero h1{
-  font-size:34px;
-  font-weight:900;
-  margin-bottom:9px;
-  position:relative;
-  z-index:2;
+font-size:34px;
+font-weight:900;
+margin-bottom:9px;
 }
 
 .hero p{
-  font-size:16px;
-  opacity:.92;
-  margin-bottom:22px;
-  position:relative;
-  z-index:2;
+font-size:16px;
+opacity:.92;
+margin-bottom:22px;
 }
 
 .search{
-  width:100%;
-  height:57px;
-  border:0;
-  outline:0;
-  border-radius:18px;
-  padding:0 20px;
-  font-size:16px;
-  color:#333;
-  background:#fff;
-  position:relative;
-  z-index:3;
+width:100%;
+height:57px;
+border:0;
+outline:0;
+border-radius:18px;
+padding:0 20px;
+font-size:16px;
+background:white;
 }
 
-/* FILTERS */
 .filters{
-  display:flex;
-  gap:10px;
-  overflow-x:auto;
-  padding:0 28px 22px;
-  scrollbar-width:none;
+display:flex;
+gap:10px;
+overflow-x:auto;
+padding:0 28px 22px;
+scrollbar-width:none;
 }
 
-.filters::-webkit-scrollbar{
-  display:none;
-}
+.filters::-webkit-scrollbar{display:none}
 
 .filter{
-  border:0;
-  background:#fff;
-  color:#075bbb;
-  border-radius:16px;
-  padding:13px 20px;
-  white-space:nowrap;
-  font-size:14px;
-  font-weight:bold;
-  box-shadow:0 3px 12px rgba(0,0,0,.06);
-  cursor:pointer;
+border:0;
+background:white;
+color:#075bbb;
+border-radius:16px;
+padding:13px 20px;
+white-space:nowrap;
+font-size:14px;
+font-weight:bold;
+box-shadow:0 3px 12px #0000000c;
 }
 
 .filter.active{
-  background:#075bbb;
-  color:#fff;
+background:#075bbb;
+color:white;
 }
 
-/* COUNTRIES */
 #countries{
-  padding:0 28px 40px;
+padding:0 28px 40px;
 }
 
 .country{
-  margin-bottom:28px;
-  background:#fff;
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:0 5px 22px rgba(0,0,0,.07);
+margin-bottom:28px;
+background:white;
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 5px 22px #0000000c;
 }
 
-/* COUNTRY HEADER */
+/* تەنها سەری وڵات */
 .country-head{
-  min-height:190px;
-  position:relative;
-  overflow:hidden;
-  color:#fff;
-  padding:28px 25px;
-  background:
-    linear-gradient(135deg,#075bbb,#168ee8);
+min-height:190px;
+position:relative;
+overflow:hidden;
+color:white;
+padding:25px 20px;
+background:linear-gradient(135deg,#075bbb,#168ee8);
 }
 
-/* sky/light */
 .country-head:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 70% 30%,#ffffff25,transparent 20%),
-    linear-gradient(135deg,transparent 50%,#ffffff0d);
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 75% 25%,#ffffff30,transparent 20%),
+linear-gradient(135deg,#ffffff08,transparent 55%);
 }
 
-/* travel decoration */
 .country-head:after{
-  content:"";
-  position:absolute;
-  left:-25px;
-  bottom:-55px;
-  width:420px;
-  height:150px;
-  background:#063e7525;
-  border-radius:50% 50% 0 0;
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-55px;
+height:130px;
+background:#07529b35;
+border-radius:50% 50% 0 0;
 }
 
-/* LANDMARK */
 .country-landmark{
-  position:absolute;
-  left:32%;
-  bottom:-30px;
-  font-size:125px;
-  line-height:1;
-  opacity:.20;
-  z-index:1;
-  filter:saturate(.7);
-  pointer-events:none;
+position:absolute;
+right:28%;
+bottom:-30px;
+font-size:125px;
+line-height:1;
+opacity:.20;
+z-index:1;
+pointer-events:none;
 }
 
-/* airplane */
 .country-plane{
-  position:absolute;
-  left:42%;
-  top:17px;
-  font-size:42px;
-  opacity:.30;
-  transform:rotate(-8deg);
-  z-index:2;
+position:absolute;
+right:48%;
+top:18px;
+font-size:38px;
+opacity:.30;
+transform:rotate(-10deg);
+z-index:2;
 }
 
-/* header content */
 .country-title{
-  position:relative;
-  z-index:5;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
+position:relative;
+z-index:5;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
 }
 
 .country-left{
-  display:flex;
-  align-items:center;
-  gap:15px;
+display:flex;
+align-items:center;
+gap:14px;
 }
 
 .country-flag{
-  width:76px;
-  height:76px;
-  border-radius:21px;
-  background:#ffffff1c;
-  border:1px solid #ffffff50;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:45px;
-  box-shadow:inset 0 0 20px #ffffff0b;
+width:72px;
+height:72px;
+border-radius:20px;
+background:#ffffff20;
+border:1px solid #ffffff45;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:42px;
 }
 
 .country-name{
-  font-size:31px;
-  font-weight:900;
+font-size:29px;
+font-weight:900;
 }
 
 .country-sub{
-  font-size:15px;
-  margin-top:7px;
-  opacity:.95;
+margin-top:7px;
+font-size:14px;
 }
 
 .country-badges{
-  display:flex;
-  flex-direction:column;
-  gap:9px;
+display:flex;
+flex-direction:column;
+gap:8px;
 }
 
 .country-badge{
-  border:1px solid #ffffff55;
-  background:#ffffff1c;
-  border-radius:25px;
-  padding:9px 15px;
-  font-size:12px;
-  white-space:nowrap;
-  backdrop-filter:blur(4px);
+background:#ffffff20;
+border:1px solid #ffffff45;
+padding:8px 13px;
+border-radius:22px;
+font-size:11px;
+white-space:nowrap;
 }
 
-/* PLAN LIST */
+/* پلانەکان - وەک خۆی */
 .plans{
-  padding:13px;
-  background:#f9fbfe;
+padding:13px;
+background:#f9fbfe;
 }
 
-/* PLAN CARD */
 .plan{
-  min-height:84px;
-  background:#fff;
-  border:1px solid #e9edf3;
-  border-radius:20px;
-  margin-bottom:10px;
-  padding:11px 12px;
-
-  display:flex;
-  align-items:center;
-  gap:12px;
-
-  box-shadow:0 2px 8px rgba(0,0,0,.025);
+min-height:70px;
+background:white;
+border:1px solid #e9edf3;
+border-radius:17px;
+margin-bottom:10px;
+padding:8px 9px;
+display:flex;
+align-items:center;
+gap:7px;
+box-shadow:0 2px 8px #00000006;
 }
 
 .plan:last-child{
-  margin-bottom:0;
+margin-bottom:0;
 }
 
-/* icon */
 .plan-icon{
-  width:56px;
-  min-width:56px;
-  height:56px;
-  border-radius:17px;
-  background:linear-gradient(145deg,#edf6ff,#dfeefe);
-  color:#0764be;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:29px;
-  font-weight:900;
+width:47px;
+min-width:47px;
+height:47px;
+border-radius:14px;
+background:linear-gradient(145deg,#edf6ff,#dfeefe);
+color:#0764be;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+font-weight:900;
 }
 
-/* info */
 .plan-info{
-  flex:1;
-  min-width:90px;
+flex:1;
+min-width:70px;
 }
 
 .plan-data{
-  font-size:23px;
-  font-weight:900;
-  color:#111b32;
-  line-height:1.1;
+font-size:18px;
+font-weight:900;
 }
 
 .plan-days{
-  font-size:13px;
-  color:#9299a7;
-  margin-top:6px;
+font-size:11px;
+color:#9299a7;
+margin-top:4px;
 }
 
-/* price */
 .plan-price{
-  background:#ffe8e8;
-  color:#df3333;
-  border-radius:22px;
-  padding:14px 19px;
-  font-size:17px;
-  font-weight:900;
-  white-space:nowrap;
+background:#ffe8e8;
+color:#df3333;
+border-radius:15px;
+padding:11px 10px;
+font-size:12px;
+font-weight:900;
+white-space:nowrap;
 }
 
-/* buy */
 .buy{
-  border:0;
-  background:linear-gradient(135deg,#16bd63,#0bb95c);
-  color:white;
-  border-radius:17px;
-  padding:15px 22px;
-  font-size:16px;
-  font-weight:900;
-  white-space:nowrap;
-  cursor:pointer;
-  box-shadow:0 4px 10px rgba(18,190,94,.18);
+border:0;
+background:linear-gradient(135deg,#16bd63,#0bb95c);
+color:white;
+border-radius:14px;
+padding:11px 11px;
+font-size:12px;
+font-weight:900;
+white-space:nowrap;
+cursor:pointer;
 }
 
-.buy:active{
-  transform:scale(.96);
-}
-
-/* COLORS */
-.turkey{
-  background:
-    linear-gradient(135deg,#075bbbcc,#168ee8dd),
-    #0873ce;
-}
-
-.europe{
-  background:
-    linear-gradient(135deg,#075bbbcc,#168ee8dd),
-    #0873ce;
+.turkey,.europe{
+background:linear-gradient(135deg,#075bbb,#168ee8);
 }
 
 .america{
-  background:
-    linear-gradient(135deg,#124e96,#1877d4);
+background:linear-gradient(135deg,#124e96,#1877d4);
 }
 
 .global{
-  background:
-    linear-gradient(135deg,#075bbb,#00a4b8);
+background:linear-gradient(135deg,#075bbb,#00a4b8);
 }
 
 .middle{
-  background:
-    linear-gradient(135deg,#075bbb,#159bd7);
+background:linear-gradient(135deg,#075bbb,#159bd7);
 }
 
 .asia{
-  background:
-    linear-gradient(135deg,#075bbb,#008fba);
+background:linear-gradient(135deg,#075bbb,#008fba);
 }
 
 .levant{
-  background:
-    linear-gradient(135deg,#075bbb,#147ed0);
+background:linear-gradient(135deg,#075bbb,#147ed0);
 }
 
-/* EMPTY */
 .empty{
-  background:#fff;
-  border-radius:20px;
-  padding:40px;
-  text-align:center;
-  color:#777;
-  font-size:16px;
+background:white;
+border-radius:20px;
+padding:40px;
+text-align:center;
+color:#777;
 }
 
-/* MOBILE */
 @media(max-width:600px){
 
-  .top{
-    height:72px;
-    padding:0 15px;
-  }
+.top{
+height:72px;
+padding:0 15px;
+}
 
-  .logo{
-    font-size:21px;
-  }
+.logo{
+font-size:21px;
+}
 
-  .whatsapp-top{
-    padding:11px 15px;
-    font-size:13px;
-  }
+.whatsapp-top{
+padding:11px 15px;
+font-size:13px;
+}
 
-  .hero{
-    margin:20px 15px;
-    padding:28px 20px;
-    border-radius:25px;
-  }
+.hero{
+margin:20px 15px;
+padding:28px 20px;
+border-radius:25px;
+}
 
-  .hero h1{
-    font-size:27px;
-  }
+.hero h1{
+font-size:27px;
+}
 
-  .hero p{
-    font-size:13px;
-  }
+.hero p{
+font-size:13px;
+}
 
-  .search{
-    height:52px;
-    font-size:14px;
-  }
+.search{
+height:52px;
+font-size:14px;
+}
 
-  .filters{
-    padding:0 15px 17px;
-  }
+.filters{
+padding:0 15px 17px;
+}
 
-  #countries{
-    padding:0 15px 30px;
-  }
+#countries{
+padding:0 15px 30px;
+}
 
-  .country{
-    border-radius:22px;
-  }
+.country{
+border-radius:22px;
+}
 
-  .country-head{
-    min-height:160px;
-    padding:22px 15px;
-  }
+.country-head{
+min-height:160px;
+padding:22px 15px;
+}
 
-  .country-flag{
-    width:62px;
-    height:62px;
-    min-width:62px;
-    font-size:36px;
-    border-radius:17px;
-  }
+.country-flag{
+width:62px;
+height:62px;
+min-width:62px;
+font-size:36px;
+}
 
-  .country-name{
-    font-size:23px;
-  }
+.country-name{
+font-size:23px;
+}
 
-  .country-sub{
-    font-size:12px;
-  }
+.country-sub{
+font-size:12px;
+}
 
-  .country-badge{
-    font-size:9px;
-    padding:7px 10px;
-  }
+.country-badge{
+font-size:9px;
+padding:7px 10px;
+}
 
-  .country-landmark{
-    left:28%;
-    bottom:-20px;
-    font-size:90px;
-  }
+.country-landmark{
+right:28%;
+bottom:-20px;
+font-size:90px;
+}
 
-  .country-plane{
-    left:43%;
-    top:15px;
-    font-size:30px;
-  }
+.country-plane{
+right:43%;
+top:15px;
+font-size:30px;
+}
 
-  .plans{
-    padding:9px;
-  }
+.plans{
+padding:9px;
+}
 
-  .plan{
-    min-height:70px;
-    padding:8px;
-    gap:7px;
-    border-radius:17px;
-  }
+.plan{
+min-height:70px;
+padding:8px;
+gap:7px;
+border-radius:17px;
+}
 
-  .plan-icon{
-    width:47px;
-    min-width:47px;
-    height:47px;
-    border-radius:14px;
-    font-size:23px;
-  }
+.plan-icon{
+width:47px;
+min-width:47px;
+height:47px;
+}
 
-  .plan-data{
-    font-size:18px;
-  }
+.plan-data{
+font-size:18px;
+}
 
-  .plan-days{
-    font-size:11px;
-    margin-top:4px;
-  }
+.plan-price{
+padding:11px 10px;
+font-size:12px;
+}
 
-  .plan-price{
-    padding:11px 10px;
-    border-radius:15px;
-    font-size:12px;
-  }
-
-  .buy{
-    padding:11px 11px;
-    border-radius:14px;
-    font-size:12px;
-  }
+.buy{
+padding:11px 11px;
+font-size:12px;
+}
 }
 
 @media(max-width:390px){
 
-  .country-name{
-    font-size:20px;
-  }
+.country-name{
+font-size:20px;
+}
 
-  .country-flag{
-    width:56px;
-    min-width:56px;
-    height:56px;
-    font-size:32px;
-  }
+.country-flag{
+width:56px;
+min-width:56px;
+height:56px;
+font-size:32px;
+}
 
-  .plan{
-    gap:5px;
-  }
+.plan-data{
+font-size:16px;
+}
 
-  .plan-icon{
-    width:42px;
-    min-width:42px;
-    height:42px;
-    font-size:20px;
-  }
+.plan-price{
+font-size:10px;
+padding:10px 7px;
+}
 
-  .plan-data{
-    font-size:16px;
-  }
-
-  .plan-price{
-    font-size:10px;
-    padding:10px 7px;
-  }
-
-  .buy{
-    font-size:10px;
-    padding:10px 7px;
-  }
+.buy{
+font-size:10px;
+padding:10px 7px;
+}
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP -->
 <div class="top">
 
-  <div class="logo">
-    e<span>SIM</span> بەڕێوە
-  </div>
+<div class="logo">
+e<span>SIM</span> بەڕێوە
+</div>
 
-  <a
-    class="whatsapp-top"
-    href="https://wa.me/9647506021212"
-    target="_blank">
-    WhatsApp 💬
-  </a>
+<a
+class="whatsapp-top"
+href="https://wa.me/9647506021212"
+target="_blank">
+WhatsApp 💬
+</a>
 
 </div>
 
 
-<!-- HERO -->
 <section class="hero">
 
-  <h1>🌍 پلانەکانی eSIM</h1>
+<h1>🌍 پلانەکانی eSIM</h1>
 
-  <p>
-    ئینتەرنێتی خێرا بۆ گەشتکردن لە هەموو جیهان
-  </p>
+<p>
+ئینتەرنێتی خێرا بۆ گەشتکردن لە هەموو جیهان
+</p>
 
-  <input
-    id="search"
-    class="search"
-    type="text"
-    placeholder="گەڕان بە ناوی وڵات، GB، Unlimited، ڕۆژ، نرخ..."
-  >
+<input
+id="search"
+class="search"
+type="text"
+placeholder="گەڕان بە ناوی وڵات، GB، Unlimited، ڕۆژ، نرخ..."
+>
 
 </section>
 
 
-<!-- FILTERS -->
 <div class="filters">
 
-  <button class="filter active"
-          onclick="setFilter('all',this)">
-    هەموو
-  </button>
+<button class="filter active"
+onclick="setFilter('all',this)">
+هەموو
+</button>
 
-  <button class="filter"
-          onclick="setFilter('europe',this)">
-    🇪🇺 ئەوروپا
-  </button>
+<button class="filter"
+onclick="setFilter('europe',this)">
+🇪🇺 ئەوروپا
+</button>
 
-  <button class="filter"
-          onclick="setFilter('middle',this)">
-    🌙 ڕۆژهەڵاتی ناوەڕاست
-  </button>
+<button class="filter"
+onclick="setFilter('middle',this)">
+🌙 ڕۆژهەڵاتی ناوەڕاست
+</button>
 
-  <button class="filter"
-          onclick="setFilter('asia',this)">
-    🌏 ئاسیا
-  </button>
+<button class="filter"
+onclick="setFilter('asia',this)">
+🌏 ئاسیا
+</button>
 
-  <button class="filter"
-          onclick="setFilter('america',this)">
-    🇺🇸 ئەمەریکا
-  </button>
+<button class="filter"
+onclick="setFilter('america',this)">
+🇺🇸 ئەمەریکا
+</button>
 
-  <button class="filter"
-          onclick="setFilter('global',this)">
-    🌍 جیهانی
-  </button>
+<button class="filter"
+onclick="setFilter('global',this)">
+🌍 جیهانی
+</button>
 
 </div>
 
@@ -645,371 +554,354 @@ body{
 
 <script>
 
-const WHATSAPP = "9647506021212";
+const WHATSAPP="9647506021212";
 
-let currentFilter = "all";
+let currentFilter="all";
 
 
-const countries = [
+const countries=[
 
-/* TURKEY */
 {
- name:"Turkey",
- sub:"گەشت بۆ تورکیا",
- flag:"🇹🇷",
- region:"ئەوروپا",
- class:"turkey",
- landmark:"🕌",
- plans:[
-  ["10 GB","30 ڕۆژ","IQD 8,500"],
-  ["20 GB","30 ڕۆژ","IQD 11,500"],
-  ["10 GB","15 ڕۆژ","IQD 8,500"],
-  ["20 GB","15 ڕۆژ","IQD 10,500"],
-  ["50 GB","30 ڕۆژ","IQD 23,000"],
-  ["Unlimited","3 ڕۆژ","IQD 8,000"],
-  ["Unlimited","5 ڕۆژ","IQD 10,000"],
-  ["Unlimited","7 ڕۆژ","IQD 11,500"],
-  ["Unlimited","15 ڕۆژ","IQD 23,000"],
-  ["Unlimited","30 ڕۆژ","IQD 28,000"],
-  ["Unlimited","10 ڕۆژ","IQD 18,000"]
- ]
+name:"Turkey",
+sub:"گەشت بۆ تورکیا",
+flag:"🇹🇷",
+region:"ئەوروپا",
+class:"turkey",
+landmark:"🕌",
+plans:[
+["10 GB","30 ڕۆژ","IQD 8,500"],
+["20 GB","30 ڕۆژ","IQD 11,500"],
+["10 GB","15 ڕۆژ","IQD 8,500"],
+["20 GB","15 ڕۆژ","IQD 10,500"],
+["50 GB","30 ڕۆژ","IQD 23,000"],
+["Unlimited","3 ڕۆژ","IQD 8,000"],
+["Unlimited","5 ڕۆژ","IQD 10,000"],
+["Unlimited","7 ڕۆژ","IQD 11,500"],
+["Unlimited","15 ڕۆژ","IQD 23,000"],
+["Unlimited","30 ڕۆژ","IQD 28,000"],
+["Unlimited","10 ڕۆژ","IQD 18,000"]
+]
 },
 
-/* GERMANY */
 {
- name:"Germany",
- sub:"گەشت بۆ ئەڵمانیا",
- flag:"🇩🇪",
- region:"ئەوروپا",
- class:"europe",
- landmark:"🏰",
- plans:[
-  ["1 GB","7 ڕۆژ","IQD 6,500"],
-  ["2 GB","15 ڕۆژ","IQD 7,000"],
-  ["3 GB","30 ڕۆژ","IQD 8,000"],
-  ["5 GB","30 ڕۆژ","IQD 9,000"],
-  ["10 GB","30 ڕۆژ","IQD 12,000"],
-  ["20 GB","30 ڕۆژ","IQD 19,000"],
-  ["Unlimited","3 ڕۆژ","IQD 11,500"],
-  ["Unlimited","5 ڕۆژ","IQD 14,000"],
-  ["Unlimited","7 ڕۆژ","IQD 16,000"],
-  ["Unlimited","10 ڕۆژ","IQD 22,000"],
-  ["Unlimited","15 ڕۆژ","IQD 30,000"],
-  ["Unlimited","30 ڕۆژ","IQD 44,000"]
- ]
+name:"Germany",
+sub:"گەشت بۆ ئەڵمانیا",
+flag:"🇩🇪",
+region:"ئەوروپا",
+class:"europe",
+landmark:"🏰",
+plans:[
+["1 GB","7 ڕۆژ","IQD 6,500"],
+["2 GB","15 ڕۆژ","IQD 7,000"],
+["3 GB","30 ڕۆژ","IQD 8,000"],
+["5 GB","30 ڕۆژ","IQD 9,000"],
+["10 GB","30 ڕۆژ","IQD 12,000"],
+["20 GB","30 ڕۆژ","IQD 19,000"],
+["Unlimited","3 ڕۆژ","IQD 11,500"],
+["Unlimited","5 ڕۆژ","IQD 14,000"],
+["Unlimited","7 ڕۆژ","IQD 16,000"],
+["Unlimited","10 ڕۆژ","IQD 22,000"],
+["Unlimited","15 ڕۆژ","IQD 30,000"],
+["Unlimited","30 ڕۆژ","IQD 44,000"]
+]
 },
 
-/* USA */
 {
- name:"United States",
- sub:"گەشت بۆ ئەمەریکا",
- flag:"🇺🇸",
- region:"ئەمەریکا",
- class:"america",
- landmark:"🗽",
- plans:[
-  ["10 GB","30 ڕۆژ","IQD 20,000"],
-  ["20 GB","30 ڕۆژ","IQD 25,000"],
-  ["3 GB","30 ڕۆژ","IQD 10,000"],
-  ["Unlimited","3 ڕۆژ","IQD 15,000"],
-  ["Unlimited","5 ڕۆژ","IQD 20,000"],
-  ["Unlimited","7 ڕۆژ","IQD 25,000"],
-  ["Unlimited","10 ڕۆژ","IQD 30,000"],
-  ["Unlimited","15 ڕۆژ","IQD 50,000"],
-  ["Unlimited","30 ڕۆژ","IQD 80,000"]
- ]
+name:"United States",
+sub:"گەشت بۆ ئەمەریکا",
+flag:"🇺🇸",
+region:"ئەمەریکا",
+class:"america",
+landmark:"🗽",
+plans:[
+["10 GB","30 ڕۆژ","IQD 20,000"],
+["20 GB","30 ڕۆژ","IQD 25,000"],
+["3 GB","30 ڕۆژ","IQD 10,000"],
+["Unlimited","3 ڕۆژ","IQD 15,000"],
+["Unlimited","5 ڕۆژ","IQD 20,000"],
+["Unlimited","7 ڕۆژ","IQD 25,000"],
+["Unlimited","10 ڕۆژ","IQD 30,000"],
+["Unlimited","15 ڕۆژ","IQD 50,000"],
+["Unlimited","30 ڕۆژ","IQD 80,000"]
+]
 },
 
-/* EUROPE UK */
 {
- name:"Europe + UK",
- sub:"گەشت بە ئەوروپا و بەریتانیا",
- flag:"🇪🇺",
- region:"ئەوروپا",
- class:"europe",
- landmark:"🗼",
- plans:[
-  ["5 GB","30 ڕۆژ","IQD 14,000"],
-  ["10 GB","30 ڕۆژ","IQD 16,000"],
-  ["20 GB","30 ڕۆژ","IQD 18,500"],
-  ["Unlimited","3 ڕۆژ","IQD 15,000"],
-  ["Unlimited","5 ڕۆژ","IQD 16,500"],
-  ["Unlimited","7 ڕۆژ","IQD 18,500"],
-  ["Unlimited","10 ڕۆژ","IQD 25,000"],
-  ["Unlimited","15 ڕۆژ","IQD 30,000"],
-  ["Unlimited","30 ڕۆژ","IQD 40,000"]
- ]
+name:"Europe + UK",
+sub:"گەشت بە ئەوروپا و بەریتانیا",
+flag:"🇪🇺",
+region:"ئەوروپا",
+class:"europe",
+landmark:"🗼",
+plans:[
+["5 GB","30 ڕۆژ","IQD 14,000"],
+["10 GB","30 ڕۆژ","IQD 16,000"],
+["20 GB","30 ڕۆژ","IQD 18,500"],
+["Unlimited","3 ڕۆژ","IQD 15,000"],
+["Unlimited","5 ڕۆژ","IQD 16,500"],
+["Unlimited","7 ڕۆژ","IQD 18,500"],
+["Unlimited","10 ڕۆژ","IQD 25,000"],
+["Unlimited","15 ڕۆژ","IQD 30,000"],
+["Unlimited","30 ڕۆژ","IQD 40,000"]
+]
 },
 
-/* GLOBAL */
 {
- name:"Global",
- sub:"گەشت بە هەموو جیهان",
- flag:"🌍",
- region:"جیهانی",
- class:"global",
- landmark:"🌐",
- plans:[
-  ["3 GB","30 ڕۆژ","IQD 20,000"],
-  ["5 GB","30 ڕۆژ","IQD 25,000"],
-  ["10 GB","30 ڕۆژ","IQD 35,000"],
-  ["20 GB","30 ڕۆژ","IQD 55,000"],
-  ["10 GB","180 ڕۆژ","IQD 85,000"],
-  ["20 GB","365 ڕۆژ","IQD 100,000"],
-  ["5 GB","60 ڕۆژ","IQD 25,000"],
-  ["1 GB","5 ڕۆژ","IQD 9,000"],
-  ["200 MB","30 ڕۆژ","IQD 7,500"],
-  ["1 GB","7 ڕۆژ","IQD 10,000"],
-  ["2 GB","15 ڕۆژ","IQD 13,500"],
-  ["300 MB","3 ڕۆژ","IQD 7,000"],
-  ["60 GB","125 ڕۆژ","IQD 255,000"]
- ]
+name:"Global",
+sub:"گەشت بە هەموو جیهان",
+flag:"🌍",
+region:"جیهانی",
+class:"global",
+landmark:"🌐",
+plans:[
+["3 GB","30 ڕۆژ","IQD 20,000"],
+["5 GB","30 ڕۆژ","IQD 25,000"],
+["10 GB","30 ڕۆژ","IQD 35,000"],
+["20 GB","30 ڕۆژ","IQD 55,000"],
+["10 GB","180 ڕۆژ","IQD 85,000"],
+["20 GB","365 ڕۆژ","IQD 100,000"],
+["5 GB","60 ڕۆژ","IQD 25,000"],
+["1 GB","5 ڕۆژ","IQD 9,000"],
+["200 MB","30 ڕۆژ","IQD 7,500"],
+["1 GB","7 ڕۆژ","IQD 10,000"],
+["2 GB","15 ڕۆژ","IQD 13,500"],
+["300 MB","3 ڕۆژ","IQD 7,000"],
+["60 GB","125 ڕۆژ","IQD 255,000"]
+]
 },
 
-/* UAE */
 {
- name:"UAE",
- sub:"گەشت بۆ ئیمارات",
- flag:"🇦🇪",
- region:"ڕۆژهەڵاتی ناوەڕاست",
- class:"middle",
- landmark:"🏙️",
- plans:[
-  ["1 GB","7 ڕۆژ","IQD 9,500"],
-  ["2 GB","15 ڕۆژ","IQD 11,500"],
-  ["3 GB","30 ڕۆژ","IQD 12,500"],
-  ["5 GB","30 ڕۆژ","IQD 20,000"],
-  ["10 GB","30 ڕۆژ","IQD 25,000"],
-  ["Unlimited","10 ڕۆژ","IQD 45,000"],
-  ["Unlimited","15 ڕۆژ","IQD 80,000"],
-  ["Unlimited","30 ڕۆژ","IQD 100,000"]
- ]
+name:"UAE",
+sub:"گەشت بۆ ئیمارات",
+flag:"🇦🇪",
+region:"ڕۆژهەڵاتی ناوەڕاست",
+class:"middle",
+landmark:"🏙️",
+plans:[
+["1 GB","7 ڕۆژ","IQD 9,500"],
+["2 GB","15 ڕۆژ","IQD 11,500"],
+["3 GB","30 ڕۆژ","IQD 12,500"],
+["5 GB","30 ڕۆژ","IQD 20,000"],
+["10 GB","30 ڕۆژ","IQD 25,000"],
+["Unlimited","10 ڕۆژ","IQD 45,000"],
+["Unlimited","15 ڕۆژ","IQD 80,000"],
+["Unlimited","30 ڕۆژ","IQD 100,000"]
+]
 },
 
-/* AZERBAIJAN */
 {
- name:"Azerbaijan",
- sub:"گەشت بۆ ئەزەربایجان",
- flag:"🇦🇿",
- region:"ئاسیا",
- class:"asia",
- landmark:"🏛️",
- plans:[
-  ["5 GB","30 ڕۆژ","IQD 15,000"],
-  ["10 GB","30 ڕۆژ","IQD 25,000"],
-  ["20 GB","30 ڕۆژ","IQD 30,000"],
-  ["Unlimited","3 ڕۆژ","IQD 20,000"],
-  ["Unlimited","5 ڕۆژ","IQD 30,000"],
-  ["Unlimited","7 ڕۆژ","IQD 35,000"],
-  ["Unlimited","10 ڕۆژ","IQD 45,000"],
-  ["Unlimited","15 ڕۆژ","IQD 75,000"],
-  ["Unlimited","30 ڕۆژ","IQD 100,000"]
- ]
+name:"Azerbaijan",
+sub:"گەشت بۆ ئەزەربایجان",
+flag:"🇦🇿",
+region:"ئاسیا",
+class:"asia",
+landmark:"🏛️",
+plans:[
+["5 GB","30 ڕۆژ","IQD 15,000"],
+["10 GB","30 ڕۆژ","IQD 25,000"],
+["20 GB","30 ڕۆژ","IQD 30,000"],
+["Unlimited","3 ڕۆژ","IQD 20,000"],
+["Unlimited","5 ڕۆژ","IQD 30,000"],
+["Unlimited","7 ڕۆژ","IQD 35,000"],
+["Unlimited","10 ڕۆژ","IQD 45,000"],
+["Unlimited","15 ڕۆژ","IQD 75,000"],
+["Unlimited","30 ڕۆژ","IQD 100,000"]
+]
 },
 
-/* CHINA */
 {
- name:"China",
- sub:"گەشت بۆ چین",
- flag:"🇨🇳",
- region:"ئاسیا",
- class:"asia",
- landmark:"🏯",
- plans:[
-  ["3 GB","30 ڕۆژ","IQD 10,000"],
-  ["5 GB","30 ڕۆژ","IQD 11,500"],
-  ["10 GB","30 ڕۆژ","IQD 20,000"],
-  ["20 GB","30 ڕۆژ","IQD 25,000"],
-  ["Unlimited","3 ڕۆژ","IQD 13,500"],
-  ["Unlimited","5 ڕۆژ","IQD 20,000"],
-  ["Unlimited","7 ڕۆژ","IQD 25,000"],
-  ["Unlimited","10 ڕۆژ","IQD 30,000"],
-  ["Unlimited","15 ڕۆژ","IQD 40,000"],
-  ["Unlimited","30 ڕۆژ","IQD 55,000"]
- ]
+name:"China",
+sub:"گەشت بۆ چین",
+flag:"🇨🇳",
+region:"ئاسیا",
+class:"asia",
+landmark:"🏯",
+plans:[
+["3 GB","30 ڕۆژ","IQD 10,000"],
+["5 GB","30 ڕۆژ","IQD 11,500"],
+["10 GB","30 ڕۆژ","IQD 20,000"],
+["20 GB","30 ڕۆژ","IQD 25,000"],
+["Unlimited","3 ڕۆژ","IQD 13,500"],
+["Unlimited","5 ڕۆژ","IQD 20,000"],
+["Unlimited","7 ڕۆژ","IQD 25,000"],
+["Unlimited","10 ڕۆژ","IQD 30,000"],
+["Unlimited","15 ڕۆژ","IQD 40,000"],
+["Unlimited","30 ڕۆژ","IQD 55,000"]
+]
 },
 
-/* OMAN */
 {
- name:"Oman",
- sub:"گەشت بۆ عومان",
- flag:"🇴🇲",
- region:"ڕۆژهەڵاتی ناوەڕاست",
- class:"middle",
- landmark:"🏰",
- plans:[
-  ["3 GB","30 ڕۆژ","IQD 10,000"],
-  ["5 GB","30 ڕۆژ","IQD 12,500"],
-  ["10 GB","30 ڕۆژ","IQD 25,000"],
-  ["20 GB","30 ڕۆژ","IQD 45,000"],
-  ["Unlimited","3 ڕۆژ","IQD 20,000"],
-  ["Unlimited","5 ڕۆژ","IQD 20,000"],
-  ["Unlimited","7 ڕۆژ","IQD 25,000"],
-  ["Unlimited","15 ڕۆژ","IQD 50,000"],
-  ["Unlimited","30 ڕۆژ","IQD 70,000"],
-  ["Unlimited","10 ڕۆژ","IQD 30,000"]
- ]
+name:"Oman",
+sub:"گەشت بۆ عومان",
+flag:"🇴🇲",
+region:"ڕۆژهەڵاتی ناوەڕاست",
+class:"middle",
+landmark:"🏰",
+plans:[
+["3 GB","30 ڕۆژ","IQD 10,000"],
+["5 GB","30 ڕۆژ","IQD 12,500"],
+["10 GB","30 ڕۆژ","IQD 25,000"],
+["20 GB","30 ڕۆژ","IQD 45,000"],
+["Unlimited","3 ڕۆژ","IQD 20,000"],
+["Unlimited","5 ڕۆژ","IQD 20,000"],
+["Unlimited","7 ڕۆژ","IQD 25,000"],
+["Unlimited","15 ڕۆژ","IQD 50,000"],
+["Unlimited","30 ڕۆژ","IQD 70,000"],
+["Unlimited","10 ڕۆژ","IQD 30,000"]
+]
 },
 
-/* SWITZERLAND */
 {
- name:"Switzerland",
- sub:"گەشت بۆ سوئیس",
- flag:"🇨🇭",
- region:"ئەوروپا",
- class:"europe",
- landmark:"🏔️",
- plans:[
-  ["5 GB","30 ڕۆژ","IQD 16,000"],
-  ["10 GB","30 ڕۆژ","IQD 23,000"],
-  ["20 GB","30 ڕۆژ","IQD 31,000"],
-  ["Unlimited","3 ڕۆژ","IQD 15,000"],
-  ["Unlimited","5 ڕۆژ","IQD 18,000"],
-  ["Unlimited","7 ڕۆژ","IQD 23,000"],
-  ["Unlimited","10 ڕۆژ","IQD 28,000"],
-  ["Unlimited","15 ڕۆژ","IQD 38,000"],
-  ["Unlimited","30 ڕۆژ","IQD 53,000"]
- ]
+name:"Switzerland",
+sub:"گەشت بۆ سوئیس",
+flag:"🇨🇭",
+region:"ئەوروپا",
+class:"europe",
+landmark:"🏔️",
+plans:[
+["5 GB","30 ڕۆژ","IQD 16,000"],
+["10 GB","30 ڕۆژ","IQD 23,000"],
+["20 GB","30 ڕۆژ","IQD 31,000"],
+["Unlimited","3 ڕۆژ","IQD 15,000"],
+["Unlimited","5 ڕۆژ","IQD 18,000"],
+["Unlimited","7 ڕۆژ","IQD 23,000"],
+["Unlimited","10 ڕۆژ","IQD 28,000"],
+["Unlimited","15 ڕۆژ","IQD 38,000"],
+["Unlimited","30 ڕۆژ","IQD 53,000"]
+]
 },
 
-/* ITALY */
 {
- name:"Italy",
- sub:"گەشت بۆ ئیتالیا",
- flag:"🇮🇹",
- region:"ئەوروپا",
- class:"europe",
- landmark:"🏛️",
- plans:[
-  ["5 GB","30 ڕۆژ","IQD 12,000"],
-  ["10 GB","30 ڕۆژ","IQD 16,000"],
-  ["20 GB","30 ڕۆژ","IQD 23,000"],
-  ["Unlimited","3 ڕۆژ","IQD 13,000"],
-  ["Unlimited","5 ڕۆژ","IQD 15,000"],
-  ["Unlimited","7 ڕۆژ","IQD 16,500"],
-  ["Unlimited","10 ڕۆژ","IQD 23,000"],
-  ["Unlimited","15 ڕۆژ","IQD 28,000"],
-  ["Unlimited","30 ڕۆژ","IQD 38,000"]
- ]
+name:"Italy",
+sub:"گەشت بۆ ئیتالیا",
+flag:"🇮🇹",
+region:"ئەوروپا",
+class:"europe",
+landmark:"🏛️",
+plans:[
+["5 GB","30 ڕۆژ","IQD 12,000"],
+["10 GB","30 ڕۆژ","IQD 16,000"],
+["20 GB","30 ڕۆژ","IQD 23,000"],
+["Unlimited","3 ڕۆژ","IQD 13,000"],
+["Unlimited","5 ڕۆژ","IQD 15,000"],
+["Unlimited","7 ڕۆژ","IQD 16,500"],
+["Unlimited","10 ڕۆژ","IQD 23,000"],
+["Unlimited","15 ڕۆژ","IQD 28,000"],
+["Unlimited","30 ڕۆژ","IQD 38,000"]
+]
 },
 
-/* DENMARK */
 {
- name:"Denmark",
- sub:"گەشت بۆ دانمارک",
- flag:"🇩🇰",
- region:"ئەوروپا",
- class:"europe",
- landmark:"🏰",
- plans:[
-  ["5 GB","30 ڕۆژ","IQD 11,500"],
-  ["10 GB","30 ڕۆژ","IQD 13,500"],
-  ["20 GB","30 ڕۆژ","IQD 15,000"],
-  ["Unlimited","3 ڕۆژ","IQD 12,000"],
-  ["Unlimited","5 ڕۆژ","IQD 14,000"],
-  ["Unlimited","7 ڕۆژ","IQD 15,500"],
-  ["Unlimited","10 ڕۆژ","IQD 22,000"],
-  ["Unlimited","15 ڕۆژ","IQD 27,000"],
-  ["Unlimited","30 ڕۆژ","IQD 37,000"]
- ]
+name:"Denmark",
+sub:"گەشت بۆ دانمارک",
+flag:"🇩🇰",
+region:"ئەوروپا",
+class:"europe",
+landmark:"🏰",
+plans:[
+["5 GB","30 ڕۆژ","IQD 11,500"],
+["10 GB","30 ڕۆژ","IQD 13,500"],
+["20 GB","30 ڕۆژ","IQD 15,000"],
+["Unlimited","3 ڕۆژ","IQD 12,000"],
+["Unlimited","5 ڕۆژ","IQD 14,000"],
+["Unlimited","7 ڕۆژ","IQD 15,500"],
+["Unlimited","10 ڕۆژ","IQD 22,000"],
+["Unlimited","15 ڕۆژ","IQD 27,000"],
+["Unlimited","30 ڕۆژ","IQD 37,000"]
+]
 },
 
-/* SINGAPORE */
 {
- name:"Singapore",
- sub:"گەشت بۆ سینگاپور",
- flag:"🇸🇬",
- region:"ئاسیا",
- class:"asia",
- landmark:"🌆",
- plans:[
-  ["2 GB","15 ڕۆژ","IQD 13,000"],
-  ["3 GB","30 ڕۆژ","IQD 13,500"],
-  ["5 GB","30 ڕۆژ","IQD 14,500"],
-  ["10 GB","30 ڕۆژ","IQD 15,500"],
-  ["20 GB","30 ڕۆژ","IQD 20,000"],
-  ["Unlimited","3 ڕۆژ","IQD 16,500"],
-  ["Unlimited","5 ڕۆژ","IQD 17,500"],
-  ["Unlimited","7 ڕۆژ","IQD 19,000"],
-  ["Unlimited","10 ڕۆژ","IQD 25,000"],
-  ["Unlimited","15 ڕۆژ","IQD 30,000"],
-  ["Unlimited","30 ڕۆژ","IQD 40,000"]
- ]
+name:"Singapore",
+sub:"گەشت بۆ سینگاپور",
+flag:"🇸🇬",
+region:"ئاسیا",
+class:"asia",
+landmark:"🌆",
+plans:[
+["2 GB","15 ڕۆژ","IQD 13,000"],
+["3 GB","30 ڕۆژ","IQD 13,500"],
+["5 GB","30 ڕۆژ","IQD 14,500"],
+["10 GB","30 ڕۆژ","IQD 15,500"],
+["20 GB","30 ڕۆژ","IQD 20,000"],
+["Unlimited","3 ڕۆژ","IQD 16,500"],
+["Unlimited","5 ڕۆژ","IQD 17,500"],
+["Unlimited","7 ڕۆژ","IQD 19,000"],
+["Unlimited","10 ڕۆژ","IQD 25,000"],
+["Unlimited","15 ڕۆژ","IQD 30,000"],
+["Unlimited","30 ڕۆژ","IQD 40,000"]
+]
 },
 
-/* THAILAND */
 {
- name:"Thailand",
- sub:"گەشت بۆ تایلەند",
- flag:"🇹🇭",
- region:"ئاسیا",
- class:"asia",
- landmark:"🛕",
- plans:[
-  ["5 GB","30 ڕۆژ","IQD 16,000"],
-  ["10 GB","30 ڕۆژ","IQD 23,000"],
-  ["20 GB","30 ڕۆژ","IQD 31,000"],
-  ["Unlimited","3 ڕۆژ","IQD 15,000"],
-  ["Unlimited","5 ڕۆژ","IQD 18,000"],
-  ["Unlimited","7 ڕۆژ","IQD 23,000"],
-  ["Unlimited","10 ڕۆژ","IQD 28,000"],
-  ["Unlimited","15 ڕۆژ","IQD 38,000"],
-  ["Unlimited","30 ڕۆژ","IQD 53,000"]
- ]
+name:"Thailand",
+sub:"گەشت بۆ تایلەند",
+flag:"🇹🇭",
+region:"ئاسیا",
+class:"asia",
+landmark:"🛕",
+plans:[
+["5 GB","30 ڕۆژ","IQD 16,000"],
+["10 GB","30 ڕۆژ","IQD 23,000"],
+["20 GB","30 ڕۆژ","IQD 31,000"],
+["Unlimited","3 ڕۆژ","IQD 15,000"],
+["Unlimited","5 ڕۆژ","IQD 18,000"],
+["Unlimited","7 ڕۆژ","IQD 23,000"],
+["Unlimited","10 ڕۆژ","IQD 28,000"],
+["Unlimited","15 ڕۆژ","IQD 38,000"],
+["Unlimited","30 ڕۆژ","IQD 53,000"]
+]
 },
 
-/* SAUDI */
 {
- name:"Saudi Arabia",
- sub:"گەشت بۆ سعودیە",
- flag:"🇸🇦",
- region:"ڕۆژهەڵاتی ناوەڕاست",
- class:"middle",
- landmark:"🕋",
- plans:[
-  ["20 GB","30 ڕۆژ","IQD 40,000"],
-  ["25 GB","45 ڕۆژ","IQD 60,000"],
-  ["50 GB","30 ڕۆژ","IQD 90,000"],
-  ["Unlimited","3 ڕۆژ","IQD 15,000"],
-  ["Unlimited","5 ڕۆژ","IQD 20,000"],
-  ["Unlimited","7 ڕۆژ","IQD 25,000"],
-  ["Unlimited","10 ڕۆژ","IQD 35,000"],
-  ["Unlimited","15 ڕۆژ","IQD 60,000"]
- ]
+name:"Saudi Arabia",
+sub:"گەشت بۆ سعودیە",
+flag:"🇸🇦",
+region:"ڕۆژهەڵاتی ناوەڕاست",
+class:"middle",
+landmark:"🕋",
+plans:[
+["20 GB","30 ڕۆژ","IQD 40,000"],
+["25 GB","45 ڕۆژ","IQD 60,000"],
+["50 GB","30 ڕۆژ","IQD 90,000"],
+["Unlimited","3 ڕۆژ","IQD 15,000"],
+["Unlimited","5 ڕۆژ","IQD 20,000"],
+["Unlimited","7 ڕۆژ","IQD 25,000"],
+["Unlimited","10 ڕۆژ","IQD 35,000"],
+["Unlimited","15 ڕۆژ","IQD 60,000"]
+]
 },
 
-/* LEBANON */
 {
- name:"Lebanon",
- sub:"گەشت بۆ لوبنان",
- flag:"🇱🇧",
- region:"ڕۆژهەڵاتی ناوەڕاست",
- class:"levant",
- landmark:"🏛️",
- plans:[
-  ["1 GB","5 ڕۆژ","$7.99"],
-  ["1 GB","7 ڕۆژ","$8.99"],
-  ["2 GB","15 ڕۆژ","$11.99"],
-  ["3 GB","30 ڕۆژ","$13.99"],
-  ["5 GB","30 ڕۆژ","$18.99"],
-  ["5 GB","60 ڕۆژ","$18.99"],
-  ["10 GB","30 ڕۆژ","$12.99"],
-  ["10 GB","180 ڕۆژ","$73.99"],
-  ["20 GB","30 ڕۆژ","$44.99"],
-  ["20 GB","365 ڕۆژ","$85.99"]
- ]
+name:"Lebanon",
+sub:"گەشت بۆ لوبنان",
+flag:"🇱🇧",
+region:"ڕۆژهەڵاتی ناوەڕاست",
+class:"levant",
+landmark:"🏛️",
+plans:[
+["1 GB","5 ڕۆژ","$7.99"],
+["1 GB","7 ڕۆژ","$8.99"],
+["2 GB","15 ڕۆژ","$11.99"],
+["3 GB","30 ڕۆژ","$13.99"],
+["5 GB","30 ڕۆژ","$18.99"],
+["5 GB","60 ڕۆژ","$18.99"],
+["10 GB","30 ڕۆژ","$12.99"],
+["10 GB","180 ڕۆژ","$73.99"],
+["20 GB","30 ڕۆژ","$44.99"],
+["20 GB","365 ڕۆژ","$85.99"]
+]
 }
 
 ];
 
 
-/* BUY */
 function buy(ci,pi){
 
-  const c = countries[ci];
-  const p = c.plans[pi];
+const c=countries[ci];
+const p=c.plans[pi];
 
-  const message =
+const message=
 `سڵاو 👋
 
 دەمەوێت ئەم پلانەی eSIM بکڕم:
@@ -1021,213 +913,204 @@ function buy(ci,pi){
 
 تکایە یارمەتیم بدەن بۆ کڕین.`;
 
-  window.location.href =
-    "https://wa.me/" +
-    WHATSAPP +
-    "?text=" +
-    encodeURIComponent(message);
+window.location.href=
+"https://wa.me/"+
+WHATSAPP+
+"?text="+
+encodeURIComponent(message);
+
 }
 
 
-/* DISPLAY */
 function display(){
 
-  const search =
-    document.getElementById("search")
-    .value
-    .toLowerCase()
-    .trim();
+const search=
+document.getElementById("search")
+.value
+.toLowerCase()
+.trim();
 
-  const container =
-    document.getElementById("countries");
+const container=
+document.getElementById("countries");
 
-  container.innerHTML="";
+container.innerHTML="";
 
-  let found=false;
-
-  countries.forEach((c,ci)=>{
-
-    if(
-      currentFilter !== "all" &&
-      c.class !== currentFilter
-    ){
-      return;
-    }
-
-    const searchable =
-      (
-        c.name +
-        " " +
-        c.sub +
-        " " +
-        c.region +
-        " " +
-        c.plans
-          .map(p=>p.join(" "))
-          .join(" ")
-      ).toLowerCase();
-
-    if(
-      search &&
-      !searchable.includes(search)
-    ){
-      return;
-    }
-
-    found=true;
-
-    let plansHTML="";
-
-    c.plans.forEach((p,pi)=>{
-
-      const icon =
-        p[0].toLowerCase()
-        .includes("unlimited")
-        ? "∞"
-        : "▮▮▮";
-
-      plansHTML += `
-
-        <div class="plan">
-
-          <div class="plan-icon">
-            ${icon}
-          </div>
-
-          <div class="plan-info">
-
-            <div class="plan-data">
-              ${p[0]}
-            </div>
-
-            <div class="plan-days">
-              ${p[1]}
-            </div>
-
-          </div>
-
-          <div class="plan-price">
-            ${p[2]}
-          </div>
-
-          <button
-            class="buy"
-            onclick="buy(${ci},${pi})">
-            🛒 کڕین
-          </button>
-
-        </div>
-
-      `;
-    });
+let found=false;
 
 
-    container.innerHTML += `
+countries.forEach((c,ci)=>{
 
-      <section class="country">
-
-        <div class="country-head ${c.class}">
-
-          <div class="country-plane">
-            ✈️
-          </div>
-
-          <div class="country-landmark">
-            ${c.landmark}
-          </div>
-
-          <div class="country-title">
-
-            <div class="country-left">
-
-              <div class="country-flag">
-                ${c.flag}
-              </div>
-
-              <div>
-
-                <div class="country-name">
-                  ${c.name}
-                </div>
-
-                <div class="country-sub">
-                  ✈️ ${c.sub}
-                </div>
-
-              </div>
-
-            </div>
+if(
+currentFilter!=="all" &&
+c.class!==currentFilter
+)return;
 
 
-            <div class="country-badges">
-
-              <div class="country-badge">
-                eSIM 📶
-              </div>
-
-              <div class="country-badge">
-                📍 ${c.region}
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
+const searchable=
+(
+c.name+" "+
+c.sub+" "+
+c.region+" "+
+c.plans.map(p=>p.join(" ")).join(" ")
+).toLowerCase();
 
 
-        <div class="plans">
-
-          ${plansHTML}
-
-        </div>
-
-      </section>
-
-    `;
-  });
+if(
+search &&
+!searchable.includes(search)
+)return;
 
 
-  if(!found){
+found=true;
 
-    container.innerHTML=`
+let plansHTML="";
 
-      <div class="empty">
-        🔎 هیچ پلانێک نەدۆزرایەوە
-      </div>
 
-    `;
-  }
+c.plans.forEach((p,pi)=>{
+
+const icon=
+p[0].toLowerCase().includes("unlimited")
+?"∞"
+:"▮▮▮";
+
+
+plansHTML+=`
+
+<div class="plan">
+
+<div class="plan-icon">
+${icon}
+</div>
+
+<div class="plan-info">
+
+<div class="plan-data">
+${p[0]}
+</div>
+
+<div class="plan-days">
+${p[1]}
+</div>
+
+</div>
+
+<div class="plan-price">
+${p[2]}
+</div>
+
+<button
+class="buy"
+onclick="buy(${ci},${pi})">
+🛒 کڕین
+</button>
+
+</div>
+
+`;
+
+});
+
+
+container.innerHTML+=`
+
+<section class="country">
+
+<div class="country-head ${c.class}">
+
+<div class="country-plane">
+✈️
+</div>
+
+<div class="country-landmark">
+${c.landmark}
+</div>
+
+<div class="country-title">
+
+<div class="country-left">
+
+<div class="country-flag">
+${c.flag}
+</div>
+
+<div>
+
+<div class="country-name">
+${c.name}
+</div>
+
+<div class="country-sub">
+✈️ ${c.sub}
+</div>
+
+</div>
+
+</div>
+
+
+<div class="country-badges">
+
+<div class="country-badge">
+eSIM 📶
+</div>
+
+<div class="country-badge">
+📍 ${c.region}
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="plans">
+
+${plansHTML}
+
+</div>
+
+</section>
+
+`;
+
+});
+
+
+if(!found){
+
+container.innerHTML=`
+<div class="empty">
+🔎 هیچ پلانێک نەدۆزرایەوە
+</div>
+`;
+
+}
+
 }
 
 
-/* FILTER */
 function setFilter(filter,button){
 
-  currentFilter=filter;
+currentFilter=filter;
 
-  document
-    .querySelectorAll(".filter")
-    .forEach(
-      x=>x.classList.remove("active")
-    );
+document
+.querySelectorAll(".filter")
+.forEach(x=>x.classList.remove("active"));
 
-  button.classList.add("active");
+button.classList.add("active");
 
-  display();
+display();
+
 }
 
 
-/* SEARCH */
 document
-  .getElementById("search")
-  .addEventListener(
-    "input",
-    display
-  );
+.getElementById("search")
+.addEventListener("input",display);
 
 
-/* START */
 display();
 
 </script>
