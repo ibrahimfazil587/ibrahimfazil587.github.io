@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="ku" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>eSIM Online | پلانەکانی ئینتەرنێت</title>
+<title>eSIM Online</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -19,9 +21,10 @@ body{
   color:#102a43;
 }
 
-/* TOP */
+/* TOP BAR */
+
 .topbar{
-  background:#fff;
+  background:white;
   padding:10px 14px;
   display:flex;
   justify-content:space-between;
@@ -41,7 +44,7 @@ body{
 .whatsapp-top{
   text-decoration:none;
   background:#20c967;
-  color:#fff;
+  color:white;
   padding:8px 14px;
   border-radius:22px;
   font-weight:bold;
@@ -49,9 +52,10 @@ body{
 }
 
 /* HEADER */
+
 header{
   background:linear-gradient(135deg,#075bbb,#138ce8);
-  color:#fff;
+  color:white;
   padding:28px 15px 30px;
   text-align:center;
 }
@@ -93,6 +97,7 @@ header p{
 }
 
 /* FILTER */
+
 .filters{
   padding:16px 10px;
   display:flex;
@@ -103,7 +108,7 @@ header p{
 
 .filters button{
   border:0;
-  background:#fff;
+  background:white;
   color:#075bbb;
   padding:9px 15px;
   border-radius:22px;
@@ -117,7 +122,8 @@ header p{
   color:white;
 }
 
-/* CONTENT */
+/* MAIN */
+
 .container{
   max-width:1000px;
   margin:auto;
@@ -125,8 +131,9 @@ header p{
 }
 
 /* COUNTRY */
+
 .country{
-  background:#fff;
+  background:white;
   border-radius:25px;
   overflow:hidden;
   margin:24px 0;
@@ -135,7 +142,7 @@ header p{
 
 .country-head{
   background:linear-gradient(135deg,#075bbb,#168ee8);
-  color:#fff;
+  color:white;
   padding:23px 20px;
   text-align:center;
 }
@@ -156,6 +163,7 @@ header p{
 }
 
 /* PLANS */
+
 .plans{
   padding:15px;
 }
@@ -226,27 +234,27 @@ header p{
   border-radius:30px;
   cursor:pointer;
   white-space:nowrap;
-  transition:.2s;
 }
 
 .buy:hover{
   background:#18ad57;
-  transform:scale(1.03);
 }
 
 /* EMPTY */
+
 .empty{
   text-align:center;
-  background:#fff;
+  background:white;
   border-radius:20px;
   padding:45px 20px;
   color:#69798c;
 }
 
 /* FOOTER */
+
 footer{
   background:#071f49;
-  color:#fff;
+  color:white;
   text-align:center;
   padding:30px 15px;
 }
@@ -267,6 +275,7 @@ footer{
 }
 
 /* MOBILE */
+
 @media(max-width:700px){
 
   header h1{
@@ -311,289 +320,512 @@ footer{
   .country-name{
     font-size:24px;
   }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <!-- TOP -->
+
 <div class="topbar">
 
-  <div class="logo">🌐 eSIM Online</div>
+<div class="logo">
+🌐 eSIM Online
+</div>
 
-  <a
-    class="whatsapp-top"
-    href="https://wa.me/9647506021212"
-    aria-label="Chat on WhatsApp">
-    🟢 WhatsApp
-  </a>
+<a
+class="whatsapp-top"
+href="https://wa.me/9647506021212">
+🟢 WhatsApp
+</a>
 
 </div>
 
 
+<!-- HEADER -->
+
 <header>
 
-  <h1>🌍 پلانەکانی eSIM</h1>
+<h1>🌍 پلانەکانی eSIM</h1>
 
-  <p>
-    ئینتەرنێتی خێرا بۆ گەشتەکانت
-  </p>
+<p>
+ئینتەرنێتی خێرا بۆ گەشتەکانت
+</p>
 
-  <div class="search">
+<div class="search">
 
-    <input
-      id="search"
-      type="text"
-      placeholder="وڵات، GB، Unlimited، ڕۆژ..."
-    >
+<input
+id="search"
+type="text"
+placeholder="وڵات، GB، Unlimited، ڕۆژ..."
+>
 
-    <button onclick="searchPlans()">
-      🔍 گەڕان
-    </button>
+<button onclick="searchPlans()">
+🔍 گەڕان
+</button>
 
-  </div>
+</div>
 
 </header>
 
 
-<div class="filters" id="filters"></div>
+<!-- FILTERS -->
+
+<div
+class="filters"
+id="filters">
+</div>
 
 
-<main class="container" id="countries"></main>
+<!-- COUNTRIES -->
 
+<main
+class="container"
+id="countries">
+</main>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-  <h2>🌐 eSIM Online</h2>
+<h2>🌐 eSIM Online</h2>
 
-  <p style="margin-top:8px;">
-    پلانەکانی ئینتەرنێت بۆ هەموو جیهان 🌍
-  </p>
+<p style="margin-top:8px;">
+پلانەکانی ئینتەرنێت بۆ هەموو جیهان 🌍
+</p>
 
-  <div class="payments">
-    <span>FIB</span>
-    <span>SuperQi</span>
-    <span>VISA</span>
-    <span>WhatsApp</span>
-  </div>
+<div class="payments">
 
-  <p>© 2026 eSIM Online</p>
+<span>FIB</span>
+<span>SuperQi</span>
+<span>VISA</span>
+<span>WhatsApp</span>
+
+</div>
+
+<p>
+© 2026 eSIM Online
+</p>
 
 </footer>
 
 
 <script>
 
-/* ===================================
-   WHATSAPP NUMBER
-=================================== */
+/* =================================
+WHATSAPP
+================================= */
 
 const WHATSAPP_NUMBER = "9647506021212";
 
 
-/* ===================================
-   ALL PLANS
-=================================== */
+/* =================================
+ALL COUNTRIES
+================================= */
 
 const countries = [
 
 /* 🇹🇷 TURKEY — سەرەتا */
+
 {
- name:"🇹🇷 Turkey",
- region:"ئوروپا",
- plans:[
-  ["10 GB","30 days","IQD 8,500"],
-  ["20 GB","30 days","IQD 11,500"],
-  ["10 GB","15 days","IQD 8,500"],
-  ["20 GB","15 days","IQD 10,500"],
-  ["50 GB","30 days","IQD 23,000"],
-  ["Unlimited","3 days","IQD 8,000"],
-  ["Unlimited","5 days","IQD 10,000"],
-  ["Unlimited","7 days","IQD 11,500"],
-  ["Unlimited","15 days","IQD 23,000"],
-  ["Unlimited","30 days","IQD 28,000"],
-  ["Unlimited","10 days","IQD 18,000"]
- ]
+name:"🇹🇷 Turkey",
+region:"ئوروپا",
+
+plans:[
+
+["10 GB","30 days","IQD 8,500"],
+["20 GB","30 days","IQD 11,500"],
+["10 GB","15 days","IQD 8,500"],
+["20 GB","15 days","IQD 10,500"],
+["50 GB","30 days","IQD 23,000"],
+
+["Unlimited","3 days","IQD 8,000"],
+["Unlimited","5 days","IQD 10,000"],
+["Unlimited","7 days","IQD 11,500"],
+["Unlimited","15 days","IQD 23,000"],
+["Unlimited","30 days","IQD 28,000"],
+["Unlimited","10 days","IQD 18,000"]
+
+]
 },
+
 
 /* 🇩🇪 GERMANY */
+
 {
- name:"🇩🇪 Germany",
- region:"ئوروپا",
- plans:[
-  ["1 GB","7 days","IQD 6,500"],
-  ["2 GB","15 days","IQD 7,000"],
-  ["3 GB","30 days","IQD 8,000"],
-  ["5 GB","30 days","IQD 9,000"],
-  ["10 GB","30 days","IQD 12,000"],
-  ["20 GB","30 days","IQD 19,000"],
-  ["Unlimited","3 days","IQD 11,500"],
-  ["Unlimited","5 days","IQD 14,000"],
-  ["Unlimited","7 days","IQD 16,000"],
-  ["Unlimited","10 days","IQD 22,000"],
-  ["Unlimited","15 days","IQD 30,000"],
-  ["Unlimited","30 days","IQD 44,000"]
- ]
+name:"🇩🇪 Germany",
+region:"ئوروپا",
+
+plans:[
+
+["1 GB","7 days","IQD 6,500"],
+["2 GB","15 days","IQD 7,000"],
+["3 GB","30 days","IQD 8,000"],
+["5 GB","30 days","IQD 9,000"],
+["10 GB","30 days","IQD 12,000"],
+["20 GB","30 days","IQD 19,000"],
+
+["Unlimited","3 days","IQD 11,500"],
+["Unlimited","5 days","IQD 14,000"],
+["Unlimited","7 days","IQD 16,000"],
+["Unlimited","10 days","IQD 22,000"],
+["Unlimited","15 days","IQD 30,000"],
+["Unlimited","30 days","IQD 44,000"]
+
+]
 },
+
 
 /* 🇺🇸 USA */
+
 {
- name:"🇺🇸 United States",
- region:"ئەمەریکا",
- plans:[
-  ["10 GB","30 days","IQD 20,000"],
-  ["20 GB","30 days","IQD 25,000"],
-  ["3 GB","30 days","IQD 10,000"],
-  ["Unlimited","3 days","IQD 15,000"],
-  ["Unlimited","5 days","IQD 20,000"],
-  ["Unlimited","7 days","IQD 25,000"],
-  ["Unlimited","10 days","IQD 30,000"],
-  ["Unlimited","15 days","IQD 50,000"],
-  ["Unlimited","30 days","IQD 80,000"]
- ]
+name:"🇺🇸 United States",
+region:"ئەمەریکا",
+
+plans:[
+
+["10 GB","30 days","IQD 20,000"],
+["20 GB","30 days","IQD 25,000"],
+["3 GB","30 days","IQD 10,000"],
+
+["Unlimited","3 days","IQD 15,000"],
+["Unlimited","5 days","IQD 20,000"],
+["Unlimited","7 days","IQD 25,000"],
+["Unlimited","10 days","IQD 30,000"],
+["Unlimited","15 days","IQD 50,000"],
+["Unlimited","30 days","IQD 80,000"]
+
+]
 },
+
 
 /* 🇪🇺 EUROPE + UK */
+
 {
- name:"🇪🇺 Europe + UK",
- region:"ئوروپا",
- plans:[
-  ["5 GB","7 days","IQD 25,000"],
-  ["10 GB","7 days","IQD 35,000"],
-  ["50 GB","7 days","IQD 90,000"],
-  ["5 GB","15 days","IQD 30,000"],
-  ["10 GB","15 days","IQD 40,000"],
-  ["50 GB","15 days","IQD 100,000"],
-  ["Unlimited","3 days","IQD 20,000"],
-  ["Unlimited","5 days","IQD 25,000"],
-  ["Unlimited","7 days","IQD 30,000"],
-  ["Unlimited","10 days","IQD 35,000"],
-  ["Unlimited","15 days","IQD 55,000"],
-  ["Unlimited","30 days","IQD 75,000"]
- ]
+name:"🇪🇺 Europe + UK",
+region:"ئوروپا",
+
+plans:[
+
+["5 GB","7 days","IQD 25,000"],
+["10 GB","7 days","IQD 35,000"],
+["50 GB","7 days","IQD 90,000"],
+
+["5 GB","15 days","IQD 30,000"],
+["10 GB","15 days","IQD 40,000"],
+["50 GB","15 days","IQD 100,000"],
+
+["Unlimited","3 days","IQD 20,000"],
+["Unlimited","5 days","IQD 25,000"],
+["Unlimited","7 days","IQD 30,000"],
+["Unlimited","10 days","IQD 35,000"],
+["Unlimited","15 days","IQD 55,000"],
+["Unlimited","30 days","IQD 75,000"]
+
+]
 },
+
 
 /* 🌍 GLOBAL */
+
 {
- name:"🌍 Global",
- region:"جیهانی",
- plans:[
-  ["3 GB","30 days","IQD 20,000"],
-  ["5 GB","30 days","IQD 25,000"],
-  ["10 GB","30 days","IQD 35,000"],
-  ["20 GB","30 days","IQD 55,000"],
-  ["10 GB","180 days","IQD 85,000"],
-  ["20 GB","365 days","IQD 100,000"],
-  ["5 GB","60 days","IQD 25,000"],
-  ["1 GB","5 days","IQD 9,000"],
-  ["200 MB","30 days","IQD 7,500"],
-  ["1 GB","7 days","IQD 10,000"],
-  ["2 GB","15 days","IQD 13,500"],
-  ["300 MB","3 days","IQD 7,000"],
-  ["60 GB","125 days","IQD 255,000"]
- ]
+name:"🌍 Global",
+region:"جیهانی",
+
+plans:[
+
+["3 GB","30 days","IQD 20,000"],
+["5 GB","30 days","IQD 25,000"],
+["10 GB","30 days","IQD 35,000"],
+["20 GB","30 days","IQD 55,000"],
+
+["10 GB","180 days","IQD 85,000"],
+["20 GB","365 days","IQD 100,000"],
+["5 GB","60 days","IQD 25,000"],
+
+["1 GB","5 days","IQD 9,000"],
+["200 MB","30 days","IQD 7,500"],
+["1 GB","7 days","IQD 10,000"],
+["2 GB","15 days","IQD 13,500"],
+["300 MB","3 days","IQD 7,000"],
+["60 GB","125 days","IQD 255,000"]
+
+]
 },
+
 
 /* 🇦🇪 UAE */
+
 {
- name:"🇦🇪 UAE",
- region:"ڕۆژهەڵاتی ناوەڕاست",
- plans:[
-  ["1 GB","7 days","IQD 9,500"],
-  ["2 GB","15 days","IQD 11,500"],
-  ["3 GB","30 days","IQD 12,500"],
-  ["5 GB","30 days","IQD 20,000"],
-  ["10 GB","30 days","IQD 25,000"],
-  ["Unlimited","10 days","IQD 45,000"],
-  ["Unlimited","15 days","IQD 80,000"],
-  ["Unlimited","30 days","IQD 100,000"]
- ]
+name:"🇦🇪 UAE",
+region:"ڕۆژهەڵاتی ناوەڕاست",
+
+plans:[
+
+["1 GB","7 days","IQD 9,500"],
+["2 GB","15 days","IQD 11,500"],
+["3 GB","30 days","IQD 12,500"],
+["5 GB","30 days","IQD 20,000"],
+["10 GB","30 days","IQD 25,000"],
+
+["Unlimited","10 days","IQD 45,000"],
+["Unlimited","15 days","IQD 80,000"],
+["Unlimited","30 days","IQD 100,000"]
+
+]
 },
+
 
 /* 🇦🇿 AZERBAIJAN */
+
 {
- name:"🇦🇿 Azerbaijan",
- region:"ئاسیا",
- plans:[
-  ["5 GB","30 days","IQD 15,000"],
-  ["10 GB","30 days","IQD 25,000"],
-  ["20 GB","30 days","IQD 30,000"],
-  ["Unlimited","3 days","IQD 20,000"],
-  ["Unlimited","5 days","IQD 30,000"],
-  ["Unlimited","7 days","IQD 35,000"],
-  ["Unlimited","10 days","IQD 45,000"],
-  ["Unlimited","15 days","IQD 75,000"],
-  ["Unlimited","30 days","IQD 100,000"]
- ]
+name:"🇦🇿 Azerbaijan",
+region:"ئاسیا",
+
+plans:[
+
+["5 GB","30 days","IQD 15,000"],
+["10 GB","30 days","IQD 25,000"],
+["20 GB","30 days","IQD 30,000"],
+
+["Unlimited","3 days","IQD 20,000"],
+["Unlimited","5 days","IQD 30,000"],
+["Unlimited","7 days","IQD 35,000"],
+["Unlimited","10 days","IQD 45,000"],
+["Unlimited","15 days","IQD 75,000"],
+["Unlimited","30 days","IQD 100,000"]
+
+]
 },
+
 
 /* 🇨🇳 CHINA */
+
 {
- name:"🇨🇳 China",
- region:"ئاسیا",
- plans:[
-  ["3 GB","30 days","IQD 10,000"],
-  ["5 GB","30 days","IQD 11,500"],
-  ["10 GB","30 days","IQD 20,000"],
-  ["20 GB","30 days","IQD 25,000"],
-  ["Unlimited","3 days","IQD 13,500"],
-  ["Unlimited","5 days","IQD 20,000"],
-  ["Unlimited","7 days","IQD 25,000"],
-  ["Unlimited","10 days","IQD 30,000"],
-  ["Unlimited","15 days","IQD 40,000"],
-  ["Unlimited","30 days","IQD 55,000"]
- ]
+name:"🇨🇳 China",
+region:"ئاسیا",
+
+plans:[
+
+["3 GB","30 days","IQD 10,000"],
+["5 GB","30 days","IQD 11,500"],
+["10 GB","30 days","IQD 20,000"],
+["20 GB","30 days","IQD 25,000"],
+
+["Unlimited","3 days","IQD 13,500"],
+["Unlimited","5 days","IQD 20,000"],
+["Unlimited","7 days","IQD 25,000"],
+["Unlimited","10 days","IQD 30,000"],
+["Unlimited","15 days","IQD 40,000"],
+["Unlimited","30 days","IQD 55,000"]
+
+]
 },
+
 
 /* 🇴🇲 OMAN */
+
 {
- name:"🇴🇲 Oman",
- region:"ڕۆژهەڵاتی ناوەڕاست",
- plans:[
-  ["3 GB","30 days","IQD 10,000"],
-  ["5 GB","30 days","IQD 12,500"],
-  ["10 GB","30 days","IQD 25,000"],
-  ["20 GB","30 days","IQD 45,000"],
-  ["Unlimited","3 days","IQD 20,000"],
-  ["Unlimited","5 days","IQD 20,000"],
-  ["Unlimited","7 days","IQD 25,000"],
-  ["Unlimited","15 days","IQD 50,000"],
-  ["Unlimited","30 days","IQD 70,000"],
-  ["Unlimited","10 days","IQD 30,000"]
- ]
+name:"🇴🇲 Oman",
+region:"ڕۆژهەڵاتی ناوەڕاست",
+
+plans:[
+
+["3 GB","30 days","IQD 10,000"],
+["5 GB","30 days","IQD 12,500"],
+["10 GB","30 days","IQD 25,000"],
+["20 GB","30 days","IQD 45,000"],
+
+["Unlimited","3 days","IQD 20,000"],
+["Unlimited","5 days","IQD 20,000"],
+["Unlimited","7 days","IQD 25,000"],
+["Unlimited","15 days","IQD 50,000"],
+["Unlimited","30 days","IQD 70,000"],
+["Unlimited","10 days","IQD 30,000"]
+
+]
 },
 
+
 /* 🇨🇭 SWITZERLAND */
+
 {
- name:"🇨🇭 Switzerland",
- region:"ئوروپا",
- plans:[
-  ["5 GB","30 days","IQD 16,000"],
-  ["10 GB","30 days","IQD 23,000"],
-  ["20 GB","30 days","IQD 31,000"],
-  ["Unlimited","3 days","IQD 15,000"],
-  ["Unlimited","5 days","IQD 18,000"],
-  ["Unlimited","7 days","IQD 23,000"],
-  ["Unlimited","10 days","IQD 28,000"],
-  ["Unlimited","15 days","IQD 38,000"],
-  ["Unlimited","30 days","IQD 53,000"]
- ]
+name:"🇨🇭 Switzerland",
+region:"ئوروپا",
+
+plans:[
+
+["5 GB","30 days","IQD 16,000"],
+["10 GB","30 days","IQD 23,000"],
+["20 GB","30 days","IQD 31,000"],
+
+["Unlimited","3 days","IQD 15,000"],
+["Unlimited","5 days","IQD 18,000"],
+["Unlimited","7 days","IQD 23,000"],
+["Unlimited","10 days","IQD 28,000"],
+["Unlimited","15 days","IQD 38,000"],
+["Unlimited","30 days","IQD 53,000"]
+
+]
+},
+
+
+/* 🇮🇹 ITALY */
+
+{
+name:"🇮🇹 Italy",
+region:"ئوروپا",
+
+plans:[
+
+["5 GB","30 days","IQD 12,000"],
+["10 GB","30 days","IQD 16,000"],
+["20 GB","30 days","IQD 23,000"],
+
+["Unlimited","3 days","IQD 13,000"],
+["Unlimited","5 days","IQD 15,000"],
+["Unlimited","7 days","IQD 16,500"],
+["Unlimited","10 days","IQD 23,000"],
+["Unlimited","15 days","IQD 28,000"],
+["Unlimited","30 days","IQD 38,000"]
+
+]
+},
+
+
+/* 🇩🇰 DENMARK */
+
+{
+name:"🇩🇰 Denmark",
+region:"ئوروپا",
+
+plans:[
+
+["5 GB","30 days","IQD 11,500"],
+["10 GB","30 days","IQD 13,500"],
+["20 GB","30 days","IQD 15,000"],
+
+["Unlimited","3 days","IQD 12,000"],
+["Unlimited","5 days","IQD 14,000"],
+["Unlimited","7 days","IQD 15,500"],
+["Unlimited","10 days","IQD 22,000"],
+["Unlimited","15 days","IQD 27,000"],
+["Unlimited","30 days","IQD 37,000"]
+
+]
+},
+
+
+/* 🇸🇬 SINGAPORE */
+
+{
+name:"🇸🇬 Singapore",
+region:"ئاسیا",
+
+plans:[
+
+["2 GB","15 days","IQD 13,000"],
+["3 GB","30 days","IQD 13,500"],
+["5 GB","30 days","IQD 14,500"],
+["10 GB","30 days","IQD 15,500"],
+["20 GB","30 days","IQD 20,000"],
+
+["Unlimited","3 days","IQD 16,500"],
+["Unlimited","5 days","IQD 17,500"],
+["Unlimited","7 days","IQD 19,000"],
+["Unlimited","10 days","IQD 25,000"],
+["Unlimited","15 days","IQD 30,000"],
+["Unlimited","30 days","IQD 40,000"]
+
+]
+},
+
+
+/* 🇹🇭 THAILAND */
+
+{
+name:"🇹🇭 Thailand",
+region:"ئاسیا",
+
+plans:[
+
+["5 GB","30 days","IQD 16,000"],
+["10 GB","30 days","IQD 23,000"],
+["20 GB","30 days","IQD 31,000"],
+
+["Unlimited","3 days","IQD 15,000"],
+["Unlimited","5 days","IQD 18,000"],
+["Unlimited","7 days","IQD 23,000"],
+["Unlimited","10 days","IQD 28,000"],
+["Unlimited","15 days","IQD 38,000"],
+["Unlimited","30 days","IQD 53,000"]
+
+]
+},
+
+
+/* 🇸🇦 SAUDI ARABIA */
+
+{
+name:"🇸🇦 Saudi Arabia",
+region:"ڕۆژهەڵاتی ناوەڕاست",
+
+plans:[
+
+["20 GB","30 days","IQD 40,000"],
+["25 GB","45 days","IQD 60,000"],
+["50 GB","30 days","IQD 90,000"],
+
+["Unlimited","3 days","IQD 15,000"],
+["Unlimited","5 days","IQD 20,000"],
+["Unlimited","7 days","IQD 25,000"],
+["Unlimited","10 days","IQD 35,000"],
+["Unlimited","15 days","IQD 60,000"]
+
+]
+},
+
+
+/* 🇱🇧 LEBANON */
+
+{
+name:"🇱🇧 Lebanon",
+region:"ڕۆژهەڵاتی ناوەڕاست",
+
+plans:[
+
+["1 GB","5 days","$7.99"],
+["1 GB","7 days","$8.99"],
+["2 GB","15 days","$11.99"],
+["3 GB","30 days","$13.99"],
+["5 GB","30 days","$18.99"],
+["5 GB","60 days","$18.99"],
+["10 GB","30 days","$12.99"],
+["10 GB","180 days","$73.99"],
+["20 GB","30 days","$44.99"],
+["20 GB","365 days","$85.99"]
+
+]
 }
 
 ];
 
 
-/* ===================================
-   WHATSAPP PURCHASE
-=================================== */
+/* =================================
+BUY
+================================= */
 
-function buy(countryIndex, planIndex){
+function buy(countryIndex,planIndex){
 
-  const country = countries[countryIndex];
-  const plan = country.plans[planIndex];
+const country=countries[countryIndex];
 
-  const message =
+const plan=country.plans[planIndex];
+
+const message=
 `سڵاو 👋
 
 دەمەوێت ئەم پلانەی eSIM بکڕم:
@@ -605,242 +837,297 @@ function buy(countryIndex, planIndex){
 
 تکایە یارمەتیم بدەن بۆ تەواوکردنی کڕین.`;
 
-  const url =
-    "https://wa.me/" +
-    WHATSAPP_NUMBER +
-    "?text=" +
-    encodeURIComponent(message);
+const url=
+"https://wa.me/"+
+WHATSAPP_NUMBER+
+"?text="+
+encodeURIComponent(message);
 
-  window.location.href = url;
-}
+/* ئەمە بۆ مۆبایل جێگیرترە */
 
-
-/* ===================================
-   DISPLAY COUNTRIES
-=================================== */
-
-function displayCountries(list = countries){
-
-  const container =
-    document.getElementById("countries");
-
-  container.innerHTML = "";
-
-  if(list.length === 0){
-
-    container.innerHTML = `
-      <div class="empty">
-        <h2>هیچ پلانێک نەدۆزرایەوە ❌</h2>
-        <p style="margin-top:10px;">
-          وشەیەکی تر تاقی بکەرەوە
-        </p>
-      </div>
-    `;
-
-    return;
-  }
-
-  list.forEach(country => {
-
-    const countryIndex =
-      countries.indexOf(country);
-
-    let html = `
-
-      <section class="country">
-
-        <div class="country-head">
-
-          <div class="country-name">
-            ${country.name}
-          </div>
-
-          <div class="country-region">
-            ${country.region}
-          </div>
-
-        </div>
-
-        <div class="plans">
-    `;
-
-    country.plans.forEach((plan,planIndex)=>{
-
-      const icon =
-        plan[0].toLowerCase() === "unlimited"
-        ? "∞"
-        : "▮▮▮";
-
-      html += `
-
-        <div class="plan">
-
-          <div class="plan-icon">
-            ${icon}
-          </div>
-
-          <div class="plan-info">
-
-            <strong>
-              ${plan[0]}
-            </strong>
-
-            <small>
-              ماوە: ${plan[1]}
-            </small>
-
-          </div>
-
-          <div class="price">
-            ${plan[2]}
-          </div>
-
-          <button
-            class="buy"
-            onclick="buy(${countryIndex},${planIndex})">
-
-            🛒 کڕین
-
-          </button>
-
-        </div>
-
-      `;
-
-    });
-
-    html += `
-        </div>
-      </section>
-    `;
-
-    container.innerHTML += html;
-
-  });
+window.location.href=url;
 
 }
 
 
-/* ===================================
-   FILTERS
-=================================== */
+/* =================================
+DISPLAY
+================================= */
+
+function displayCountries(list=countries){
+
+const container=
+document.getElementById("countries");
+
+container.innerHTML="";
+
+
+if(list.length===0){
+
+container.innerHTML=`
+
+<div class="empty">
+
+<h2>
+هیچ پلانێک نەدۆزرایەوە ❌
+</h2>
+
+<p style="margin-top:10px">
+وشەیەکی تر تاقی بکەرەوە
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+list.forEach(country=>{
+
+const countryIndex=
+countries.indexOf(country);
+
+let html=`
+
+<section class="country">
+
+<div class="country-head">
+
+<div class="country-name">
+${country.name}
+</div>
+
+<div class="country-region">
+${country.region}
+</div>
+
+</div>
+
+<div class="plans">
+
+`;
+
+
+country.plans.forEach((plan,planIndex)=>{
+
+const icon=
+plan[0].toLowerCase()==="unlimited"
+?"∞"
+:"▮▮▮";
+
+
+html+=`
+
+<div class="plan">
+
+<div class="plan-icon">
+${icon}
+</div>
+
+
+<div class="plan-info">
+
+<strong>
+${plan[0]}
+</strong>
+
+<small>
+ماوە: ${plan[1]}
+</small>
+
+</div>
+
+
+<div class="price">
+${plan[2]}
+</div>
+
+
+<button
+class="buy"
+onclick="buy(${countryIndex},${planIndex})">
+
+🛒 کڕین
+
+</button>
+
+</div>
+
+`;
+
+});
+
+
+html+=`
+
+</div>
+
+</section>
+
+`;
+
+
+container.innerHTML+=html;
+
+});
+
+}
+
+
+/* =================================
+FILTERS
+================================= */
 
 function createFilters(){
 
-  const filters =
-    document.getElementById("filters");
+const filters=
+document.getElementById("filters");
 
-  const regions = [
-    "هەمووی",
-    "ئوروپا",
-    "ئاسیا",
-    "ئەمەریکا",
-    "ڕۆژهەڵاتی ناوەڕاست",
-    "جیهانی"
-  ];
+const regions=[
 
-  regions.forEach((region,index)=>{
+"هەمووی",
+"ئوروپا",
+"ئاسیا",
+"ئەمەریکا",
+"ڕۆژهەڵاتی ناوەڕاست",
+"جیهانی"
 
-    const button =
-      document.createElement("button");
+];
 
-    button.textContent = region;
 
-    if(index === 0){
-      button.classList.add("active");
-    }
+regions.forEach((region,index)=>{
 
-    button.onclick = ()=>{
+const button=
+document.createElement("button");
 
-      document
-        .querySelectorAll(".filters button")
-        .forEach(b =>
-          b.classList.remove("active")
-        );
+button.textContent=region;
 
-      button.classList.add("active");
 
-      if(region === "هەمووی"){
-        displayCountries(countries);
-      }else{
-        displayCountries(
-          countries.filter(
-            c => c.region === region
-          )
-        );
-      }
+if(index===0){
 
-    };
-
-    filters.appendChild(button);
-
-  });
+button.classList.add("active");
 
 }
 
 
-/* ===================================
-   SEARCH
-=================================== */
+button.onclick=()=>{
+
+document
+.querySelectorAll(".filters button")
+.forEach(b=>
+b.classList.remove("active")
+);
+
+
+button.classList.add("active");
+
+
+if(region==="هەمووی"){
+
+displayCountries(countries);
+
+}else{
+
+displayCountries(
+
+countries.filter(
+c=>c.region===region
+)
+
+);
+
+}
+
+};
+
+
+filters.appendChild(button);
+
+});
+
+}
+
+
+/* =================================
+SEARCH
+================================= */
 
 function searchPlans(){
 
-  const q =
-    document
-      .getElementById("search")
-      .value
-      .trim()
-      .toLowerCase();
+const q=
+document
+.getElementById("search")
+.value
+.trim()
+.toLowerCase();
 
-  if(!q){
 
-    displayCountries(countries);
-    return;
+if(!q){
 
-  }
+displayCountries(countries);
 
-  const result =
-    countries.filter(country => {
+return;
 
-      const countryMatch =
-        country.name
-          .toLowerCase()
-          .includes(q);
-
-      const planMatch =
-        country.plans.some(plan =>
-          plan.join(" ")
-            .toLowerCase()
-            .includes(q)
-        );
-
-      return countryMatch || planMatch;
-
-    });
-
-  displayCountries(result);
 }
 
 
-/* ENTER = SEARCH */
+const result=
+countries.filter(country=>{
+
+const countryMatch=
+country.name
+.toLowerCase()
+.includes(q);
+
+
+const planMatch=
+country.plans.some(plan=>
+
+plan.join(" ")
+.toLowerCase()
+.includes(q)
+
+);
+
+
+return countryMatch||planMatch;
+
+});
+
+
+displayCountries(result);
+
+}
+
+
+/* =================================
+ENTER SEARCH
+================================= */
 
 document
-  .getElementById("search")
-  .addEventListener(
-    "keydown",
-    function(e){
+.getElementById("search")
+.addEventListener(
+"keydown",
+function(e){
 
-      if(e.key === "Enter"){
-        searchPlans();
-      }
+if(e.key==="Enter"){
 
-    }
-  );
+searchPlans();
+
+}
+
+});
 
 
-/* START */
+/* =================================
+START
+================================= */
 
 createFilters();
+
 displayCountries();
 
 </script>
