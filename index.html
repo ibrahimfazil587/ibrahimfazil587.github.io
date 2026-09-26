@@ -2,423 +2,224 @@
 <html lang="ku" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eSIM online </title>
-<meta name="description" content="eSIM Online - Buy eSIM plans for Turkey, Europe and worldwide destinations.">
-<meta name="keywords" content="eSIM Online, Turkey eSIM, eSIM Turkey, Europe eSIM, worldwide eSIM">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>eSIM Online</title>
+<meta name="description" content="eSIM Online - پلانەکانی eSIM بۆ گەشت لە هەموو جیهان">
+
 <style>
 *{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:Arial,"Noto Sans Arabic",sans-serif;
-background:#f4f7fb;
-color:#172033;
-}
+body{margin:0;font-family:Arial,"Noto Sans Arabic",sans-serif;background:#f4f7fb;color:#172033}
 
 header{
-background:#fff;
-padding:18px 20px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-border-bottom:1px solid #edf0f5;
-position:sticky;
-top:0;
-z-index:100;
+background:#fff;padding:18px 20px;display:flex;align-items:center;
+justify-content:space-between;border-bottom:1px solid #edf0f5;
+position:sticky;top:0;z-index:100
 }
 
-.logo{
-font-size:25px;
-font-weight:900;
-color:#0862bd;
-}
-
+.logo{font-size:25px;font-weight:900;color:#0862bd}
 .logo span{color:#e53935}
 
 .whatsapp-top{
-background:#18bf62;
-color:#fff;
-padding:13px 20px;
-border-radius:14px;
-font-weight:900;
-text-decoration:none;
+background:#18bf62;color:#fff;padding:13px 20px;border-radius:14px;
+font-weight:900;text-decoration:none
 }
 
 .hero{
-margin:28px auto 18px;
-width:94%;
-max-width:900px;
-min-height:300px;
-border-radius:30px;
-padding:35px 25px;
+margin:28px auto 18px;width:94%;max-width:900px;min-height:300px;
+border-radius:30px;padding:35px 25px;
 background:linear-gradient(135deg,#0865c7,#1594e9);
-color:#fff;
-position:relative;
-overflow:hidden;
+color:#fff;position:relative;overflow:hidden
 }
 
 .hero:before{
-content:"✈️";
-position:absolute;
-left:25px;
-bottom:-15px;
-font-size:150px;
-opacity:.12;
-transform:rotate(-15deg);
+content:"✈️";position:absolute;left:25px;bottom:-15px;
+font-size:150px;opacity:.12;transform:rotate(-15deg)
 }
 
 .hero:after{
-content:"🌍";
-position:absolute;
-left:40%;
-top:15px;
-font-size:120px;
-opacity:.08;
+content:"🌍";position:absolute;left:40%;top:15px;
+font-size:120px;opacity:.08
 }
 
-.hero h1{
-position:relative;
-z-index:2;
-font-size:38px;
-margin:5px 0 12px;
-}
-
-.hero p{
-position:relative;
-z-index:2;
-font-size:16px;
-opacity:.9;
-}
+.hero h1,.hero p,.search{position:relative;z-index:2}
+.hero h1{font-size:38px;margin:5px 0 12px}
+.hero p{font-size:16px;opacity:.9}
 
 .search{
-position:relative;
-z-index:3;
-margin-top:30px;
-background:#fff;
-border-radius:20px;
-padding:5px;
-display:flex;
+margin-top:30px;background:#fff;border-radius:20px;padding:5px
 }
 
 .search input{
-width:100%;
-border:0;
-outline:0;
-padding:16px;
-font-size:15px;
-border-radius:18px;
-text-align:right;
+width:100%;border:0;outline:0;padding:16px;font-size:15px;
+border-radius:18px;text-align:right
 }
 
 .filters{
-display:flex;
-gap:10px;
-overflow-x:auto;
-padding:8px 3%;
-margin-bottom:20px;
-scrollbar-width:none;
+display:flex;gap:10px;overflow-x:auto;padding:8px 3%;
+margin-bottom:20px;scrollbar-width:none
 }
 
-.filters::-webkit-scrollbar{
-display:none;
-}
+.filters::-webkit-scrollbar{display:none}
 
 .filter{
-border:0;
-background:#fff;
-color:#0964bd;
-padding:14px 24px;
-border-radius:18px;
-font-size:15px;
-font-weight:900;
-white-space:nowrap;
-box-shadow:0 2px 10px #00000008;
-cursor:pointer;
+border:0;background:#fff;color:#0964bd;padding:14px 24px;
+border-radius:18px;font-size:15px;font-weight:900;
+white-space:nowrap;box-shadow:0 2px 10px #00000008;cursor:pointer
 }
 
-.filter.active{
-background:#0865c7;
-color:#fff;
-}
+.filter.active{background:#0865c7;color:#fff}
 
-.container{
-width:94%;
-max-width:900px;
-margin:auto;
-}
-
-/* COUNTRY */
+.container{width:94%;max-width:900px;margin:auto}
 
 .country{
-background:#fff;
-border-radius:25px;
-overflow:hidden;
-margin-bottom:24px;
-box-shadow:0 5px 20px #00000009;
+background:#fff;border-radius:25px;overflow:hidden;margin-bottom:24px;
+box-shadow:0 5px 20px #00000009
 }
 
 .country-head{
-height:210px;
-position:relative;
-overflow:hidden;
-color:#fff;
-padding:24px 20px;
-background:
-linear-gradient(135deg,#075bbb,#168ee8);
+height:210px;position:relative;overflow:hidden;color:#fff;
+padding:24px 20px;background:linear-gradient(135deg,#075bbb,#168ee8)
 }
 
 .country-head:before{
-content:"";
-position:absolute;
-inset:0;
+content:"";position:absolute;inset:0;
 background:
 radial-gradient(circle at 80% 20%,#ffffff30,transparent 22%),
-linear-gradient(135deg,#ffffff10,transparent 60%);
+linear-gradient(135deg,#ffffff10,transparent 60%)
 }
 
 .country-head:after{
-content:"";
-position:absolute;
-left:-10%;
-right:-10%;
-bottom:-80px;
-height:150px;
-background:#07529b45;
-border-radius:50% 50% 0 0;
+content:"";position:absolute;left:-10%;right:-10%;bottom:-80px;
+height:150px;background:#07529b45;border-radius:50% 50% 0 0
 }
 
 .travel-scene{
-position:absolute;
-right:8%;
-bottom:-8px;
-font-size:115px;
-line-height:1;
-opacity:.24;
-z-index:1;
+position:absolute;right:8%;bottom:-8px;font-size:115px;
+line-height:1;opacity:.24;z-index:1
 }
 
 .travel-small{
-position:absolute;
-left:27%;
-top:25px;
-font-size:45px;
-opacity:.25;
-z-index:2;
-transform:rotate(-12deg);
+position:absolute;left:27%;top:25px;font-size:45px;
+opacity:.25;z-index:2;transform:rotate(-12deg)
 }
 
 .country-title{
-position:relative;
-z-index:5;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px;
+position:relative;z-index:5;display:flex;align-items:center;
+justify-content:space-between;gap:15px
 }
 
 .country-left{
-display:flex;
-align-items:center;
-gap:14px;
+display:flex;align-items:center;gap:14px
 }
 
 .country-flag{
-width:72px;
-height:72px;
-border-radius:20px;
-background:#ffffff20;
-border:1px solid #ffffff45;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:42px;
+width:72px;height:72px;border-radius:20px;
+background:#ffffff20;border:1px solid #ffffff45;
+display:flex;align-items:center;justify-content:center;font-size:42px
 }
 
-.country-name{
-font-size:29px;
-font-weight:900;
-}
-
-.country-sub{
-margin-top:7px;
-font-size:14px;
-}
+.country-name{font-size:29px;font-weight:900}
+.country-sub{margin-top:7px;font-size:14px}
 
 .country-badges{
-display:flex;
-flex-direction:column;
-gap:8px;
+display:flex;flex-direction:column;gap:8px
 }
 
 .country-badge{
-background:#ffffff20;
-border:1px solid #ffffff45;
-padding:8px 13px;
-border-radius:22px;
-font-size:11px;
-white-space:nowrap;
+background:#ffffff20;border:1px solid #ffffff45;
+padding:8px 13px;border-radius:22px;font-size:11px;
+white-space:nowrap
 }
 
 .plans{
-padding:13px;
-background:#f9fbfe;
+padding:13px;background:#f9fbfe
 }
 
 .plan{
-min-height:70px;
-background:#fff;
-border:1px solid #e9edf3;
-border-radius:17px;
-margin-bottom:10px;
-padding:8px 9px;
-display:flex;
-align-items:center;
-gap:7px;
-box-shadow:0 2px 8px #00000006;
+min-height:70px;background:#fff;border:1px solid #e9edf3;
+border-radius:17px;margin-bottom:10px;padding:8px 9px;
+display:flex;align-items:center;gap:7px;
+box-shadow:0 2px 8px #00000006
 }
 
 .plan-icon{
-width:47px;
-min-width:47px;
-height:47px;
-border-radius:14px;
+width:47px;min-width:47px;height:47px;border-radius:14px;
 background:linear-gradient(145deg,#edf6ff,#dfeefe);
-color:#0764be;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:22px;
-font-weight:900;
+color:#0764be;display:flex;align-items:center;
+justify-content:center;font-size:22px;font-weight:900
 }
 
-.plan-info{
-flex:1;
-min-width:70px;
-}
-
-.plan-data{
-font-size:18px;
-font-weight:900;
-}
+.plan-info{flex:1;min-width:70px}
+.plan-data{font-size:18px;font-weight:900}
 
 .plan-days{
-font-size:11px;
-color:#9299a7;
-margin-top:4px;
+font-size:11px;color:#9299a7;margin-top:4px
 }
 
 .plan-price{
-background:#ffe8e8;
-color:#df3333;
-border-radius:15px;
-padding:11px 10px;
-font-size:12px;
-font-weight:900;
-white-space:nowrap;
+background:#ffe8e8;color:#df3333;border-radius:15px;
+padding:11px 10px;font-size:12px;font-weight:900;
+white-space:nowrap
 }
 
 .buy{
-border:0;
-background:linear-gradient(135deg,#16bd63,#0bb95c);
-color:#fff;
-border-radius:14px;
-padding:11px 11px;
-font-size:12px;
-font-weight:900;
-white-space:nowrap;
-cursor:pointer;
+border:0;background:linear-gradient(135deg,#16bd63,#0bb95c);
+color:#fff;border-radius:14px;padding:11px 11px;
+font-size:12px;font-weight:900;white-space:nowrap;cursor:pointer
 }
 
 .empty{
-text-align:center;
-padding:50px 20px;
-color:#8992a2;
-display:none;
+text-align:center;padding:50px 20px;color:#8992a2;display:none
 }
 
 @media(max-width:600px){
 
-header{
-padding:15px 14px;
-}
-
-.logo{
-font-size:21px;
-}
-
-.whatsapp-top{
-padding:11px 14px;
-font-size:12px;
-}
+header{padding:15px 14px}
+.logo{font-size:21px}
+.whatsapp-top{padding:11px 14px;font-size:12px}
 
 .hero{
-margin-top:20px;
-min-height:275px;
-padding:28px 20px;
+margin-top:20px;min-height:275px;padding:28px 20px
 }
 
-.hero h1{
-font-size:30px;
-}
+.hero h1{font-size:30px}
 
 .country-head{
-height:195px;
-padding:22px 15px;
+height:195px;padding:22px 15px
 }
 
-.country-name{
-font-size:25px;
-}
+.country-name{font-size:25px}
 
 .country-flag{
-width:62px;
-height:62px;
-font-size:35px;
-}
-
-.country-badges{
-gap:6px;
+width:62px;height:62px;font-size:35px
 }
 
 .country-badge{
-font-size:10px;
-padding:7px 9px;
+font-size:10px;padding:7px 9px
 }
 
 .travel-scene{
-font-size:95px;
-right:5%;
+font-size:95px;right:5%
 }
 
-.travel-small{
-font-size:35px;
-}
+.travel-small{font-size:35px}
 
 .plan{
-gap:6px;
-padding:7px;
+gap:6px;padding:7px
 }
 
 .plan-icon{
-width:43px;
-min-width:43px;
-height:43px;
-font-size:19px;
+width:43px;min-width:43px;height:43px;font-size:19px
 }
 
-.plan-data{
-font-size:17px;
-}
+.plan-data{font-size:17px}
 
 .plan-price{
-padding:10px 8px;
-font-size:11px;
+padding:10px 8px;font-size:11px
 }
 
 .buy{
-padding:10px 9px;
-font-size:11px;
+padding:10px 9px;font-size:11px
 }
 
 }
@@ -428,18 +229,13 @@ font-size:11px;
 <body>
 
 <header>
-
-<div class="logo">
-🌍 <span>eSIM</span> گەشتیار
-</div>
+<div class="logo">🌍 <span>eSIM</span> گەشتیار</div>
 
 <a class="whatsapp-top"
 href="https://wa.me/9647506021212">
 💬 WhatsApp
 </a>
-
 </header>
-
 
 <section class="hero">
 
@@ -455,13 +251,11 @@ href="https://wa.me/9647506021212">
 id="search"
 type="text"
 placeholder="گەڕان بە ناوی وڵات، GB، Unlimited، ڕۆژ، نرخ..."
-onkeyup="searchPlans(event)"
+oninput="searchPlans()"
 >
 
 </div>
-
 </section>
-
 
 <div class="filters">
 
@@ -497,23 +291,19 @@ onclick="filterRegion('global',this)">
 
 </div>
 
-
 <div class="container" id="countries"></div>
 
 <div class="empty" id="empty">
 هیچ پلانێک نەدۆزرایەوە 😕
 </div>
 
-
 <script>
 
 const WHATSAPP="9647506021212";
 
-
 const countries=[
 
 /* TURKEY */
-
 {
 name:"تورکیا",
 en:"Turkey",
@@ -521,8 +311,6 @@ flag:"🇹🇷",
 region:"europe",
 place:"ئەوروپا",
 scene:"🕌",
-small:"✈️",
-
 plans:[
 ["10 GB","30 ڕۆژ","IQD 8,500"],
 ["20 GB","30 ڕۆژ","IQD 11,500"],
@@ -539,7 +327,6 @@ plans:[
 },
 
 /* GERMANY */
-
 {
 name:"ئەڵمانیا",
 en:"Germany",
@@ -547,8 +334,6 @@ flag:"🇩🇪",
 region:"europe",
 place:"ئەوروپا",
 scene:"🏰",
-small:"✈️",
-
 plans:[
 ["1 GB","7 ڕۆژ","IQD 6,500"],
 ["2 GB","15 ڕۆژ","IQD 7,000"],
@@ -566,7 +351,6 @@ plans:[
 },
 
 /* USA */
-
 {
 name:"ئەمەریکا",
 en:"United States",
@@ -574,8 +358,6 @@ flag:"🇺🇸",
 region:"america",
 place:"ئەمەریکا",
 scene:"🗽",
-small:"✈️",
-
 plans:[
 ["3 GB","30 ڕۆژ","IQD 10,000"],
 ["10 GB","30 ڕۆژ","IQD 20,000"],
@@ -589,8 +371,7 @@ plans:[
 ]
 },
 
-/* EUROPE UK */
-
+/* EUROPE + UK */
 {
 name:"ئەوروپا + بەریتانیا",
 en:"Europe + UK",
@@ -598,8 +379,6 @@ flag:"🇪🇺",
 region:"europe",
 place:"ئەوروپا",
 scene:"🏛️",
-small:"✈️",
-
 plans:[
 ["5 GB","30 ڕۆژ","IQD 14,000"],
 ["10 GB","30 ڕۆژ","IQD 16,000"],
@@ -614,7 +393,6 @@ plans:[
 },
 
 /* GLOBAL */
-
 {
 name:"هەموو جیهان",
 en:"Global",
@@ -622,8 +400,6 @@ flag:"🌍",
 region:"global",
 place:"جیهان",
 scene:"🌐",
-small:"✈️",
-
 plans:[
 ["200 MB","30 ڕۆژ","IQD 7,500"],
 ["300 MB","3 ڕۆژ","IQD 7,000"],
@@ -642,7 +418,6 @@ plans:[
 },
 
 /* UAE */
-
 {
 name:"ئیمارات",
 en:"UAE",
@@ -650,8 +425,6 @@ flag:"🇦🇪",
 region:"middle",
 place:"ڕۆژهەڵاتی ناوەڕاست",
 scene:"🏙️",
-small:"✈️",
-
 plans:[
 ["1 GB","7 ڕۆژ","IQD 9,500"],
 ["2 GB","15 ڕۆژ","IQD 11,500"],
@@ -665,7 +438,6 @@ plans:[
 },
 
 /* AZERBAIJAN */
-
 {
 name:"ئەزەربایجان",
 en:"Azerbaijan",
@@ -673,8 +445,6 @@ flag:"🇦🇿",
 region:"asia",
 place:"ئاسیا",
 scene:"🏛️",
-small:"✈️",
-
 plans:[
 ["5 GB","30 ڕۆژ","IQD 15,000"],
 ["10 GB","30 ڕۆژ","IQD 25,000"],
@@ -689,7 +459,6 @@ plans:[
 },
 
 /* CHINA */
-
 {
 name:"چین",
 en:"China",
@@ -697,8 +466,6 @@ flag:"🇨🇳",
 region:"asia",
 place:"ئاسیا",
 scene:"🏯",
-small:"✈️",
-
 plans:[
 ["3 GB","30 ڕۆژ","IQD 10,000"],
 ["5 GB","30 ڕۆژ","IQD 11,500"],
@@ -714,7 +481,6 @@ plans:[
 },
 
 /* OMAN */
-
 {
 name:"عومان",
 en:"Oman",
@@ -722,8 +488,6 @@ flag:"🇴🇲",
 region:"middle",
 place:"ڕۆژهەڵاتی ناوەڕاست",
 scene:"🕌",
-small:"✈️",
-
 plans:[
 ["3 GB","30 ڕۆژ","IQD 10,000"],
 ["5 GB","30 ڕۆژ","IQD 12,500"],
@@ -739,7 +503,6 @@ plans:[
 },
 
 /* SWITZERLAND */
-
 {
 name:"سوئیس",
 en:"Switzerland",
@@ -747,8 +510,6 @@ flag:"🇨🇭",
 region:"europe",
 place:"ئەوروپا",
 scene:"🏔️",
-small:"✈️",
-
 plans:[
 ["5 GB","30 ڕۆژ","IQD 16,000"],
 ["10 GB","30 ڕۆژ","IQD 23,000"],
@@ -763,7 +524,6 @@ plans:[
 },
 
 /* ITALY */
-
 {
 name:"ئیتالیا",
 en:"Italy",
@@ -771,8 +531,6 @@ flag:"🇮🇹",
 region:"europe",
 place:"ئەوروپا",
 scene:"🏛️",
-small:"✈️",
-
 plans:[
 ["5 GB","30 ڕۆژ","IQD 12,000"],
 ["10 GB","30 ڕۆژ","IQD 16,000"],
@@ -787,7 +545,6 @@ plans:[
 },
 
 /* LEBANON */
-
 {
 name:"لوبنان",
 en:"Lebanon",
@@ -795,8 +552,6 @@ flag:"🇱🇧",
 region:"middle",
 place:"ڕۆژهەڵاتی ناوەڕاست",
 scene:"🏛️",
-small:"✈️",
-
 plans:[
 ["1 GB","5 ڕۆژ","$7.99"],
 ["1 GB","7 ڕۆژ","$8.99"],
@@ -812,7 +567,6 @@ plans:[
 },
 
 /* DENMARK */
-
 {
 name:"دانمارک",
 en:"Denmark",
@@ -820,8 +574,6 @@ flag:"🇩🇰",
 region:"europe",
 place:"ئەوروپا",
 scene:"🏰",
-small:"✈️",
-
 plans:[
 ["5 GB","30 ڕۆژ","IQD 11,500"],
 ["10 GB","30 ڕۆژ","IQD 13,500"],
@@ -836,7 +588,6 @@ plans:[
 },
 
 /* SINGAPORE */
-
 {
 name:"سینگاپور",
 en:"Singapore",
@@ -844,8 +595,6 @@ flag:"🇸🇬",
 region:"asia",
 place:"ئاسیا",
 scene:"🏙️",
-small:"✈️",
-
 plans:[
 ["2 GB","15 ڕۆژ","IQD 13,000"],
 ["3 GB","30 ڕۆژ","IQD 13,500"],
@@ -862,7 +611,6 @@ plans:[
 },
 
 /* THAILAND */
-
 {
 name:"تایلەند",
 en:"Thailand",
@@ -870,8 +618,6 @@ flag:"🇹🇭",
 region:"asia",
 place:"ئاسیا",
 scene:"🏝️",
-small:"✈️",
-
 plans:[
 ["5 GB","30 ڕۆژ","IQD 16,000"],
 ["10 GB","30 ڕۆژ","IQD 23,000"],
@@ -886,7 +632,6 @@ plans:[
 },
 
 /* SAUDI */
-
 {
 name:"سعودیە",
 en:"Saudi Arabia",
@@ -894,8 +639,6 @@ flag:"🇸🇦",
 region:"middle",
 place:"ڕۆژهەڵاتی ناوەڕاست",
 scene:"🕋",
-small:"✈️",
-
 plans:[
 ["20 GB","30 ڕۆژ","IQD 40,000"],
 ["25 GB","45 ڕۆژ","IQD 60,000"],
@@ -906,33 +649,405 @@ plans:[
 ["Unlimited","10 ڕۆژ","IQD 35,000"],
 ["Unlimited","15 ڕۆژ","IQD 60,000"]
 ]
+},
+
+/* JAPAN */
+{
+name:"ژاپۆن",
+en:"Japan",
+flag:"🇯🇵",
+region:"asia",
+place:"ئاسیا",
+scene:"🗻",
+plans:[
+["2 GB","15 ڕۆژ","IQD 9,500"],
+["3 GB","30 ڕۆژ","IQD 10,500"],
+["5 GB","30 ڕۆژ","IQD 12,000"],
+["10 GB","30 ڕۆژ","IQD 15,000"],
+["20 GB","30 ڕۆژ","IQD 21,000"],
+["500 MB","7 ڕۆژ","IQD 8,000"],
+["Unlimited","3 ڕۆژ","IQD 14,500"],
+["Unlimited","5 ڕۆژ","IQD 21,000"],
+["Unlimited","7 ڕۆژ","IQD 21,000"],
+["Unlimited","10 ڕۆژ","IQD 26,000"],
+["Unlimited","15 ڕۆژ","IQD 41,000"],
+["Unlimited","30 ڕۆژ","IQD 56,000"]
+]
+},
+
+/* ARUBA */
+{
+name:"ئارووبا",
+en:"Aruba",
+flag:"🇦🇼",
+region:"america",
+place:"ئەمەریکا",
+scene:"🏝️",
+plans:[
+["1 GB","7 ڕۆژ","IQD 12,500"],
+["2 GB","15 ڕۆژ","IQD 20,000"],
+["3 GB","30 ڕۆژ","IQD 25,000"],
+["5 GB","30 ڕۆژ","IQD 35,000"],
+["10 GB","30 ڕۆژ","IQD 55,000"]
+]
+},
+
+/* AFGHANISTAN */
+{
+name:"ئەفغانستان",
+en:"Afghanistan",
+flag:"🇦🇫",
+region:"asia",
+place:"ئاسیا",
+scene:"🏔️",
+plans:[
+["1 GB","7 ڕۆژ","IQD 12,500"],
+["2 GB","15 ڕۆژ","IQD 20,000"],
+["3 GB","30 ڕۆژ","IQD 25,000"],
+["5 GB","30 ڕۆژ","IQD 30,000"],
+["10 GB","30 ڕۆژ","IQD 55,000"]
+]
+},
+
+/* AUSTRIA */
+{
+name:"Austria",
+en:"Austria",
+flag:"🇦🇹",
+region:"europe",
+place:"ئەوروپا",
+scene:"🏔️",
+plans:[
+["1 GB","7 ڕۆژ","IQD 12,000"],
+["2 GB","15 ڕۆژ","IQD 12,500"],
+["3 GB","30 ڕۆژ","IQD 13,500"],
+["5 GB","30 ڕۆژ","IQD 14,000"],
+["10 GB","30 ڕۆژ","IQD 16,000"],
+["20 GB","30 ڕۆژ","IQD 18,500"],
+["Unlimited","3 ڕۆژ","IQD 15,000"],
+["Unlimited","5 ڕۆژ","IQD 15,500"],
+["Unlimited","7 ڕۆژ","IQD 19,500"],
+["Unlimited","10 ڕۆژ","IQD 18,500"],
+["Unlimited","15 ڕۆژ","IQD 30,000"],
+["Unlimited","30 ڕۆژ","IQD 35,000"]
+]
+},
+
+/* ALBANIA */
+{
+name:"Albania",
+en:"Albania",
+flag:"🇦🇱",
+region:"europe",
+place:"ئەوروپا",
+scene:"🏔️",
+plans:[
+["1 GB","7 ڕۆژ","IQD 9,000"],
+["2 GB","15 ڕۆژ","IQD 11,000"],
+["3 GB","30 ڕۆژ","IQD 12,500"],
+["5 GB","30 ڕۆژ","IQD 20,000"],
+["10 GB","30 ڕۆژ","IQD 30,000"],
+["20 GB","30 ڕۆژ","IQD 40,000"],
+["Unlimited","3 ڕۆژ","IQD 20,000"],
+["Unlimited","5 ڕۆژ","IQD 30,000"],
+["Unlimited","7 ڕۆژ","IQD 35,000"],
+["Unlimited","10 ڕۆژ","IQD 40,000"],
+["Unlimited","15 ڕۆژ","IQD 75,000"],
+["Unlimited","30 ڕۆژ","IQD 100,000"]
+]
+},
+
+/* ANDORRA */
+{
+name:"Andorra",
+en:"Andorra",
+flag:"🇦🇩",
+region:"europe",
+place:"ئەوروپا",
+scene:"🏔️",
+plans:[
+["Unlimited","3 ڕۆژ","IQD 25,000"],
+["Unlimited","5 ڕۆژ","IQD 35,000"],
+["Unlimited","7 ڕۆژ","IQD 40,000"],
+["Unlimited","10 ڕۆژ","IQD 55,000"],
+["1 GB","7 ڕۆژ","IQD 9,500"],
+["2 GB","15 ڕۆژ","IQD 12,000"],
+["3 GB","30 ڕۆژ","IQD 14,000"],
+["5 GB","30 ڕۆژ","IQD 20,000"],
+["10 GB","30 ڕۆژ","IQD 30,000"],
+["20 GB","30 ڕۆژ","IQD 45,000"]
+]
+},
+
+/* ARGENTINA */
+{
+name:"Argentina",
+en:"Argentina",
+flag:"🇦🇷",
+region:"america",
+place:"ئەمەریکا",
+scene:"🏙️",
+plans:[
+["1 GB","7 ڕۆژ","IQD 9,500"],
+["2 GB","15 ڕۆژ","IQD 12,000"],
+["3 GB","30 ڕۆژ","IQD 13,500"],
+["5 GB","30 ڕۆژ","IQD 20,000"],
+["10 GB","30 ڕۆژ","IQD 30,000"],
+["20 GB","30 ڕۆژ","IQD 40,000"],
+["Unlimited","3 ڕۆژ","IQD 25,000"],
+["Unlimited","5 ڕۆژ","IQD 35,000"],
+["Unlimited","7 ڕۆژ","IQD 40,000"],
+["Unlimited","10 ڕۆژ","IQD 50,000"],
+["Unlimited","15 ڕۆژ","IQD 85,000"],
+["Unlimited","30 ڕۆژ","IQD 155,000"]
+]
+},
+
+/* ARMENIA */
+{
+name:"Armenia",
+en:"Armenia",
+flag:"🇦🇲",
+region:"asia",
+place:"ئاسیا",
+scene:"🏔️",
+plans:[
+["Unlimited","3 ڕۆژ","IQD 13,000"],
+["Unlimited","5 ڕۆژ","IQD 11,000"],
+["Unlimited","7 ڕۆژ","IQD 14,000"],
+["Unlimited","10 ڕۆژ","IQD 20,000"],
+["Unlimited","15 ڕۆژ","IQD 25,000"],
+["Unlimited","30 ڕۆژ","IQD 35,000"],
+["1 GB","7 ڕۆژ","IQD 7,000"],
+["2 GB","15 ڕۆژ","IQD 7,500"],
+["3 GB","30 ڕۆژ","IQD 8,000"],
+["5 GB","30 ڕۆژ","IQD 9,500"],
+["10 GB","30 ڕۆژ","IQD 10,000"],
+["20 GB","30 ڕۆژ","IQD 13,000"]
+]
+},
+
+/* BELGIUM */
+{
+name:"Belgium",
+en:"Belgium",
+flag:"🇧🇪",
+region:"europe",
+place:"ئەوروپا",
+scene:"🏰",
+plans:[
+["Unlimited","3 ڕۆژ","IQD 14,500"],
+["Unlimited","5 ڕۆژ","IQD 16,000"],
+["Unlimited","7 ڕۆژ","IQD 19,000"],
+["Unlimited","10 ڕۆژ","IQD 25,000"],
+["Unlimited","15 ڕۆژ","IQD 30,000"],
+["Unlimited","30 ڕۆژ","IQD 40,000"],
+["1 GB","7 ڕۆژ","IQD 13,500"],
+["2 GB","15 ڕۆژ","IQD 15,000"],
+["3 GB","30 ڕۆژ","IQD 17,500"],
+["5 GB","30 ڕۆژ","IQD 25,000"],
+["10 GB","30 ڕۆژ","IQD 30,000"],
+["20 GB","30 ڕۆژ","IQD 35,000"]
+]
+},
+
+/* BANGLADESH */
+{
+name:"Bangladesh",
+en:"Bangladesh",
+flag:"🇧🇩",
+region:"asia",
+place:"ئاسیا",
+scene:"🏙️",
+plans:[
+["1 GB","7 ڕۆژ","IQD 8,500"],
+["2 GB","15 ڕۆژ","IQD 10,000"],
+["3 GB","30 ڕۆژ","IQD 12,500"],
+["5 GB","30 ڕۆژ","IQD 20,000"],
+["10 GB","30 ڕۆژ","IQD 25,000"],
+["20 GB","30 ڕۆژ","IQD 30,000"],
+["Unlimited","3 ڕۆژ","IQD 20,000"],
+["Unlimited","5 ڕۆژ","IQD 25,000"],
+["Unlimited","7 ڕۆژ","IQD 30,000"],
+["Unlimited","10 ڕۆژ","IQD 40,000"],
+["Unlimited","15 ڕۆژ","IQD 65,000"],
+["Unlimited","30 ڕۆژ","IQD 90,000"]
+]
+},
+
+/* BRAZIL */
+{
+name:"Brazil",
+en:"Brazil",
+flag:"🇧🇷",
+region:"america",
+place:"ئەمەریکا",
+scene:"🏝️",
+plans:[
+["1 GB","7 ڕۆژ","IQD 8,000"],
+["2 GB","15 ڕۆژ","IQD 9,500"],
+["5 GB","30 ڕۆژ","IQD 10,500"],
+["10 GB","30 ڕۆژ","IQD 20,000"],
+["20 GB","30 ڕۆژ","IQD 30,000"],
+["3 GB","30 ڕۆژ","IQD 10,500"],
+["Unlimited","3 ڕۆژ","IQD 20,000"],
+["Unlimited","5 ڕۆژ","IQD 30,000"],
+["Unlimited","7 ڕۆژ","IQD 35,000"],
+["Unlimited","10 ڕۆژ","IQD 40,000"],
+["Unlimited","15 ڕۆژ","IQD 70,000"],
+["Unlimited","30 ڕۆژ","IQD 100,000"]
+]
+},
+
+/* IRAQ */
+{
+name:"Iraq",
+en:"Iraq",
+flag:"🇮🇶",
+region:"middle",
+place:"ڕۆژهەڵاتی ناوەڕاست",
+scene:"🕌",
+plans:[
+["1 GB","7 ڕۆژ","IQD 9,500"],
+["2 GB","15 ڕۆژ","IQD 12,000"],
+["3 GB","30 ڕۆژ","IQD 13,500"],
+["5 GB","30 ڕۆژ","IQD 25,000"],
+["10 GB","30 ڕۆژ","IQD 30,000"],
+["20 GB","30 ڕۆژ","IQD 40,000"]
+]
+},
+
+/* CROATIA */
+{
+name:"Croatia",
+en:"Croatia",
+flag:"🇭🇷",
+region:"europe",
+place:"ئەوروپا",
+scene:"🏰",
+plans:[
+["Unlimited","3 ڕۆژ","IQD 13,500"],
+["Unlimited","5 ڕۆژ","IQD 15,500"],
+["Unlimited","7 ڕۆژ","IQD 17,000"],
+["Unlimited","10 ڕۆژ","IQD 23,000"],
+["Unlimited","15 ڕۆژ","IQD 28,000"],
+["Unlimited","30 ڕۆژ","IQD 38,000"],
+["1 GB","7 ڕۆژ","IQD 10,500"],
+["2 GB","15 ڕۆژ","IQD 11,000"],
+["3 GB","30 ڕۆژ","IQD 11,500"],
+["5 GB","30 ڕۆژ","IQD 12,000"],
+["10 GB","30 ڕۆژ","IQD 14,000"],
+["20 GB","30 ڕۆژ","IQD 18,000"]
+]
+},
+
+/* UZBEKISTAN */
+{
+name:"Uzbekistan",
+en:"Uzbekistan",
+flag:"🇺🇿",
+region:"asia",
+place:"ئاسیا",
+scene:"🏛️",
+plans:[
+["5 GB","30 ڕۆژ","IQD 22,000"],
+["10 GB","30 ڕۆژ","IQD 32,000"],
+["20 GB","30 ڕۆژ","IQD 42,000"],
+["1 GB","7 ڕۆژ","IQD 11,500"],
+["2 GB","15 ڕۆژ","IQD 14,000"],
+["3 GB","30 ڕۆژ","IQD 16,000"],
+["Unlimited","3 ڕۆژ","IQD 22,000"],
+["Unlimited","5 ڕۆژ","IQD 32,000"],
+["Unlimited","7 ڕۆژ","IQD 42,000"],
+["Unlimited","15 ڕۆژ","IQD 77,000"]
+]
+},
+
+/* SCOTLAND */
+{
+name:"Scotland",
+en:"Scotland",
+flag:"🏴",
+region:"europe",
+place:"UK",
+scene:"🏰",
+plans:[
+["1 GB","7 ڕۆژ","IQD 10,500"],
+["2 GB","15 ڕۆژ","IQD 11,500"],
+["3 GB","30 ڕۆژ","IQD 12,000"],
+["5 GB","30 ڕۆژ","IQD 14,000"],
+["10 GB","30 ڕۆژ","IQD 16,000"],
+["20 GB","30 ڕۆژ","IQD 23,000"],
+["Unlimited","10 ڕۆژ","IQD 28,000"]
+]
+},
+
+/* VIETNAM */
+{
+name:"Vietnam",
+en:"Vietnam",
+flag:"🇻🇳",
+region:"asia",
+place:"ئاسیا",
+scene:"🏝️",
+plans:[
+["Unlimited","10 ڕۆژ","IQD 42,000"],
+["Unlimited","15 ڕۆژ","IQD 67,000"],
+["Unlimited","3 ڕۆژ","IQD 22,000"],
+["Unlimited","5 ڕۆژ","IQD 27,000"],
+["Unlimited","7 ڕۆژ","IQD 32,000"],
+["Unlimited","30 ڕۆژ","IQD 92,000"],
+["1 GB","7 ڕۆژ","IQD 10,500"],
+["2 GB","15 ڕۆژ","IQD 12,000"],
+["3 GB","30 ڕۆژ","IQD 13,000"],
+["5 GB","30 ڕۆژ","IQD 16,000"],
+["10 GB","30 ڕۆژ","IQD 22,000"],
+["20 GB","30 ڕۆژ","IQD 32,000"]
+]
+},
+
+/* VIRGIN ISLANDS */
+{
+name:"Virgin Islands (U.S.)",
+en:"Virgin Islands (U.S.)",
+flag:"🇻🇮",
+region:"america",
+place:"ئەمەریکا",
+scene:"🏝️",
+plans:[
+["1 GB","7 ڕۆژ","IQD 8,000"],
+["2 GB","15 ڕۆژ","IQD 9,500"],
+["3 GB","30 ڕۆژ","IQD 10,000"],
+["5 GB","30 ڕۆژ","IQD 12,500"],
+["10 GB","30 ڕۆژ","IQD 20,000"],
+["20 GB","30 ڕۆژ","IQD 25,000"],
+["Unlimited","3 ڕۆژ","IQD 20,000"],
+["Unlimited","5 ڕۆژ","IQD 25,000"],
+["Unlimited","7 ڕۆژ","IQD 25,000"],
+["Unlimited","10 ڕۆژ","IQD 30,000"],
+["Unlimited","15 ڕۆژ","IQD 55,000"],
+["Unlimited","30 ڕۆژ","IQD 75,000"]
+]
 }
 
 ];
-
 
 function render(list=countries){
 
 const box=document.getElementById("countries");
 
-box.innerHTML="";
+box.innerHTML=list.map((c,ci)=>`
 
-list.forEach((c,ci)=>{
-
-const section=document.createElement("section");
-
-section.className="country";
-
-section.innerHTML=`
+<section class="country">
 
 <div class="country-head">
 
 <div class="travel-scene">
-${c.scene}
+${c.scene||"✈️"}
 </div>
 
 <div class="travel-small">
-${c.small}
+✈️
 </div>
 
 <div class="country-title">
@@ -954,7 +1069,6 @@ ${c.en}
 </div>
 
 </div>
-
 </div>
 
 <div class="country-badges">
@@ -970,9 +1084,7 @@ ${c.en}
 </div>
 
 </div>
-
 </div>
-
 
 <div class="plans">
 
@@ -1011,26 +1123,20 @@ onclick="buy(${ci},${pi})">
 
 </div>
 
-`;
+</section>
 
-box.appendChild(section);
-
-});
+`).join("");
 
 document.getElementById("empty").style.display=
 list.length ? "none" : "block";
-
 }
-
 
 function buy(ci,pi){
 
 const c=countries[ci];
-
 const p=c.plans[pi];
 
-const message=
-`سڵاو 👋
+const message=`سڵاو 👋
 
 دەمەوێت ئەم پلانەی eSIM بکڕم:
 
@@ -1046,62 +1152,59 @@ window.location.href=
 WHATSAPP+
 "?text="+
 encodeURIComponent(message);
-
 }
-
 
 function filterRegion(region,btn){
 
 document.querySelectorAll(".filter")
-.forEach(x=>{
-x.classList.remove("active");
-});
+.forEach(x=>x.classList.remove("active"));
 
 btn.classList.add("active");
 
-if(region==="all"){
-render(countries);
-return;
-}
+document.getElementById("search").value="";
 
 render(
-countries.filter(c=>c.region===region)
+region==="all"
+?countries
+:countries.filter(c=>c.region===region)
 );
-
 }
 
+function searchPlans(){
 
-function searchPlans(e){
-
-const value=e.target.value.trim().toLowerCase();
+const value=
+document.getElementById("search").value.trim().toLowerCase();
 
 if(!value){
 render(countries);
 return;
 }
 
-const result=countries.filter(c=>{
+const normalize=s=>
+s.toLowerCase()
+.replace(/[يى]/g,"ی")
+.replace(/ك/g,"ک")
+.replace(/ة/g,"ە");
 
-const countryText=
-(
-c.name+" "+
-c.en+" "+
-c.place
-).toLowerCase();
+const q=normalize(value);
 
-const plansText=
-c.plans.flat().join(" ").toLowerCase();
+const result=countries.filter(c=>
 
-return
-countryText.includes(value) ||
-plansText.includes(value);
+normalize(
+[
+c.name,
+c.en,
+c.place,
+c.region,
+c.flag,
+...c.plans.flat()
+].join(" ")
+).includes(q)
 
-});
+);
 
 render(result);
-
 }
-
 
 render();
 
