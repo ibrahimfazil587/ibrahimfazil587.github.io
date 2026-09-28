@@ -2,7 +2,9 @@
 <html lang="ku" dir="rtl">
 <head>
 <meta charset="UTF-8">
+
 <meta name="google-site-verification" content="xJStED7URyZT2os0025ErSNb0AGIvjKQsinvdSPod8s">
+
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>FirstESIM | eSIM Turkey, Global & Travel eSIM Plans</title>
@@ -29,16 +31,19 @@
 </script>
 
 <style>
+
 *{
-  box-sizing:border-box
+  box-sizing:border-box;
 }
 
 body{
   margin:0;
   font-family:Arial,"Noto Sans Arabic",sans-serif;
   background:#f4f7fb;
-  color:#172033
+  color:#172033;
 }
+
+/* ================= HEADER ================= */
 
 header{
   background:#fff;
@@ -49,293 +54,409 @@ header{
   border-bottom:1px solid #edf0f5;
   position:sticky;
   top:0;
-  z-index:100
+  z-index:100;
 }
 
 .logo{
-  font-size:25px;
+  font-size:28px;
   font-weight:900;
-  color:#0862bd
+  color:#0862bd;
 }
 
 .logo span{
-  color:#e53935
+  color:#e53935;
 }
 
 .whatsapp-top{
   background:#18bf62;
   color:#fff;
-  padding:13px 20px;
-  border-radius:14px;
+  padding:14px 22px;
+  border-radius:15px;
+  font-size:16px;
   font-weight:900;
-  text-decoration:none
+  text-decoration:none;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
-  margin:28px auto 18px;
+  margin:28px auto 20px;
   width:94%;
   max-width:900px;
-  min-height:300px;
+  min-height:430px;
+
   border-radius:30px;
-  padding:35px 25px;
-  background:linear-gradient(135deg,#0865c7,#1594e9);
+
+  padding:45px 30px;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0,55,145,.30),
+      rgba(0,90,190,.10)
+    ),
+    url('/0016DE22-5EB2-4EBC-834A-F545DBDBC423.png');
+
+  background-size:cover;
+  background-position:center;
+
   color:#fff;
+
   position:relative;
   overflow:hidden;
 
-  background-image:url('/1D60BE2A-6C89-46F1-98BE-6739B72C42CF.png');
-  background-size:cover;
-  background-position:center;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    90deg,
-    rgba(0,60,150,.35),
-    rgba(0,100,210,.10)
-  );
-  z-index:1
-}
-
-.hero:after{
-  display:none
+  box-shadow:
+    0 8px 30px rgba(0,70,150,.18);
 }
 
 .hero h1,
 .hero p,
 .search{
   position:relative;
-  z-index:2
+  z-index:2;
 }
 
 .hero h1{
-  font-size:38px;
-  margin:5px 0 12px
+  font-size:48px;
+  line-height:1.25;
+  margin:5px 0 15px;
+  font-weight:900;
+
+  text-shadow:
+    0 3px 8px rgba(0,0,0,.65);
 }
 
 .hero p{
-  font-size:16px;
-  opacity:.9
+  font-size:22px;
+  font-weight:900;
+  margin:0;
+
+  text-shadow:
+    0 3px 7px rgba(0,0,0,.65);
 }
 
 .search{
-  margin-top:30px;
+  margin-top:40px;
   background:#fff;
-  border-radius:20px;
-  padding:5px
+  border-radius:24px;
+  padding:6px;
+  box-shadow:0 8px 25px rgba(0,0,0,.18);
 }
 
 .search input{
   width:100%;
   border:0;
   outline:0;
-  padding:16px;
-  font-size:15px;
-  border-radius:18px;
-  text-align:right
+
+  padding:19px 20px;
+
+  font-size:18px;
+  border-radius:20px;
+
+  text-align:right;
+
+  color:#222;
 }
 
-/* FILTERS */
+/* ================= FILTERS ================= */
 
 .filters{
   display:flex;
-  gap:10px;
+  gap:12px;
+
   overflow-x:auto;
+
   padding:8px 3%;
-  margin-bottom:20px;
-  scrollbar-width:none
+
+  margin-bottom:25px;
+
+  scrollbar-width:none;
 }
 
 .filters::-webkit-scrollbar{
-  display:none
+  display:none;
 }
 
 .filter{
   border:0;
+
   background:#fff;
+
   color:#0964bd;
-  padding:14px 24px;
-  border-radius:18px;
-  font-size:15px;
+
+  padding:15px 26px;
+
+  border-radius:19px;
+
+  font-size:17px;
+
   font-weight:900;
+
   white-space:nowrap;
-  box-shadow:0 2px 10px #00000008;
-  cursor:pointer
+
+  box-shadow:0 3px 12px #0000000b;
+
+  cursor:pointer;
 }
 
 .filter.active{
   background:#0865c7;
-  color:#fff
+  color:#fff;
 }
+
+/* ================= CONTAINER ================= */
 
 .container{
   width:94%;
   max-width:900px;
-  margin:auto
+  margin:auto;
 }
-
-/* COUNTRY */
 
 .country{
   background:#fff;
-  border-radius:25px;
+
+  border-radius:27px;
+
   overflow:hidden;
-  margin-bottom:24px;
-  box-shadow:0 5px 20px #00000009
+
+  margin-bottom:28px;
+
+  box-shadow:
+    0 6px 24px #0000000b;
 }
 
+/* ================= COUNTRY IMAGE ================= */
+
 .country-head{
-  height:240px;
+  height:260px;
+
   position:relative;
+
   overflow:hidden;
+
   color:#fff;
+
   padding:24px 20px;
+
   background-size:cover;
-  background-position:center
+  background-position:center;
 }
 
 .country-head:before{
   content:"";
+
   position:absolute;
+
   inset:0;
-  background:linear-gradient(90deg,#0009,#0002)
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.65),
+      rgba(0,0,0,.12)
+    );
 }
 
 .country-title{
   position:relative;
+
   z-index:5;
+
   display:flex;
+
   align-items:center;
-  justify-content:space-between;
-  gap:15px
+
+  justify-content:center;
+
+  gap:16px;
+
+  height:100%;
 }
 
 .country-left{
   display:flex;
+
   align-items:center;
-  gap:14px
+
+  justify-content:center;
+
+  gap:16px;
 }
 
 .country-flag{
-  width:72px;
-  height:72px;
-  border-radius:20px;
+  width:78px;
+  height:78px;
+
+  border-radius:22px;
+
   background:#ffffff20;
+
   border:1px solid #ffffff45;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
-  font-size:42px
+
+  font-size:45px;
+
+  backdrop-filter:blur(5px);
 }
 
 .country-name{
-  font-size:29px;
-  font-weight:900;
-  text-shadow:0 2px 5px #000
+  font-size:46px !important;
+
+  font-weight:900 !important;
+
+  color:#fff !important;
+
+  line-height:1.1;
+
+  text-shadow:
+    0 3px 8px rgba(0,0,0,.9),
+    0 0 15px rgba(0,0,0,.55);
 }
 
 .country-sub{
-  margin-top:7px;
-  font-size:14px;
-  text-shadow:0 2px 5px #000
+  display:none !important;
 }
 
 .country-badges{
   display:flex;
+
   flex-direction:column;
-  gap:8px
+
+  gap:9px;
+
+  position:absolute;
+
+  right:20px;
+
+  top:12px;
 }
 
 .country-badge{
   background:#ffffff20;
+
   border:1px solid #ffffff45;
-  padding:8px 13px;
+
+  padding:9px 14px;
+
   border-radius:22px;
-  font-size:11px;
-  white-space:nowrap
+
+  font-size:12px;
+
+  white-space:nowrap;
+
+  backdrop-filter:blur(4px);
 }
 
-/* PLANS */
+/* ================= PLANS ================= */
 
 .plans{
-  padding:13px;
-  background:#f9fbfe
+  padding:15px;
+
+  background:#f9fbfe;
 }
 
 .plan{
-  min-height:78px;
+  min-height:86px;
+
   background:#fff;
+
   border:1px solid #e9edf3;
-  border-radius:18px;
-  margin-bottom:10px;
-  padding:9px 12px;
+
+  border-radius:19px;
+
+  margin-bottom:11px;
+
+  padding:10px 13px;
 
   display:grid;
-  grid-template-columns:minmax(110px,1fr) minmax(170px,220px) auto;
+
+  grid-template-columns:
+    minmax(120px,1fr)
+    minmax(180px,230px)
+    auto;
 
   align-items:center;
-  gap:14px;
 
-  box-shadow:0 3px 10px #00000008;
-  transition:.2s ease
+  gap:15px;
+
+  box-shadow:
+    0 3px 10px #00000008;
+
+  transition:.2s ease;
 }
 
 .plan:hover{
   transform:translateY(-1px);
-  box-shadow:0 6px 16px #00000012
+
+  box-shadow:
+    0 6px 17px #00000012;
 }
 
-/* سێ نیشانەی سیگناڵ لابراوە */
+/* هیچ نیشانەی سێ بارە نییە */
 
 .plan-icon{
-  display:none !important
+  display:none !important;
 }
 
 .plan-info{
   min-width:80px;
-  order:1
+
+  order:1;
 }
 
 .plan-data{
-  font-size:25px;
+  font-size:27px;
+
   font-weight:900;
-  color:#172033
+
+  color:#172033;
 }
 
 .plan-days{
-  font-size:16px;
+  font-size:17px;
+
   color:#9299a7;
+
   margin-top:5px;
-  font-weight:800
+
+  font-weight:800;
 }
+
+/* ================= PRICE ================= */
 
 .plan-price{
   order:2;
+
   justify-self:center;
 
-  min-width:205px;
+  min-width:210px;
+
   text-align:center;
 
   background:#ffe8e8;
+
   color:#df3333;
 
   border-radius:18px;
-  padding:15px 22px;
 
-  font-size:23px;
+  padding:16px 22px;
+
+  font-size:24px;
+
   font-weight:900;
 
-  white-space:nowrap
+  white-space:nowrap;
 }
 
-/* UNLIMITED */
+/* ================= UNLIMITED GOLD ================= */
 
 .plan.unlimited{
+
   background:
     linear-gradient(
       105deg,
@@ -348,23 +469,30 @@ header{
   border:2px solid #e2ad19 !important;
 
   box-shadow:
-    0 5px 18px rgba(210,150,20,.30),
-    inset 0 1px 0 #fffde8 !important
+    0 6px 20px rgba(210,150,20,.30),
+    inset 0 1px 0 #fffde8 !important;
 }
 
 .plan.unlimited .plan-data{
+
   color:#704400;
-  font-size:27px;
-  font-weight:900
+
+  font-size:29px;
+
+  font-weight:900;
 }
 
 .plan.unlimited .plan-days{
+
   color:#815900;
-  font-size:17px;
-  font-weight:900
+
+  font-size:18px;
+
+  font-weight:900;
 }
 
 .plan.unlimited .plan-price{
+
   background:
     linear-gradient(
       135deg,
@@ -376,21 +504,23 @@ header{
 
   border:1px solid #dfa914;
 
-  min-width:205px;
+  min-width:210px;
 
-  padding:16px 24px;
+  padding:17px 24px;
 
-  font-size:23px;
+  font-size:24px;
+
   font-weight:900;
 
   box-shadow:
-    0 2px 7px rgba(155,105,0,.18),
-    inset 0 1px 0 #fff
+    0 3px 8px rgba(155,105,0,.18),
+    inset 0 1px 0 #fff;
 }
 
-/* BUY */
+/* ================= BUY BUTTON ================= */
 
 .buy{
+
   order:3;
 
   border:0;
@@ -404,99 +534,249 @@ header{
 
   color:#fff;
 
-  border-radius:14px;
+  border-radius:15px;
 
-  padding:12px 17px;
+  padding:13px 18px;
 
-  font-size:13px;
+  font-size:15px;
+
   font-weight:900;
 
   white-space:nowrap;
 
   cursor:pointer;
 
-  box-shadow:0 3px 8px #16bd6340;
+  box-shadow:
+    0 4px 9px #16bd6340;
 
-  transition:.2s ease
+  transition:.2s ease;
 }
 
 .buy:hover{
-  transform:scale(1.03)
+  transform:scale(1.04);
 }
 
 .empty{
   text-align:center;
+
   padding:50px 20px;
+
   color:#8992a2;
-  display:none
+
+  display:none;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
   header{
-    padding:15px 14px
+    padding:15px 14px;
   }
 
   .logo{
-    font-size:21px
+    font-size:22px;
   }
 
   .whatsapp-top{
     padding:11px 14px;
-    font-size:12px
+
+    font-size:12px;
   }
 
   .hero{
-    margin-top:20px;
-    min-height:275px;
-    padding:28px 20px
+
+    margin-top:18px;
+
+    min-height:330px;
+
+    padding:30px 20px;
+
+    border-radius:25px;
+
+    background-position:center;
   }
 
   .hero h1{
-    font-size:30px
+
+    font-size:31px;
+
+    line-height:1.25;
+  }
+
+  .hero p{
+
+    font-size:16px;
+
+    line-height:1.5;
+  }
+
+  .search{
+
+    margin-top:28px;
+  }
+
+  .search input{
+
+    padding:16px;
+
+    font-size:15px;
+  }
+
+  .filter{
+
+    padding:13px 20px;
+
+    font-size:14px;
   }
 
   .country-head{
-    height:205px;
-    padding:22px 15px
+
+    height:220px;
+
+    padding:20px 15px;
   }
 
   .country-name{
-    font-size:25px
+
+    font-size:34px !important;
   }
 
   .country-flag{
-    width:62px;
-    height:62px;
-    font-size:35px
+
+    width:64px;
+
+    height:64px;
+
+    font-size:36px;
+  }
+
+  .country-badges{
+
+    right:10px;
+
+    top:8px;
   }
 
   .country-badge{
-    font-size:10px;
-    padding:7px 9px
+
+    font-size:9px;
+
+    padding:6px 8px;
   }
 
   .plan{
-    gap:6px;
-    padding:7px
+
+    grid-template-columns:
+      minmax(65px,1fr)
+      minmax(115px,145px)
+      auto;
+
+    gap:7px;
+
+    padding:8px;
+
+    min-height:76px;
   }
 
   .plan-data{
-    font-size:17px
+
+    font-size:19px;
+  }
+
+  .plan-days{
+
+    font-size:13px;
   }
 
   .plan-price{
-    padding:10px 8px;
-    font-size:11px
+
+    min-width:115px;
+
+    padding:11px 7px;
+
+    font-size:15px;
+  }
+
+  .plan.unlimited .plan-price{
+
+    min-width:120px;
+
+    font-size:16px;
+  }
+
+  .plan.unlimited .plan-data{
+
+    font-size:20px;
+  }
+
+  .plan.unlimited .plan-days{
+
+    font-size:14px;
   }
 
   .buy{
+
     padding:10px 9px;
-    font-size:11px
+
+    font-size:11px;
   }
 }
+
+@media(max-width:390px){
+
+  .hero h1{
+    font-size:27px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .plan{
+
+    grid-template-columns:
+      minmax(58px,1fr)
+      minmax(100px,115px)
+      auto;
+
+    gap:5px;
+
+    padding:6px;
+  }
+
+  .plan-data{
+    font-size:16px;
+  }
+
+  .plan-days{
+    font-size:11px;
+  }
+
+  .plan-price{
+
+    min-width:100px;
+
+    font-size:13px;
+
+    padding:10px 5px;
+  }
+
+  .plan.unlimited .plan-price{
+
+    min-width:102px;
+
+    font-size:14px;
+  }
+
+  .buy{
+
+    padding:9px 7px;
+
+    font-size:10px;
+  }
+}
+
 </style>
 </head>
 
@@ -1325,14 +1605,95 @@ plans:[
 
 ];
 
+/* ================= COUNTRY IMAGES ================= */
 
-/* RENDER */
+const imageMap={
+
+"Turkey":"/0016DE22-5EB2-4EBC-834A-F545DBDBC423.png",
+
+"Germany":"/1DD5D2EA-D5E7-40D1-AF10-487874998116.png",
+
+"United States":"/07269030-034D-4B1A-B27F-5D05C8C8F215.png",
+
+"Europe + UK":"/4E1BC982-A88B-4B96-A57B-E0AAC5C8BC9B.png",
+
+"Global":"/680AF33F-91E2-4F69-B5E7-E260FC374EBB.png",
+
+"UAE":"/8DF6A966-A0E8-4F2D-981B-A1AED2247CE2.png",
+
+"Azerbaijan":"/A655C95A-FF07-4651-ADD2-FBC1F76D56B8.png",
+
+"China":"/302F32DB-D0D9-44CD-A467-89B630DCB8D4.png",
+
+"Oman":"/C5E1A9C4-3575-493C-8AB7-6877B0240E9C.png",
+
+"Switzerland":"/AA0B469F-84C9-459D-A5D9-86370712B02B.png",
+
+"Italy":"/6442CC42-02CD-420B-86A5-63C6BA505559.png",
+
+"Lebanon":"/F158C01E-273C-4662-A6B5-D1188D6F1231.png",
+
+"Denmark":"/34B8F9F0-D435-4866-A7C1-3AF60292047E.png",
+
+"Singapore":"/C655CFC7-AD61-48B4-890C-D605980BD9CD.png",
+
+"Thailand":"/F5B13CE0-9BD1-48EC-B32A-E516D269AE77.png",
+
+"Saudi Arabia":"/649453C0-8A0B-4954-8CF4-61D659C88541.png",
+
+"Japan":"/6CC4A6FE-2EEB-41B4-AEC9-7DA57B42BAB8.png",
+
+"Aruba":"/297A9FFA-0002-45C6-A016-2F4533B095AC.png",
+
+"Afghanistan":"/B5920B07-4456-44BD-9817-43699336D7C9.png",
+
+"Austria":"/841E1CA9-BD2D-4AEF-AF5B-CCDA59E44CB6.png",
+
+"Albania":"/76930A21-B06E-4E68-A888-C4E11C6AFD00.png",
+
+"Andorra":"/467C1306-48E4-4293-9461-409504BEFD25.png",
+
+"Argentina":"/3DCD6928-C8DB-4FB8-8292-F288D362C4BB.png",
+
+"Armenia":"/05E4F252-60F7-446E-BAF0-3D29EF006F94.png",
+
+"Belgium":"/A15AEBDA-70F0-400D-868D-0177B2DDC5CA.png",
+
+"Bangladesh":"/CC58BAD1-ADA0-4D79-8A2B-75E7271CDC98.png",
+
+"Brazil":"/EA44E8EA-7072-44EB-B366-5B66CAF6B9ED.png",
+
+"Iraq":"/9CC1DA2C-0C2C-49FD-AE17-FF6748C0ED2C.png",
+
+"Croatia":"/7EB24468-E101-4A7B-A94B-8873A66838B1.png",
+
+"Uzbekistan":"/18AD25C3-DA6C-4904-86CC-63DB3D50CACB.png",
+
+"Scotland":"/E531E2D4-6F66-4A33-8A52-4CFF08DCA0D3.png",
+
+"Vietnam":"/4F9A8DE8-52EA-4174-93D0-C603F349060F.png",
+
+"Virgin Islands (U.S.)":"/5881DB50-3562-469F-9733-10620C33E163.png"
+
+};
+
+countries.forEach(c=>{
+
+  if(imageMap[c.en]){
+
+    c.image=imageMap[c.en];
+
+  }
+
+});
+
+/* ================= RENDER ================= */
 
 function render(list=countries){
 
 const box=document.getElementById("countries");
 
-box.innerHTML=list.map((c,ci)=>`
+box.innerHTML=list.map((c)=>`
 
 <section class="country">
 
@@ -1352,10 +1713,6 @@ ${c.flag}
 
 <div class="country-name">
 ${c.en}
-</div>
-
-<div class="country-sub">
-✈️ گەشت بۆ ${c.name}
 </div>
 
 </div>
@@ -1380,13 +1737,14 @@ ${c.en}
 
 <div class="plans">
 
-${c.plans.map((p,pi)=>`
+${c.plans.map((p,pi)=>{
 
-<div class="plan">
+const isUnlimited =
+String(p[0]).trim().toLowerCase()==="unlimited";
 
-<div class="plan-icon">
-▮▮▮
-</div>
+return `
+
+<div class="plan ${isUnlimited ? "unlimited" : ""}">
 
 <div class="plan-info">
 
@@ -1406,13 +1764,15 @@ ${p[2]}
 
 <button
 class="buy"
-onclick="buy(${ci},${pi})">
+onclick="buy(${countries.indexOf(c)},${pi})">
 کڕین 🛒
 </button>
 
 </div>
 
-`).join("")}
+`;
+
+}).join("")}
 
 </div>
 
@@ -1420,19 +1780,17 @@ onclick="buy(${ci},${pi})">
 
 `).join("");
 
-document.getElementById("empty").style.display=
-list.length
-? "none"
-: "block";
+document.getElementById("empty").style.display =
+list.length ? "none" : "block";
 
 }
 
-
-/* BUY */
+/* ================= BUY ================= */
 
 function buy(ci,pi){
 
 const c=countries[ci];
+
 const p=c.plans[pi];
 
 const message=`سڵاو 👋
@@ -1454,8 +1812,7 @@ encodeURIComponent(message);
 
 }
 
-
-/* FILTER */
+/* ================= FILTER ================= */
 
 function filterRegion(region,btn){
 
@@ -1472,15 +1829,14 @@ document.getElementById("search").value="";
 render(
 region==="all"
 ?countries
-:countries.filter(
-c=>c.region===region
+:countries.filter(c=>
+c.region===region
 )
 );
 
 }
 
-
-/* SEARCH */
+/* ================= SEARCH ================= */
 
 function searchPlans(){
 
@@ -1492,8 +1848,11 @@ document
 .toLowerCase();
 
 if(!value){
+
 render(countries);
+
 return;
+
 }
 
 const normalize=s=>
@@ -1505,8 +1864,8 @@ s
 
 const q=normalize(value);
 
-render(
-countries.filter(c=>
+const result=countries.filter(c=>
+
 normalize(
 [
 c.name,
@@ -1516,14 +1875,14 @@ c.region,
 c.flag,
 ...c.plans.flat()
 ].join(" ")
-).includes(q)
 )
+.includes(q)
+
 );
 
+render(result);
+
 }
-
-
-/* START */
 
 render();
 
