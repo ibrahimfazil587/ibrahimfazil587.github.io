@@ -1317,7 +1317,114 @@ plans:[
 }
 
 ];
+const imageMap = {
 
+  "Turkey":
+  "/025FB8B2-50AC-4A21-9983-5BECFE2811E1.png",
+
+  "Germany":
+  "/1DD5D2EA-D5E7-40D1-AF10-487874998116.png",
+
+  "United States":
+  "/07269030-034D-4B1A-B27F-5D05C8C8F215.png",
+
+  "Europe + UK":
+  "/4E1BC982-A88B-4B96-A57B-E0AAC5C8BC9B.png",
+
+  "Global":
+  "/680AF33F-91E2-4F69-B5E7-E260FC374EBB.png",
+
+  "UAE":
+  "/8DF6A966-A0E8-4F2D-981B-A1AED2247CE2.png",
+
+  "Azerbaijan":
+  "/A655C95A-FF07-4651-ADD2-FBC1F76D56B8.png",
+
+  "China":
+  "/302F32DB-D0D9-44CD-A467-89B630DCB8D4.png",
+
+  "Oman":
+  "/C5E1A9C4-3575-493C-8AB7-6877B0240E9C.png",
+
+  "Switzerland":
+  "/AA0B469F-84C9-459D-A5D9-86370712B02B.png",
+
+  "Italy":
+  "/6442CC42-02CD-420B-86A5-63C6BA505559.png",
+
+  "Lebanon":
+  "/F158C01E-273C-4662-A6B5-D1188D6F1231.png",
+
+  "Denmark":
+  "/34B8F9F0-D435-4866-A7C1-3AF60292047E.png",
+
+  "Singapore":
+  "/C655CFC7-AD61-48B4-890C-D605980BD9CD.png",
+
+  "Thailand":
+  "/F5B13CE0-9BD1-48EC-B32A-E516D269AE77.png",
+
+  "Saudi Arabia":
+  "/649453C0-8A0B-4954-8CF4-61D659C88541.png",
+
+  "Japan":
+  "/6CC4A6FE-2EEB-41B4-AEC9-7DA57B42BAB8.png",
+
+  "Aruba":
+  "/297A9FFA-0002-45C6-A016-2F4533B095AC.png",
+
+  "Afghanistan":
+  "/B5920B07-4456-44BD-9817-43699336D7C9.png",
+
+  "Austria":
+  "/841E1CA9-BD2D-4AEF-AF5B-CCDA59E44CB6.png",
+
+  "Albania":
+  "/76930A21-B06E-4E68-A888-C4E11C6AFD00.png",
+
+  "Andorra":
+  "/467C1306-48E4-4293-9461-409504BEFD25.png",
+
+  "Argentina":
+  "/3DCD6928-C8DB-4FB8-8292-F288D362C4BB.png",
+
+  "Armenia":
+  "/05E4F252-60F7-446E-BAF0-3D29EF006F94.png",
+
+  "Belgium":
+  "/A15AEBDA-70F0-400D-868D-0177B2DDC5CA.png",
+
+  "Bangladesh":
+  "/CC58BAD1-ADA0-4D79-8A2B-75E7271CDC98.png",
+
+  "Brazil":
+  "/EA44E8EA-7072-44EB-B366-5B66CAF6B9ED.png",
+
+  "Iraq":
+  "/9CC1DA2C-0C2C-49FD-AE17-FF6748C0ED2C.png",
+
+  "Croatia":
+  "/7EB24468-E101-4A7B-A94B-8873A66838B1.png",
+
+  "Uzbekistan":
+  "/18AD25C3-DA6C-4904-86CC-63DB3D50CACB.png",
+
+  "Scotland":
+  "/E531E2D4-6F66-4A33-8A52-4CFF08DCA0D3.png",
+
+  "Vietnam":
+  "/4F9A8DE8-52EA-4174-93D0-C603F349060F.png",
+
+  "Virgin Islands (U.S.)":
+  "/5881DB50-3562-469F-9733-10620C33E163.png"
+
+};
+
+countries.forEach(c => {
+  if (imageMap[c.en]) {
+    c.image = imageMap[c.en];
+  }
+});
 function render(list=countries){
 
 const box=document.getElementById("countries");
