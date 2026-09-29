@@ -84,9 +84,7 @@ header{
   width:94%;
   max-width:900px;
   min-height:430px;
-
   border-radius:30px;
-
   padding:45px 30px;
 
   background-image:
@@ -101,7 +99,6 @@ header{
   background-position:center;
 
   color:#fff;
-
   position:relative;
   overflow:hidden;
 
@@ -117,18 +114,22 @@ header{
 }
 
 .hero h1{
-  font-size:48px;
-  line-height:1.25;
-  margin:5px 0 15px;
+  font-family:"Noto Sans Arabic","SF Arabic","Geeza Pro",Arial,sans-serif;
+  font-size:40px;
+  line-height:1.4;
+  margin:5px 0 12px;
   font-weight:900;
+  letter-spacing:-.5px;
 
   text-shadow:
     0 3px 8px rgba(0,0,0,.65);
 }
 
 .hero p{
-  font-size:22px;
-  font-weight:900;
+  font-family:"Noto Sans Arabic","SF Arabic","Geeza Pro",Arial,sans-serif;
+  font-size:18px;
+  line-height:1.7;
+  font-weight:800;
   margin:0;
 
   text-shadow:
@@ -136,26 +137,44 @@ header{
 }
 
 .search{
-  margin-top:40px;
+  margin-top:62px;
+  margin-right:0;
+  margin-left:auto;
+  width:76%;
+  max-width:650px;
+
   background:#fff;
-  border-radius:24px;
-  padding:6px;
-  box-shadow:0 8px 25px rgba(0,0,0,.18);
+  border-radius:20px;
+  padding:5px;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.18);
 }
 
 .search input{
   width:100%;
+  height:50px;
+
   border:0;
   outline:0;
 
-  padding:19px 20px;
+  padding:12px 18px;
 
-  font-size:18px;
-  border-radius:20px;
+  font-family:"Noto Sans Arabic","SF Arabic","Geeza Pro",Arial,sans-serif;
+  font-size:14px;
+  font-weight:600;
+
+  border-radius:16px;
 
   text-align:right;
 
   color:#222;
+  background:#fff;
+}
+
+.search input::placeholder{
+  color:#a0a0a0;
+  opacity:1;
 }
 
 /* ================= FILTERS ================= */
@@ -163,13 +182,9 @@ header{
 .filters{
   display:flex;
   gap:12px;
-
   overflow-x:auto;
-
   padding:8px 3%;
-
   margin-bottom:25px;
-
   scrollbar-width:none;
 }
 
@@ -179,9 +194,7 @@ header{
 
 .filter{
   border:0;
-
   background:#fff;
-
   color:#0964bd;
 
   padding:15px 26px;
@@ -189,7 +202,6 @@ header{
   border-radius:19px;
 
   font-size:17px;
-
   font-weight:900;
 
   white-space:nowrap;
@@ -214,11 +226,8 @@ header{
 
 .country{
   background:#fff;
-
   border-radius:27px;
-
   overflow:hidden;
-
   margin-bottom:28px;
 
   box-shadow:
@@ -231,7 +240,6 @@ header{
   height:260px;
 
   position:relative;
-
   overflow:hidden;
 
   color:#fff;
@@ -246,7 +254,6 @@ header{
   content:"";
 
   position:absolute;
-
   inset:0;
 
   background:
@@ -259,13 +266,10 @@ header{
 
 .country-title{
   position:relative;
-
   z-index:5;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   gap:16px;
@@ -275,11 +279,8 @@ header{
 
 .country-left{
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   gap:16px;
 }
 
@@ -294,9 +295,7 @@ header{
   border:1px solid #ffffff45;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   font-size:45px;
@@ -324,7 +323,6 @@ header{
 
 .country-badges{
   display:flex;
-
   flex-direction:column;
 
   gap:9px;
@@ -332,7 +330,6 @@ header{
   position:absolute;
 
   right:20px;
-
   top:12px;
 }
 
@@ -356,7 +353,6 @@ header{
 
 .plans{
   padding:15px;
-
   background:#f9fbfe;
 }
 
@@ -397,33 +393,25 @@ header{
     0 6px 17px #00000012;
 }
 
-/* هیچ نیشانەی سێ بارە نییە */
-
 .plan-icon{
   display:none !important;
 }
 
 .plan-info{
   min-width:80px;
-
   order:1;
 }
 
 .plan-data{
   font-size:27px;
-
   font-weight:900;
-
   color:#172033;
 }
 
 .plan-days{
   font-size:17px;
-
   color:#9299a7;
-
   margin-top:5px;
-
   font-weight:800;
 }
 
@@ -474,20 +462,14 @@ header{
 }
 
 .plan.unlimited .plan-data{
-
   color:#704400;
-
   font-size:29px;
-
   font-weight:900;
 }
 
 .plan.unlimited .plan-days{
-
   color:#815900;
-
   font-size:18px;
-
   font-weight:900;
 }
 
@@ -520,7 +502,6 @@ header{
 /* ================= BUY BUTTON ================= */
 
 .buy{
-
   order:3;
 
   border:0;
@@ -558,11 +539,8 @@ header{
 
 .empty{
   text-align:center;
-
   padding:50px 20px;
-
   color:#8992a2;
-
   display:none;
 }
 
@@ -580,145 +558,108 @@ header{
 
   .whatsapp-top{
     padding:11px 14px;
-
     font-size:12px;
   }
 
   .hero{
-
     margin-top:18px;
-
     min-height:330px;
-
     padding:30px 20px;
-
     border-radius:25px;
-
     background-position:center;
   }
 
   .hero h1{
-
-    font-size:31px;
-
-    line-height:1.25;
+    font-size:29px;
+    line-height:1.35;
   }
 
   .hero p{
-
-    font-size:16px;
-
-    line-height:1.5;
+    font-size:15px;
+    line-height:1.6;
   }
 
   .search{
-
-    margin-top:28px;
+    margin-top:38px;
+    width:82%;
   }
 
   .search input{
-
-    padding:16px;
-
-    font-size:15px;
+    height:46px;
+    padding:12px 15px;
+    font-size:13px;
   }
 
   .filter{
-
     padding:13px 20px;
-
     font-size:14px;
   }
 
   .country-head{
-
     height:220px;
-
     padding:20px 15px;
   }
 
   .country-name{
-
     font-size:34px !important;
   }
 
   .country-flag{
-
     width:64px;
-
     height:64px;
-
     font-size:36px;
   }
 
   .country-badges{
-
     right:10px;
-
     top:8px;
   }
 
   .country-badge{
-
     font-size:9px;
-
     padding:6px 8px;
   }
 
   .plan{
-
     grid-template-columns:
       minmax(65px,1fr)
       minmax(115px,145px)
       auto;
 
     gap:7px;
-
     padding:8px;
-
     min-height:76px;
   }
 
   .plan-data{
-
     font-size:19px;
   }
 
   .plan-days{
-
     font-size:13px;
   }
 
   .plan-price{
-
     min-width:115px;
-
     padding:11px 7px;
-
     font-size:15px;
   }
 
   .plan.unlimited .plan-price{
-
     min-width:120px;
-
     font-size:16px;
   }
 
   .plan.unlimited .plan-data{
-
     font-size:20px;
   }
 
   .plan.unlimited .plan-days{
-
     font-size:14px;
   }
 
   .buy{
-
     padding:10px 9px;
-
     font-size:11px;
   }
 }
@@ -733,15 +674,17 @@ header{
     font-size:14px;
   }
 
-  .plan{
+  .search{
+    width:86%;
+  }
 
+  .plan{
     grid-template-columns:
       minmax(58px,1fr)
       minmax(100px,115px)
       auto;
 
     gap:5px;
-
     padding:6px;
   }
 
@@ -754,25 +697,18 @@ header{
   }
 
   .plan-price{
-
     min-width:100px;
-
     font-size:13px;
-
     padding:10px 5px;
   }
 
   .plan.unlimited .plan-price{
-
     min-width:102px;
-
     font-size:14px;
   }
 
   .buy{
-
     padding:9px 7px;
-
     font-size:10px;
   }
 }
@@ -821,52 +757,35 @@ oninput="searchPlans()"
 
 <div class="filters">
 
-<button
-class="filter active"
-onclick="filterRegion('all',this)">
+<button class="filter active" onclick="filterRegion('all',this)">
 هەموو
 </button>
 
-<button
-class="filter"
-onclick="filterRegion('europe',this)">
+<button class="filter" onclick="filterRegion('europe',this)">
 🇪🇺 ئەوروپا
 </button>
 
-<button
-class="filter"
-onclick="filterRegion('asia',this)">
+<button class="filter" onclick="filterRegion('asia',this)">
 🌏 ئاسیا
 </button>
 
-<button
-class="filter"
-onclick="filterRegion('middle',this)">
+<button class="filter" onclick="filterRegion('middle',this)">
 🌙 ڕۆژهەڵاتی ناوەڕاست
 </button>
 
-<button
-class="filter"
-onclick="filterRegion('america',this)">
+<button class="filter" onclick="filterRegion('america',this)">
 🌎 ئەمەریکا
 </button>
 
-<button
-class="filter"
-onclick="filterRegion('global',this)">
+<button class="filter" onclick="filterRegion('global',this)">
 🌍 جیهان
 </button>
 
 </div>
 
-<div
-class="container"
-id="countries">
-</div>
+<div class="container" id="countries"></div>
 
-<div
-class="empty"
-id="empty">
+<div class="empty" id="empty">
 هیچ پلانێک نەدۆزرایەوە 😕
 </div>
 
@@ -1680,9 +1599,7 @@ const imageMap={
 countries.forEach(c=>{
 
   if(imageMap[c.en]){
-
     c.image=imageMap[c.en];
-
   }
 
 });
@@ -1790,7 +1707,6 @@ list.length ? "none" : "block";
 function buy(ci,pi){
 
 const c=countries[ci];
-
 const p=c.plans[pi];
 
 const message=`سڵاو 👋
@@ -1850,7 +1766,6 @@ document
 if(!value){
 
 render(countries);
-
 return;
 
 }
