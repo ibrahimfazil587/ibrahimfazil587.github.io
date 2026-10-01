@@ -1767,13 +1767,11 @@ c.region===region
 )
 );
 
-}
-
 /* ================= SEARCH ================= */
 
 function searchPlans(){
 
-const value=
+const value =
 document
 .getElementById("search")
 .value
@@ -1787,30 +1785,77 @@ return;
 
 }
 
-const normalize=s=>
-s
+/* Normalize Kurdish / Arabic / English */
+const normalize = s =>
+String(s)
 .toLowerCase()
 .replace(/[يى]/g,"ی")
 .replace(/ك/g,"ک")
-.replace(/ة/g,"ە");
+.replace(/ة/g,"ە")
+.replace(/ـ/g,"")
+.replace(/\s+/g," ")
+.trim();
 
-const q=normalize(value);
+/*
+  Search examples:
+  Turkey
+  تورکیا
+  eSIM Turkey
+  10GB
+  10 GB
+  Unlimited
+  30 ڕۆژ
+  IQD 20,000
+*/
 
-const result=countries.filter(c=>
+const q = normalize(value)
+.replace(/(\d+)\s*gb\b/g,"$1 gb")
+.replace(/(\d+)\s*mb\b/g,"$1 mb")
+.split(/\s+/)
+.filter(Boolean);
 
-normalize(
-[
+const result = countries.filter(c => {
+
+const fullText = normalize([
 c.name,
 c.en,
 c.place,
 c.region,
 c.flag,
+c.scene,
+"esim",
 ...c.plans.flat()
-].join(" ")
-)
-.includes(q)
+].join(" "));
 
+return q.every(word => {
+
+if(/^\d+gb$/.test(word)){
+
+const number = word.replace("gb","");
+
+return (
+fullText.includes(number + "gb") ||
+fullText.includes(number + " gb")
 );
+
+}
+
+if(/^\d+mb$/.test(word)){
+
+const number = word.replace("mb","");
+
+return (
+fullText.includes(number + "mb") ||
+fullText.includes(number + " mb")
+);
+
+}
+
+return fullText.includes(word);
+
+});
+
+});
 
 render(result);
 
