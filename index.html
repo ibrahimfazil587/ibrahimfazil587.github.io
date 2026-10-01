@@ -1725,7 +1725,60 @@ region==="all"
 
 }
 
+
 function searchPlans(){
+
+const input=document.getElementById("search");
+const value=String(input?.value||"").trim();
+
+if(!value){
+render(countries);
+return;
+}
+
+const normalize=s=>String(s||"")
+.toLowerCase()
+.normalize("NFKC")
+.replace(/[يى]/g,"ی")
+.replace(/[كک]/g,"ک")
+.replace(/[ةۀ]/g,"ە")
+.replace(/[ؤ]/g,"ۆ")
+.replace(/[إأآ]/g,"ا")
+.replace(/[ئ]/g,"ی")
+.replace(/[ـ]/g,"")
+.replace(/[.,،؛;:!?؟()\[\]{}\-_/\\+]+/g," ")
+.replace(/\s+/g," ")
+.trim();
+
+const q=normalize(value);
+const qc=q.replace(/\s/g,"");
+
+const result=countries.filter(c=>{
+
+const planText=(Array.isArray(c.plans)?c.plans:[])
+.map(p=>Array.isArray(p)?p.join(" "):String(p||""))
+.join(" ");
+
+const text=normalize([
+c.name,
+c.en,
+c.place,
+c.region,
+c.flag,
+c.scene,
+planText
+].join(" "));
+
+const compact=text.replace(/\s/g,"");
+
+return text.includes(q)||compact.includes(qc);
+
+});
+
+render(result);
+
+}
+   
 
 const value=
 document
