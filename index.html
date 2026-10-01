@@ -1725,7 +1725,6 @@ region==="all"
 
 }
 
-
 function searchPlans(){
 
 const input=document.getElementById("search");
@@ -1746,7 +1745,7 @@ const normalize=s=>String(s||"")
 .replace(/[إأآ]/g,"ا")
 .replace(/[ئ]/g,"ی")
 .replace(/[ـ]/g,"")
-.replace(/[.,،؛;:!?؟()\[\]{}\-_/\\+]+/g," ")
+.replace(/[.,،؛;:!?؟()[\]{}_-]+/g," ")
 .replace(/\s+/g," ")
 .trim();
 
@@ -1774,51 +1773,6 @@ const compact=text.replace(/\s/g,"");
 return text.includes(q)||compact.includes(qc);
 
 });
-
-render(result);
-
-}
-   
-
-const value=
-document
-.getElementById("search")
-.value
-.trim()
-.toLowerCase();
-
-if(!value){
-
-render(countries);
-return;
-
-}
-
-const normalize=s=>
-s
-.toLowerCase()
-.replace(/[يى]/g,"ی")
-.replace(/ك/g,"ک")
-.replace(/ة/g,"ە");
-
-const q=normalize(value);
-
-const result=countries.filter(c=>
-
-normalize(
-[
-c.name,
-c.en,
-c.place,
-c.region,
-c.flag,
-...c.plans.flat()
-].join(" ")
-)
-
-.includes(q)
-
-);
 
 render(result);
 
