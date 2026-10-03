@@ -1,34 +1,24 @@
 {
   "name": "FirstESIM | Global eSIM",
   "short_name": "FirstESIM",
-  "description": "FirstESIM - Global eSIM internet plans for Turkey, Europe, Asia, America and destinations around the world.",
+  "description": "FirstESIM - Global eSIM internet plans for destinations around the world.",
   "lang": "ku",
   "dir": "rtl",
-
   "start_url": "/",
   "scope": "/",
-
   "display": "standalone",
   "orientation": "portrait",
-
   "background_color": "#f4f7fb",
   "theme_color": "#0862bd",
-
-  "categories": [
-    "travel",
-    "business",
-    "shopping"
-  ],
-
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "/4DCBA6EB-B0D3-438C-B704-719558C62B5F.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/logo.png",
+      "src": "/4DCBA6EB-B0D3-438C-B704-719558C62B5F.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
