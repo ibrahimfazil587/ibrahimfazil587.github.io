@@ -1793,7 +1793,23 @@ render(result);
 }
 
 render();
+// =========================
+// FirstESIM PWA
+// =========================
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/sw.js")
+      .then(() => {
+        console.log("FirstESIM PWA فعالە ✅");
+      })
+      .catch((error) => {
+        console.log("PWA Service Worker Error:", error);
+      });
+  });
+}
+   
 </script>
 
 </body>
