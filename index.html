@@ -1699,88 +1699,24 @@ list.length?"none":"block";
 
 }
 
-async function buy(ci, pi){
-
+function buy(ci, pi){
   const c = countries[ci];
   const p = c.plans[pi];
 
-  const customerName = prompt("ناوی کڕیار بنووسە:");
-  if(!customerName) return;
+  const message =
+    `سڵاو 👋\n` +
+    `دەمەوێت ئەم eSIM ـە بکڕم:\n\n` +
+    `🌍 وڵات: ${c.name}\n` +
+    `📦 پلان: ${p[0]}\n` +
+    `💰 نرخ: ${p[2]}\n\n` +
+    `تکایە یارمەتیم بدەن بۆ تەواوکردنی کڕین.`;
 
-  const customerPhone = prompt("ژمارەی مۆبایل بنووسە:");
-  if(!customerPhone) return;
+  const whatsappUrl =
+    `https://wa.me/9647506021212?text=${encodeURIComponent(message)}`;
 
-  const payment = prompt(
-    "شێوازی پارەدان بنووسە:\nFIB / FastPay / Super Qi / QuickPay"
-  );
-
-  if(!payment) return;
-
-  const orderData = new FormData();
-
-  orderData.append("customerName", customerName);
-  orderData.append("customerPhone", customerPhone);
-
-  orderData.append("country", c.name);
-  orderData.append("plan", p[0]);
-  orderData.append("price", p[2]);
-
-  orderData.append("payment", payment);
-
-  try{
-
-    const response = await fetch(
-      "https://firstesim-api.onrender.com/api/orders",
-      {
-        method:"POST",
-        body:orderData
-      }
-    );
-
-    const data = await response.json();
-
-    if(!response.ok){
-      alert(
-        data.error || "هەڵەیەک ڕوویدا."
-      );
-      return;
-    }
-
-    const order = data.order;
-
-    const message = `سڵاو 👋
-
-داواکاری eSIM ـم کرد:
-
-🌍 وڵات: ${c.name}
-📦 پلان: ${p[0]}
-📅 ماوە: ${p[1]}
-💰 نرخ: ${p[2]}
-
-👤 ناو: ${customerName}
-📱 ژمارە: ${customerPhone}
-💳 پارەدان: ${payment}
-
-🆔 Order ID: ${order.id}
-
-تکایە داواکارییەکەم پشکنین بکەن.`;
-
-    window.location.href =
-      "https://wa.me/" +
-      WHATSAPP +
-      "?text=" +
-      encodeURIComponent(message);
-
-  }catch(error){
-
-    console.error(error);
-
-    alert(
-      "پەیوەندی بە سیستەمی Order نەکرا. تکایە دووبارە هەوڵ بدەرەوە."
-    );
-  }
+  window.location.href = whatsappUrl;
 }
-
+   
 function filterRegion(region,btn){
 
 document
