@@ -1699,26 +1699,86 @@ list.length?"none":"block";
 
 }
 
-function buy(ci,pi){
+async function buy(ci, pi){
 
-const c=countries[ci];
-const p=c.plans[pi];
+  const c = countries[ci];
+  const p = c.plans[pi];
 
-const message=`سڵاو 👋
+  const customerName = prompt("ناوی کڕیار بنووسە:");
+  if(!customerName) return;
 
-دەمەوێت ئەم پلانەی eSIM بکڕم:
+  const customerPhone = prompt("ژمارەی مۆبایل بنووسە:");
+  if(!customerPhone) return;
+
+  const payment = prompt(
+    "شێوازی پارەدان بنووسە:\nFIB / FastPay / Super Qi / QuickPay"
+  );
+
+  if(!payment) return;
+
+  const orderData = new FormData();
+
+  orderData.append("customerName", customerName);
+  orderData.append("customerPhone", customerPhone);
+
+  orderData.append("country", c.name);
+  orderData.append("plan", p[0]);
+  orderData.append("price", p[2]);
+
+  orderData.append("payment", payment);
+
+  try{
+
+    const response = await fetch(
+      "https://firstesim-api.onrender.com/api/orders",
+      {
+        method:"POST",
+        body:orderData
+      }
+    );
+
+    const data = await response.json();
+
+    if(!response.ok){
+      alert(
+        data.error || "هەڵەیەک ڕوویدا."
+      );
+      return;
+    }
+
+    const order = data.order;
+
+    const message = `سڵاو 👋
+
+داواکاری eSIM ـم کرد:
 
 🌍 وڵات: ${c.name}
 📦 پلان: ${p[0]}
 📅 ماوە: ${p[1]}
 💰 نرخ: ${p[2]}
 
-تکایە یارمەتیم بدەن بۆ کڕین.`;
+👤 ناو: ${customerName}
+📱 ژمارە: ${customerPhone}
+💳 پارەدان: ${payment}
 
-window.location.href=
-"https://wa.me/"+WHATSAPP+
-"?text="+encodeURIComponent(message);
+🆔 Order ID: ${order.id}
 
+تکایە داواکارییەکەم پشکنین بکەن.`;
+
+    window.location.href =
+      "https://wa.me/" +
+      WHATSAPP +
+      "?text=" +
+      encodeURIComponent(message);
+
+  }catch(error){
+
+    console.error(error);
+
+    alert(
+      "پەیوەندی بە سیستەمی Order نەکرا. تکایە دووبارە هەوڵ بدەرەوە."
+    );
+  }
 }
 
 function filterRegion(region,btn){
