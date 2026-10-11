@@ -416,19 +416,6 @@ html[dir="ltr"] .hero,html[dir="ltr"] .search input{text-align:left}
 html[dir="ltr"] .country-badges{right:auto;left:14px}
 @media(max-width:600px){header{padding:10px 12px}.logo{font-size:21px}.header-actions{gap:5px}.language-label{display:none}.language-select{max-width:112px;padding:8px;font-size:13px}.whatsapp-top{padding:9px 10px;font-size:12px}.hero{min-height:250px;margin-top:14px;padding:25px 17px;border-radius:18px}.hero h1{font-size:26px}.hero p{font-size:14px}.search{width:100%;margin-top:28px}.country-head{height:150px}.country-name{font-size:26px!important}.country-flag{width:48px;height:48px;font-size:28px}.plan{grid-template-columns:minmax(55px,1fr) minmax(105px,130px) auto;gap:6px;padding:7px;min-height:70px}.plan-data{font-size:17px}.plan-days{font-size:12px}.plan-price{min-width:0!important;padding:10px 5px;font-size:13px!important}.buy{padding:9px 8px;font-size:11px}}
 
-
-/* Mobile bottom navigation inspired by the approved FirstESIM mockup */
-.mobile-bottom-nav{display:none}
-@media(max-width:600px){
-  body{padding-bottom:calc(82px + env(safe-area-inset-bottom, 0px))}
-  .mobile-bottom-nav{position:fixed;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;left:10px;right:10px;bottom:calc(8px + env(safe-area-inset-bottom, 0px));z-index:9990;padding:8px 6px;background:rgba(255,255,255,.97);border:1px solid #dce7f5;border-radius:20px;box-shadow:0 8px 30px rgba(8,45,91,.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-  .mobile-bottom-nav button{display:flex;min-width:0;min-height:54px;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:0;border-radius:13px;background:transparent;color:#53647c;font:inherit;font-size:11px;font-weight:800;cursor:pointer;padding:4px 2px}
-  .mobile-bottom-nav button .nav-icon{font-size:21px;line-height:1.15}
-  .mobile-bottom-nav button.active{color:#0862bd;background:#edf5ff}
-  .order-tracker{bottom:calc(88px + env(safe-area-inset-bottom, 0px));max-height:calc(78vh - 75px)}
-}
-@media(min-width:601px){.mobile-bottom-nav{display:none!important}}
-
 </style>
 </head>
 
@@ -469,13 +456,6 @@ oninput="searchPlans()">
 
 <div class="container" id="countries"></div>
 <div class="empty" id="empty" data-i18n="empty">هیچ پلانێک نەدۆزرایەوە 😕</div>
-
-<nav class="mobile-bottom-nav" aria-label="FirstESIM mobile navigation">
-  <button type="button" class="active" data-nav="home" onclick="mobileNav('home',this)"><span class="nav-icon" aria-hidden="true">⌂</span><span data-i18n="navHome">سەرەکی</span></button>
-  <button type="button" data-nav="destinations" onclick="mobileNav('destinations',this)"><span class="nav-icon" aria-hidden="true">✈</span><span data-i18n="navDestinations">وڵاتەکان</span></button>
-  <button type="button" data-nav="orders" onclick="mobileNav('orders',this)"><span class="nav-icon" aria-hidden="true">▤</span><span data-i18n="navOrders">داواکارییەکان</span></button>
-  <button type="button" data-nav="profile" onclick="mobileNav('profile',this)"><span class="nav-icon" aria-hidden="true">♙</span><span data-i18n="navProfile">من</span></button>
-</nav>
 
 
 
@@ -1773,9 +1753,9 @@ plans:[
 ];
 
 const FIRSTESIM_TRANSLATIONS = {
- ku:{language:"زمان",whatsapp:"💬 WhatsApp",heroTitle:"🌍 eSIM و پلانەکانی eSIM بۆ گەشت",heroSubtitle:"ئینتەرنێتی گەشتیاری بۆ هەموو جیهان",searchPlaceholder:"گەڕان بە ناوی وڵات، GB، Unlimited، ڕۆژ، نرخ...",all:"هەموو",europe:"🇪🇺 ئەوروپا",asia:"🌏 ئاسیا",middle:"🌙 ڕۆژهەڵاتی ناوەڕاست",america:"🌎 ئەمەریکا",global:"🌍 جیهان",empty:"هیچ پلانێک نەدۆزرایەوە 😕",buy:"کڕین 🛒",checkoutHeading:"تەواوکردنی کڕین — FirstESIM",checkoutIntro:"پارەدان هەڵبژێرە و پسوڵەکەت بار بکە. داواکارییەکەت بۆ Admin دەنێردرێت بۆ پشکنین.",paymentMethod:"شێوازی پارەدان",receiptLabel:"وێنەی پسوڵە (پێویستە)",submitOrder:"ناردنی داواکاری",close:"داخستن",refresh:"پشکنینی نوێ",orderHeading:"📦 داواکاریی FirstESIM",orderWaiting:"داواکارییەکەت پشکنین دەکرێت. تکایە چاوەڕێ بکە.",waiting:"⏳ داواکارییەکەت لە پشکنینە. تکایە چاوەڕێ بکە؛ QR کاتێک Admin باریکات بە ئۆتۆماتیکی لێرە دەردەکەوێت.",planCountry:"وڵات",planLabel:"پلان",priceLabel:"نرخ",paymentNumber:"ژمارەی پارەدان",uploadHint:"تکایە بڕی",thenUpload:"بنێرە، پاشان پسوڵەکە بار بکە.",orderNumber:"ژمارەی داواکاری",readyHeading:"✅ eSIM ـەکەت ئامادەیە!",readyMessage:"QR ـی ڕاستەقینەکەت لە خوارەوەیە. دەتوانیت Scan ـی بکەیت بۆ چالاککردنی eSIM.",success:"داواکارییەکەت بە سەرکەوتوویی نێردرا!",waitFive:"تکایە تا ٥ خولەک چاوەڕێ بکە. کاتێک Admin ـەکە QR بار بکات، بە ئۆتۆماتیکی پیشان دەدرێت.",receiptRequired:"تکایە وێنەی پسوڵەکەت هەڵبژێرە.",fileTooLarge:"قەبارەی فایلەکە زۆرە. تکایە فایلێکی کەمتر لە 8MB هەڵبژێرە.",fileType:"تکایە تەنها وێنە یان PDF بنێرە.",submitError:"ناردنی داواکاری سەرکەوتوو نەبوو. تکایە دووبارە هەوڵ بدە.",submitting:"تکایە چاوەڕێ بکە...",paymentError:"نەتوانرا ژمارەی پارەدان بدۆزرێتەوە.",navHome:"سەرەکی",navDestinations:"وڵاتەکان",navOrders:"داواکارییەکان",navProfile:"من",noOrder:"هێشتا هیچ داواکارییەکی پاشەکەوتکراوت نییە."},
- en:{language:"Language",whatsapp:"💬 WhatsApp",heroTitle:"🌍 Travel eSIM plans for the world",heroSubtitle:"Simple, reliable travel internet wherever you go",searchPlaceholder:"Search country, GB, Unlimited, days, price...",all:"All",europe:"🇪🇺 Europe",asia:"🌏 Asia",middle:"🌙 Middle East",america:"🌎 Americas",global:"🌍 Global",empty:"No plans found 😕",buy:"Buy 🛒",checkoutHeading:"Checkout — FirstESIM",checkoutIntro:"Choose a payment method and upload your receipt. Your order will be sent to the admin for review.",paymentMethod:"Payment method",receiptLabel:"Payment receipt (required)",submitOrder:"Submit order",close:"Close",refresh:"Refresh status",orderHeading:"📦 FirstESIM order",orderWaiting:"Your order is being reviewed. Please wait.",waiting:"⏳ Your order is being reviewed. The QR code will appear here automatically after the admin uploads it.",planCountry:"Country",planLabel:"Plan",priceLabel:"Price",paymentNumber:"Payment number",uploadHint:"Please send",thenUpload:"then upload your receipt.",orderNumber:"Order ID",readyHeading:"✅ Your eSIM is ready!",readyMessage:"Your actual QR code is below. Scan it to activate your eSIM.",success:"Your order was submitted successfully!",waitFive:"Please allow up to 5 minutes. The QR code will appear automatically after the admin uploads it.",receiptRequired:"Please select your payment receipt.",fileTooLarge:"The file is too large. Please choose a file under 8 MB.",fileType:"Please upload an image or PDF only.",submitError:"The order could not be submitted. Please try again.",submitting:"Please wait...",paymentError:"Payment account could not be found.",navHome:"Home",navDestinations:"Destinations",navOrders:"Orders",navProfile:"Profile",noOrder:"No saved order was found yet."},
- ar:{language:"اللغة",whatsapp:"💬 واتساب",heroTitle:"🌍 باقات eSIM للسفر حول العالم",heroSubtitle:"إنترنت سفر سهل وموثوق أينما ذهبت",searchPlaceholder:"ابحث عن الدولة أو GB أو Unlimited أو الأيام أو السعر...",all:"الكل",europe:"🇪🇺 أوروبا",asia:"🌏 آسيا",middle:"🌙 الشرق الأوسط",america:"🌎 الأمريكتان",global:"🌍 عالمي",empty:"لم يتم العثور على باقات 😕",buy:"شراء 🛒",checkoutHeading:"إتمام الشراء — FirstESIM",checkoutIntro:"اختر طريقة الدفع وارفع الإيصال. سيتم إرسال الطلب إلى الإدارة للمراجعة.",paymentMethod:"طريقة الدفع",receiptLabel:"إيصال الدفع (مطلوب)",submitOrder:"إرسال الطلب",close:"إغلاق",refresh:"تحديث الحالة",orderHeading:"📦 طلب FirstESIM",orderWaiting:"طلبك قيد المراجعة. يرجى الانتظار.",waiting:"⏳ طلبك قيد المراجعة. سيظهر رمز QR هنا تلقائياً بعد أن ترفعه الإدارة.",planCountry:"الدولة",planLabel:"الباقة",priceLabel:"السعر",paymentNumber:"رقم الدفع",uploadHint:"يرجى إرسال مبلغ",thenUpload:"ثم رفع الإيصال.",orderNumber:"رقم الطلب",readyHeading:"✅ شريحة eSIM جاهزة!",readyMessage:"رمز QR الحقيقي أدناه. امسحه لتفعيل eSIM.",success:"تم إرسال طلبك بنجاح!",waitFive:"يرجى الانتظار حتى 5 دقائق. سيظهر رمز QR تلقائياً بعد أن ترفعه الإدارة.",receiptRequired:"يرجى اختيار إيصال الدفع.",fileTooLarge:"حجم الملف كبير. اختر ملفاً أقل من 8 ميغابايت.",fileType:"يرجى رفع صورة أو ملف PDF فقط.",submitError:"تعذر إرسال الطلب. حاول مرة أخرى.",submitting:"يرجى الانتظار...",paymentError:"تعذر العثور على حساب الدفع.",navHome:"الرئيسية",navDestinations:"الوجهات",navOrders:"طلباتي",navProfile:"حسابي",noOrder:"لا يوجد طلب محفوظ حتى الآن."}
+ ku:{language:"زمان",whatsapp:"💬 WhatsApp",heroTitle:"🌍 eSIM و پلانەکانی eSIM بۆ گەشت",heroSubtitle:"ئینتەرنێتی گەشتیاری بۆ هەموو جیهان",searchPlaceholder:"گەڕان بە ناوی وڵات، GB، Unlimited، ڕۆژ، نرخ...",all:"هەموو",europe:"🇪🇺 ئەوروپا",asia:"🌏 ئاسیا",middle:"🌙 ڕۆژهەڵاتی ناوەڕاست",america:"🌎 ئەمەریکا",global:"🌍 جیهان",empty:"هیچ پلانێک نەدۆزرایەوە 😕",buy:"کڕین 🛒",checkoutHeading:"تەواوکردنی کڕین — FirstESIM",checkoutIntro:"پارەدان هەڵبژێرە و پسوڵەکەت بار بکە. داواکارییەکەت بۆ Admin دەنێردرێت بۆ پشکنین.",paymentMethod:"شێوازی پارەدان",receiptLabel:"وێنەی پسوڵە (پێویستە)",submitOrder:"ناردنی داواکاری",close:"داخستن",refresh:"پشکنینی نوێ",orderHeading:"📦 داواکاریی FirstESIM",orderWaiting:"داواکارییەکەت پشکنین دەکرێت. تکایە چاوەڕێ بکە.",waiting:"⏳ داواکارییەکەت لە پشکنینە. تکایە چاوەڕێ بکە؛ QR کاتێک Admin باریکات بە ئۆتۆماتیکی لێرە دەردەکەوێت.",planCountry:"وڵات",planLabel:"پلان",priceLabel:"نرخ",paymentNumber:"ژمارەی پارەدان",uploadHint:"تکایە بڕی",thenUpload:"بنێرە، پاشان پسوڵەکە بار بکە.",orderNumber:"ژمارەی داواکاری",readyHeading:"✅ eSIM ـەکەت ئامادەیە!",readyMessage:"QR ـی ڕاستەقینەکەت لە خوارەوەیە. دەتوانیت Scan ـی بکەیت بۆ چالاککردنی eSIM.",success:"داواکارییەکەت بە سەرکەوتوویی نێردرا!",waitFive:"تکایە تا ٥ خولەک چاوەڕێ بکە. کاتێک Admin ـەکە QR بار بکات، بە ئۆتۆماتیکی پیشان دەدرێت.",receiptRequired:"تکایە وێنەی پسوڵەکەت هەڵبژێرە.",fileTooLarge:"قەبارەی فایلەکە زۆرە. تکایە فایلێکی کەمتر لە 8MB هەڵبژێرە.",fileType:"تکایە تەنها وێنە یان PDF بنێرە.",submitError:"ناردنی داواکاری سەرکەوتوو نەبوو. تکایە دووبارە هەوڵ بدە.",submitting:"تکایە چاوەڕێ بکە...",paymentError:"نەتوانرا ژمارەی پارەدان بدۆزرێتەوە."},
+ en:{language:"Language",whatsapp:"💬 WhatsApp",heroTitle:"🌍 Travel eSIM plans for the world",heroSubtitle:"Simple, reliable travel internet wherever you go",searchPlaceholder:"Search country, GB, Unlimited, days, price...",all:"All",europe:"🇪🇺 Europe",asia:"🌏 Asia",middle:"🌙 Middle East",america:"🌎 Americas",global:"🌍 Global",empty:"No plans found 😕",buy:"Buy 🛒",checkoutHeading:"Checkout — FirstESIM",checkoutIntro:"Choose a payment method and upload your receipt. Your order will be sent to the admin for review.",paymentMethod:"Payment method",receiptLabel:"Payment receipt (required)",submitOrder:"Submit order",close:"Close",refresh:"Refresh status",orderHeading:"📦 FirstESIM order",orderWaiting:"Your order is being reviewed. Please wait.",waiting:"⏳ Your order is being reviewed. The QR code will appear here automatically after the admin uploads it.",planCountry:"Country",planLabel:"Plan",priceLabel:"Price",paymentNumber:"Payment number",uploadHint:"Please send",thenUpload:"then upload your receipt.",orderNumber:"Order ID",readyHeading:"✅ Your eSIM is ready!",readyMessage:"Your actual QR code is below. Scan it to activate your eSIM.",success:"Your order was submitted successfully!",waitFive:"Please allow up to 5 minutes. The QR code will appear automatically after the admin uploads it.",receiptRequired:"Please select your payment receipt.",fileTooLarge:"The file is too large. Please choose a file under 8 MB.",fileType:"Please upload an image or PDF only.",submitError:"The order could not be submitted. Please try again.",submitting:"Please wait...",paymentError:"Payment account could not be found."},
+ ar:{language:"اللغة",whatsapp:"💬 واتساب",heroTitle:"🌍 باقات eSIM للسفر حول العالم",heroSubtitle:"إنترنت سفر سهل وموثوق أينما ذهبت",searchPlaceholder:"ابحث عن الدولة أو GB أو Unlimited أو الأيام أو السعر...",all:"الكل",europe:"🇪🇺 أوروبا",asia:"🌏 آسيا",middle:"🌙 الشرق الأوسط",america:"🌎 الأمريكتان",global:"🌍 عالمي",empty:"لم يتم العثور على باقات 😕",buy:"شراء 🛒",checkoutHeading:"إتمام الشراء — FirstESIM",checkoutIntro:"اختر طريقة الدفع وارفع الإيصال. سيتم إرسال الطلب إلى الإدارة للمراجعة.",paymentMethod:"طريقة الدفع",receiptLabel:"إيصال الدفع (مطلوب)",submitOrder:"إرسال الطلب",close:"إغلاق",refresh:"تحديث الحالة",orderHeading:"📦 طلب FirstESIM",orderWaiting:"طلبك قيد المراجعة. يرجى الانتظار.",waiting:"⏳ طلبك قيد المراجعة. سيظهر رمز QR هنا تلقائياً بعد أن ترفعه الإدارة.",planCountry:"الدولة",planLabel:"الباقة",priceLabel:"السعر",paymentNumber:"رقم الدفع",uploadHint:"يرجى إرسال مبلغ",thenUpload:"ثم رفع الإيصال.",orderNumber:"رقم الطلب",readyHeading:"✅ شريحة eSIM جاهزة!",readyMessage:"رمز QR الحقيقي أدناه. امسحه لتفعيل eSIM.",success:"تم إرسال طلبك بنجاح!",waitFive:"يرجى الانتظار حتى 5 دقائق. سيظهر رمز QR تلقائياً بعد أن ترفعه الإدارة.",receiptRequired:"يرجى اختيار إيصال الدفع.",fileTooLarge:"حجم الملف كبير. اختر ملفاً أقل من 8 ميغابايت.",fileType:"يرجى رفع صورة أو ملف PDF فقط.",submitError:"تعذر إرسال الطلب. حاول مرة أخرى.",submitting:"يرجى الانتظار...",paymentError:"تعذر العثور على حساب الدفع."}
 };
 let currentLanguage = "ku";
 function tr(key){return (FIRSTESIM_TRANSLATIONS[currentLanguage]||FIRSTESIM_TRANSLATIONS.ku)[key]||FIRSTESIM_TRANSLATIONS.ku[key]||key;}
@@ -2165,36 +2145,6 @@ render(result);
 
 try { currentLanguage = localStorage.getItem("firstesim_language") || "ku"; } catch(_) { currentLanguage = "ku"; }
 setLanguage(currentLanguage);
-
-function mobileNav(section, button){
-  document.querySelectorAll('.mobile-bottom-nav button').forEach(b=>b.classList.toggle('active', b===button));
-  if(section==='home'){
-    window.scrollTo({top:0,behavior:'smooth'});
-    return;
-  }
-  if(section==='destinations'){
-    const target=document.getElementById('countries');
-    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
-    return;
-  }
-  if(section==='orders'){
-    let orderId=activeOrderId;
-    try{orderId=orderId||localStorage.getItem('firstesim_active_order')}catch(_){}
-    if(orderId){
-      activeOrderId=orderId;
-      showOrderTracker(orderId,null);
-      checkSavedOrder();
-    }else{
-      alert(tr('noOrder'));
-    }
-    return;
-  }
-  if(section==='profile'){
-    const select=document.getElementById('languageSelect');
-    if(select){select.scrollIntoView({behavior:'smooth',block:'center'});select.focus();}
-  }
-}
-
 // =========================
 // FirstESIM PWA
 // =========================
