@@ -1610,5 +1610,64 @@ function logoutAccount(){localStorage.removeItem(AUTH_TOKEN_KEY);localStorage.re
 renderAuthState();setAuthMode('login');
 
 </script>
+
+<style>
+#firstesimRecovery{display:none;border:1px solid #d6e4f5;border-radius:18px;padding:16px;margin-top:12px;background:#fff}
+#firstesimRecovery input,#firstesimRecovery select{box-sizing:border-box;width:100%;padding:13px;border:1px solid #cdddf0;border-radius:12px;margin:6px 0;font:inherit}
+#firstesimRecovery button{padding:13px;border:0;border-radius:12px;background:#0867e8;color:white;font:inherit;font-weight:700;margin-top:8px;width:100%}
+</style>
+<div id="firstesimRecovery">
+  <h3 id="ferTitle">Forgot password / Verification</h3>
+  <label for="ferIdentity">Email or phone</label><input id="ferIdentity" autocomplete="username" placeholder="Email or phone number">
+  <label for="ferChannel">Send code by</label><select id="ferChannel"><option value="email">Email</option><option value="phone">SMS / Phone</option></select>
+  <div id="ferVerifyControls" hidden>
+    <label for="ferCode">6-digit code</label><input id="ferCode" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="000000">
+    <label for="ferNewPassword">New password (10+ characters)</label><input id="ferNewPassword" type="password" minlength="10" autocomplete="new-password">
+  </div>
+  <button type="button" id="ferSend">Send code</button>
+  <button type="button" id="ferSubmit" hidden>Verify / Reset password</button>
+  <button type="button" id="ferClose" style="background:#eaf0f8;color:#06225c">Cancel</button>
+  <p id="ferMessage" role="status"></p>
+</div>
+<script>
+(function(){
+ const box=document.getElementById('firstesimRecovery'); if(!box)return;
+ const api=(typeof API_BASE!=='undefined')?API_BASE:'https://firstesim-api.onrender.com';
+ let mode='reset';
+ const msg=(s)=>document.getElementById('ferMessage').textContent=s;
+ function addForgotButton(){
+  const form=document.getElementById('authForm');
+  if(form&&!document.getElementById('ferOpen')){const b=document.createElement('button');b.type='button';b.id='ferOpen';b.textContent='Forgot password? / Verify email or phone';b.style.cssText='margin-top:10px;padding:12px;border:0;border-radius:12px;background:#eaf0f8;color:#06225c;font-weight:700;width:100%';b.onclick=()=>{mode='reset';box.style.display='block';document.getElementById('ferVerifyControls').hidden=true;document.getElementById('ferSubmit').hidden=true;document.getElementById('ferSend').hidden=false;document.getElementById('ferTitle').textContent='Forgot password';msg('');};form.insertAdjacentElement('afterend',b);}
+  const profile=document.getElementById('authLogout');
+  if(profile&&!document.getElementById('ferVerifyOpen')){const b=document.createElement('button');b.type='button';b.id='ferVerifyOpen';b.textContent='Verify email / phone';b.style.cssText='margin-top:10px;padding:12px;border:0;border-radius:12px;background:#eaf0f8;color:#06225c;font-weight:700;width:100%';b.onclick=()=>{mode='verify';box.style.display='block';document.getElementById('ferIdentity').value='';document.getElementById('ferVerifyControls').hidden=true;document.getElementById('ferSubmit').hidden=true;document.getElementById('ferSend').hidden=false;document.getElementById('ferTitle').textContent='Verify email or phone';msg('');};profile.insertAdjacentElement('afterend',b);}
+ }
+ addForgotButton();
+ document.getElementById('ferClose').onclick=()=>box.style.display='none';
+ document.getElementById('ferSend').onclick=async()=>{
+  const identity=document.getElementById('ferIdentity').value.trim(),channel=document.getElementById('ferChannel').value;
+  try{
+   let url,body,headers={'Content-Type':'application/json'};
+   if(mode==='verify'){url='/api/auth/send-verification';body={channel};const token=localStorage.getItem(typeof AUTH_TOKEN_KEY!=='undefined'?AUTH_TOKEN_KEY:'firstesim_auth_token');headers.Authorization='Bearer '+token;}
+   else{url='/api/auth/forgot-password';body={identity,channel};}
+   const r=await fetch(api+url,{method:'POST',headers,body:JSON.stringify(body)}),d=await r.json().catch(()=>({}));
+   if(!r.ok)throw new Error(d.error||('HTTP '+r.status));
+   document.getElementById('ferVerifyControls').hidden=false;document.getElementById('ferSubmit').hidden=false;document.getElementById('ferSend').hidden=true;
+   msg('If configured, a code was sent. Enter the 6-digit code.'); 
+  }catch(e){msg(e.message||'Could not send code.');}
+ };
+ document.getElementById('ferSubmit').onclick=async()=>{
+  const channel=document.getElementById('ferChannel').value,code=document.getElementById('ferCode').value.trim();
+  try{
+   let url,body,headers={'Content-Type':'application/json'};
+   if(mode==='verify'){url='/api/auth/verify';body={channel,code};const token=localStorage.getItem(typeof AUTH_TOKEN_KEY!=='undefined'?AUTH_TOKEN_KEY:'firstesim_auth_token');headers.Authorization='Bearer '+token;}
+   else{url='/api/auth/reset-password';body={identity:document.getElementById('ferIdentity').value.trim(),channel,code,password:document.getElementById('ferNewPassword').value};}
+   const r=await fetch(api+url,{method:'POST',headers,body:JSON.stringify(body)}),d=await r.json().catch(()=>({}));
+   if(!r.ok)throw new Error(d.error||('HTTP '+r.status));
+   msg(d.message||'Success');if(mode==='reset')setTimeout(()=>{box.style.display='none';},1200);
+  }catch(e){msg(e.message||'Verification failed.');}
+ };
+})();
+</script>
+
 </body>
 </html>
