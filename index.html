@@ -1635,13 +1635,41 @@ renderAuthState();setAuthMode('login');
  const api=(typeof API_BASE!=='undefined')?API_BASE:'https://firstesim-api.onrender.com';
  let mode='reset';
  const msg=(s)=>document.getElementById('ferMessage').textContent=s;
- function addForgotButton(){
+ function openRecovery(nextMode){
+  mode=nextMode;
+  box.style.display='block';
+  document.getElementById('ferVerifyControls').hidden=true;
+  document.getElementById('ferSubmit').hidden=true;
+  document.getElementById('ferSend').hidden=false;
+  document.getElementById('ferTitle').textContent=mode==='verify'?'Verify email or phone':'Forgot password';
+  document.getElementById('ferIdentity').value='';
+  msg('');
+  box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function addForgotButton(){
   const form=document.getElementById('authForm');
-  if(form&&!document.getElementById('ferOpen')){const b=document.createElement('button');b.type='button';b.id='ferOpen';b.textContent='Forgot password? / Verify email or phone';b.style.cssText='margin-top:10px;padding:12px;border:0;border-radius:12px;background:#eaf0f8;color:#06225c;font-weight:700;width:100%';b.onclick=()=>{mode='reset';box.style.display='block';document.getElementById('ferVerifyControls').hidden=true;document.getElementById('ferSubmit').hidden=true;document.getElementById('ferSend').hidden=false;document.getElementById('ferTitle').textContent='Forgot password';msg('');};form.insertAdjacentElement('afterend',b);}
+  if(form&&!document.getElementById('ferOpen')){
+    const b=document.createElement('button');b.type='button';b.id='ferOpen';b.textContent='Forgot password? / Verify email or phone';
+    b.style.cssText='display:block;position:relative;z-index:20;pointer-events:auto;margin:10px 0;padding:12px;border:0;border-radius:12px;background:#eaf0f8;color:#06225c;font-weight:700;width:100%;cursor:pointer';
+    b.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();openRecovery('reset');});
+    form.insertAdjacentElement('afterend',b);
+  }
   const profile=document.getElementById('authLogout');
-  if(profile&&!document.getElementById('ferVerifyOpen')){const b=document.createElement('button');b.type='button';b.id='ferVerifyOpen';b.textContent='Verify email / phone';b.style.cssText='margin-top:10px;padding:12px;border:0;border-radius:12px;background:#eaf0f8;color:#06225c;font-weight:700;width:100%';b.onclick=()=>{mode='verify';box.style.display='block';document.getElementById('ferIdentity').value='';document.getElementById('ferVerifyControls').hidden=true;document.getElementById('ferSubmit').hidden=true;document.getElementById('ferSend').hidden=false;document.getElementById('ferTitle').textContent='Verify email or phone';msg('');};profile.insertAdjacentElement('afterend',b);}
- }
- addForgotButton();
+  if(profile&&!document.getElementById('ferVerifyOpen')){
+    const b=document.createElement('button');b.type='button';b.id='ferVerifyOpen';b.textContent='Verify email / phone';
+    b.style.cssText='display:block;position:relative;z-index:20;pointer-events:auto;margin:10px 0;padding:12px;border:0;border-radius:12px;background:#eaf0f8;color:#06225c;font-weight:700;width:100%;cursor:pointer';
+    b.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();openRecovery('verify');});
+    profile.insertAdjacentElement('afterend',b);
+  }
+}
+addForgotButton();
+setTimeout(addForgotButton, 500);
+setTimeout(addForgotButton, 1500);
+document.addEventListener('click',function(ev){
+ const target=ev.target&&ev.target.closest?ev.target.closest('#ferOpen,#ferVerifyOpen'):null;
+ if(target){ev.preventDefault();openRecovery(target.id==='ferVerifyOpen'?'verify':'reset');}
+});
+
  document.getElementById('ferClose').onclick=()=>box.style.display='none';
  document.getElementById('ferSend').onclick=async()=>{
   const identity=document.getElementById('ferIdentity').value.trim(),channel=document.getElementById('ferChannel').value;
